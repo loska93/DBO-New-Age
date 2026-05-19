@@ -40,16 +40,27 @@ header h1 {
 }
 
 .welcome-text {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     line-height: 1.6;
-    color: #ccc;
+    
+    /* Zmiana koloru na bardzo głęboki, wyrazisty ciemny */
+    color: #111111 !important; 
+    font-weight: 600; /* Lekkie pogrubienie, żeby litery były wyraźniejsze */
+    
+    /* Magiczny trik: delikatny jasny blask wokół ciemnych liter, 
+       dzięki czemu tekst dosłownie "odkleja się" od ciemnego tła */
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.4), 
+                 0 0 8px rgba(255, 255, 255, 0.2);
+                 
     max-width: 750px;
     margin: 0 auto;
 }
 
+/* Kolor dla nazwy serwera, żeby odznaczał się w tekście */
 .welcome-text .highlight {
-    color: #ff9800;
-    font-weight: bold;
+    color: #ff9800 !important;
+    font-weight: 800;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* Ciemny cień pod pomarańczowym napisem */
 }
 
 .container {
