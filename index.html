@@ -3,64 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WIKI - Nasz Serwer Dragon Ball</title>
+    <title>DBO New Age — Oficjalna Encyklopedia Wiedzy</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Style kafelków */
-        .tiles-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        /* Zmieniliśmy div na link (a), więc resetujemy domyślny wygląd linku */
-        .tile {
-            background-color: #1e1e1e;
-            color: #fff;
-            padding: 30px 20px;
-            text-align: center;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: transform 0.2s, background-color 0.2s;
-            border: 1px solid #333;
-            font-weight: bold;
-            text-decoration: none; /* Usuwa podkreślenie tekstu */
-            display: block;
-        }
-        .tile:hover {
-            transform: translateY(-5px);
-            background-color: #2a2a2a;
-            border-color: #ff9800;
-            color: #fff;
-        }
-    </style>
 </head>
 <body>
 
-    <header style="text-align: center; padding: 40px 20px;">
-        <h1>Serwerowa Encyklopedia Wiedzy</h1>
-        <p>Wybierz interesujący Cię system, aby poznać szczegóły, przeliczniki oraz mechaniki gry.</p>
+    <header>
+        <div class="logo-wrapper">
+            <img src="logo.png" alt="DBO New Age Logo" class="server-logo">
+        </div>
+        
+        <h1>DBO New Age — Encyklopedia Wiedzy</h1>
+        
+        <p class="welcome-text">
+            Oficjalne, kompletne kompendium wiedzy serwera <span class="highlight">DBO New Age</span> w pełni przetłumaczone na język polski. 
+            Wszystkie kluczowe mechaniki, przeliczniki oraz najważniejsze informacje z systemowej Wikipedii klienta gry zostały zgromadzone 
+            w jednym miejscu, aby ułatwić Ci codzienną rozgrywkę. Wybierz interesujący Cię system poniżej!
+        </p>
     </header>
 
-    <section class="tiles-container">
-        <a href="systems/chaos.html" class="tile">⚡ System Chaos</a>
-        <a href="systems/autoloot.html" class="tile">🎒 AutoLoot</a>
-        <a href="systems/misje.html" class="tile">📜 System Misji</a>
-        <a href="systems/serverinfo.html" class="tile">📊 Server Info</a>
-        <a href="systems/power-system.html" class="tile">🔥 Power System</a>
-        <a href="systems/rarity.html" class="tile">💎 System Rzadkości</a>
-        <a href="systems/saga.html" class="tile">🗺️ System Sag</a>
-        <a href="systems/survior.html" class="tile">⚔️ Survivor</a>
-        <a href="systems/boss.html" class="tile">👹 Bossowie</a>
-        <a href="systems/statuet.html" class="tile">🗿 Posągi (Statues)</a>
-        <a href="systems/dimension.html" class="tile">🌀 DimensionZ</a>
-        <a href="systems/recall.html" class="tile">✨ System Recall</a>
-        <a href="systems/event.html" class="tile">📅 Event</a>
-        <a href="systems/cloud-warrior.html" class="tile">☁️ Cloud Warriors</a>
-        <a href="systems/market.html" class="tile">⚖️ Market & Postacie</a>
-        <a href="systems/boss-chaos.html" class="tile">👑 Bossowie Chaos</a>
+    <section class="container">
+        <div class="grid-container">
+            <a href="systems/chaos.html" class="tile">⚡ System Chaos</a>
+            <a href="systems/autoloot.html" class="tile">🎒 AutoLoot</a>
+            <a href="systems/misje.html" class="tile">📜 System Misji</a>
+            <a href="systems/serverinfo.html" class="tile">📊 Server Info</a>
+            <a href="systems/power-system.html" class="tile">🔥 Power System</a>
+            <a href="systems/rarity.html" class="tile">💎 System Rzadkości</a>
+            <a href="systems/saga.html" class="tile">🗺️ System Sag</a>
+            <a href="systems/survior.html" class="tile">⚔️ Survivor</a>
+            <a href="systems/boss.html" class="tile">👹 Bossowie</a>
+            <a href="systems/statuet.html" class="tile">🗿 Posągi (Statues)</a>
+            <a href="systems/dimension.html" class="tile">🌀 DimensionZ</a>
+            <a href="systems/recall.html" class="tile">✨ System Recall</a>
+            <a href="systems/event.html" class="tile">📅 Harmonogram</a>
+            <a href="systems/cloud-warrior.html" class="tile">☁️ Cloud Warriors</a>
+            <a href="systems/market.html" class="tile">⚖️ Market & Postacie</a>
+            <a href="systems/boss-chaos.html" class="tile">👑 Bossowie Chaos</a>
+        </div>
     </section>
 
 </body>
