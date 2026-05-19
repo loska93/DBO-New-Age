@@ -40,98 +40,517 @@
             <button id="back-btn" class="hidden">⬅ Powrót do menu</button>
 
             <section id="chaos" class="system-content hidden">
-                <h2>System Chaos</h2>
-                <p>Tutaj wpisz opis systemu Chaos. Jak działa, jakie niesie ze sobą wyzwania i nagrody.</p>
+                <h2>System Potworów Chaos</h2>
+                <p>Potwory Chaos są epickimi wersjami normalnych stworzeń, które mogą narodzić się na dowolnym spawnie (hunt). Każdy zwykły potwór ma <strong>5% szansy</strong> na zrespienie się jako wersja Chaos.</p>
+                
+                <h3>Mnożniki Potwora Chaos:</h3>
+                <ul>
+                    <li><strong>Siła:</strong> +60% w stosunku do oryginalnego potwora.</li>
+                    <li><strong>Zdrowie (HP):</strong> 100% całkowitego życia.</li>
+                    <li><strong>Doświadczenie (EXP):</strong> +30% po pokonaniu.</li>
+                </ul>
+
+                <h3>Nagrody i Korzyści:</h3>
+                <ul>
+                    <li><strong>Esencja Chaosu (Chaos Essence):</strong> Każdy pokonany potwór gwarantuje drop 1 sztuki. Jest to jedyne źródło tego zasobu na serwerze.</li>
+                    <li><strong>Dodatkowy Loot:</strong> Szansa na unikalne, epickie przedmioty. Dodatkowy drop skaluje się progresywnie w zależności od poziomu sugerowanego potwora (od poziomu 10 do 500+).</li>
+                </ul>
+                <blockquote><strong>Ważne:</strong> Tylko standardowe potwory mogą ewoluować w wersję Chaos. System zawsze identyfikuje je specjalną nazwą "Chaos".</blockquote>
             </section>
 
             <section id="autoloot" class="system-content hidden">
-                <h2>System Autoloot</h2>
-                <p>Tutaj wpisz opis systemu Autoloot. Jak go skonfigurować, jakie komendy są dostępne dla graczy.</p>
+                <h2>System AutoLoot</h2>
+                <p>System automatycznie zbiera przedmioty wypadające z potworów po ich zabiciu i wysyła je bezpośrednio do dedykowanej Skrzyni AutoLoot (<em>Baú do AutoLoot</em>).</p>
+                
+                <h3>Jak to działa:</h3>
+                <ol>
+                    <li>Po zabiciu stwora, przedmioty są zbierane automatycznie.</li>
+                    <li>Po napełnieniu skrzyni kliknij <strong>Wyślij do depozytu (Enviar para o depósito)</strong>, aby przetransferować loot do banku/depozytu.</li>
+                    <li><strong>Czas oczekiwania:</strong> Między wysyłkami obowiązuje cooldown, który można skrócić za pomocą mechaniki Wydajności Energetycznej.</li>
+                </ol>
+
+                <h3>Zarządzanie Skrzynią:</h3>
+                <ul>
+                    <li><strong>Niszczenie Przedmiotów (Destroy Item):</strong> Kliknij na niechciany przedmiot w interfejsie i wybierz <em>Destroy Item</em>, aby usunąć go trwale z plecaka AutoLoot.</li>
+                    <li><strong>Lista Zablokowanych Przedmiotów:</strong> Kliknij <em>Abrir lista de itens</em>, dodaj przedmioty, których system ma NIE zbierać, i zatwierdź klikając <strong>Save Changes</strong> (bez zapisu zmiany nie zadziałają).</li>
+                    <li><strong>Filtr Rzadkich Przedmiotów (Tylko Premium):</strong> Przycisk w lewym górnym rogu interfejsu. Po aktywacji system zbiera wyłącznie przedmioty posiadające Rzadkość (Raridades). Przedmioty łączone (stackowalne) zbierane są zawsze normalnie.</li>
+                </ul>
+
+                <h3>Rozwój i Sloty:</h3>
+                <ul>
+                    <li>Każdy gracz startuje z <strong>12 slotami</strong>.</li>
+                    <li><strong>Darmowe sloty z poziomu:</strong> +1 dodatkowy slot co każde 10 poziomów postaci (np. lvl 10 = 13 slotów, lvl 50 = 17, lvl 100 = 22, lvl 200 = 32 sloty).</li>
+                    <li>Dodatkowe sloty można zdobyć z nagród specjalnych lub zakupić w Shopie.</li>
+                </ul>
+
+                <h3>Wydajność Energetyczna (Witaminy):</h3>
+                <p>Witaminy zakupione w Shopie zwiększają poziom energii AutoLoot, redukując czas oczekiwania na wysyłkę do depozytu:</p>
+                <ul>
+                    <li><strong>Poziom 0:</strong> Cooldown 20 min.</li>
+                    <li><strong>Poziom 1:</strong> Cooldown 18 min (Szansa: 90% / Koszt: 2 witaminy).</li>
+                    <li><strong>Poziom 2:</strong> Cooldown 15 min (Szansa: 70% / Koszt: 3 witaminy).</li>
+                    <li><strong>Poziom 3:</strong> Cooldown 10 min (Szansa: 60% / Koszt: 4 witaminy).</li>
+                    <li><strong>Poziom 4:</strong> Cooldown 5 min (Szansa: 50% / Koszt: 5 witamin).</li>
+                    <li><strong>Poziom 5:</strong> Cooldown 2 min [MAX] (Szansa: 40% / Koszt: 8 witamin).</li>
+                </ul>
             </section>
 
             <section id="misje" class="system-content hidden">
-                <h2>System Misji</h2>
-                <p>Tutaj wpisz opis zadań (Quests/Missions). Gdzie szukać głównych NPC i co można zyskać.</p>
+                <h2>System Misji (Challenges)</h2>
+                <p>Oferuje cotygodniowe wyzwania generowane automatycznie na podstawie poziomu oraz mocy (Power) gracza.</p>
+                
+                <h3>Zasady Działania:</h3>
+                <ul>
+                    <li><strong>Energia Semanal:</strong> Każdy gracz otrzymuje <strong>21 punktów energii na tydzień</strong>. Energia i wyzwania resetują się automatycznie w każdy poniedziałek podczas server-save.</li>
+                    <li><strong>Cykl misji:</strong> W każdym cyklu gracz losuje 3 zadania dostosowane do his siły. Mogą one polegać na pokonywaniu wrogów, rozmowach z NPC, zbieraniu przedmiotów bądź eksploracji.</li>
+                    <li><strong>Zmiana Misji (Reroll):</strong> Nielubiane misje można zmienić za pomocą płatności w złocie (Gold) lub walucie premium (Premium Points).</li>
+                </ul>
+
+                <h3>Nagrody i Sklep:</h3>
+                <p>Za każdą ukończoną misję otrzymujesz zeny, doświadczenie (EXP) oraz <strong>Task Points</strong>. Po ukończeniu pełnego cyklu (3 misji) odblokowujesz nagrodę główną (Claim Reward) i losujesz kolejne 3 zadania (aż do wyczerpania energii).</p>
+                <p><strong>Mission Store:</strong> Zebrane Task Points można wymienić w sklepie na przedmioty wzmacniające postać. Wszystkie przedmioty tam zakupione są przypisane do postaci (brak możliwości handlu).</p>
             </section>
 
             <section id="serverinfo" class="system-content hidden">
-                <h2>Server Info</h2>
-                <p>Informacje ogólne o serwerze DBO New Age. Mnożniki (rates), ekipa serwera, linki do Discorda i rejestracji.</p>
+                <h2>Informacje o Serwerze</h2>
+                <h3>Ogólne Zasady i Wymagania:</h3>
+                <ul>
+                    <li><strong>Gildie:</strong> Założenie gildii wymaga minimum 100 poziomu.</li>
+                    <li><strong>Domy (Houses):</strong> Zakup własnego domku dostępny jest od 100 poziomu.</li>
+                    <li><strong>Multi-Client:</strong> Dozwolone jest posiadanie maksymalnie 2 postaci zalogowanych jednocześnie na jedno konto.</li>
+                </ul>
+
+                <h3>System Party (Wspólne EXP):</h3>
+                <ul>
+                    <li><strong>Bonus grupowy:</strong> +20% doświadczenia za każdego dodatkowego członka w party (maksymalnie do +60% dla 3 graczy). Czwarci i kolejni członkowie nie zwiększają już bonusu procentowego.</li>
+                    <li><strong>Warunki dzielenia:</strong> Maksymalna różnica poziomów między graczami to 2/3 poziomu najwyższego lvl. Zasięg dzielenia wynosi 30 SQM (w osiach X/Y oraz 1 piętro w pionie Z).</li>
+                </ul>
+
+                <h3>Kary do EXP za Poziom Sugerowany:</h3>
+                <p>Każdy potwór ma przypisany poziom sugerowany. Jeśli Twój poziom drastycznie go przekracza, doświadczenie zostanie obcięte:</p>
+                <ul>
+                    <li><strong>Różnica do 99 poziomów:</strong> 100% EXP (Brak kar).</li>
+                    <li><strong>Różnica 100 - 199 poziomów:</strong> EXP zredukowane do 50%.</li>
+                    <li><strong>Różnica 200+ poziomów:</strong> Brak doświadczenia (0% EXP).</li>
+                </ul>
+
+                <h3>System PK / Skulls (System Fragów):</h3>
+                <ul>
+                    <li><strong>Protection Level:</strong> Bezpieczna strefa do 50 poziomu (brak możliwości bycia zabitym przez graczy).</li>
+                    <li><strong>PZ Locked:</strong> Trwa 60 sekund po walce.</li>
+                    <li><strong>White Skull:</strong> Blokada na 10 minut po zaatakowaniu gracza.</li>
+                    <li><strong>Red Skull:</strong> Wymaga 20 fragów w 1 dzień, 140 w 7 dni lub 560 w 30 dni. Trwa 2 dni.</li>
+                    <li><strong>Black Skull:</strong> Wymaga 30 fragów w 1 dzień, 210 w 7 dni lub 600 w 30 dni. Trwa 6 dni. Po odrodzeniu postać posiada 80% HP oraz 0% Many.</li>
+                    <li><strong>EXP za PvP:</strong> Zabijanie graczy nagradza doświadczeniem (Solo kill przyznaje 50% standardowej wartości EXP ofiary). Wpływ ma różnica poziomów: silniejsza ofiara = 50% EXP, równa = 100% EXP, słabsza = 30% EXP.</li>
+                </ul>
             </section>
 
             <section id="power-system" class="system-content hidden">
-                <h2>Power System</h2>
-                <p>Tutaj wpisz informacje o systemie mocy postaci. Jak zwiększać swoje statystyki i mnożniki obrażeń.</p>
+                <h2>Power System (Moc Bojowa)</h2>
+                <p>System określający ogólną sprawność bojową bohatera. Maksymalny limit wynosi <strong>500 000 punktów Power</strong>.</p>
+                
+                <h3>Działanie według Archetypów Klasowych:</h3>
+                <ul>
+                    <li><strong>Klasy TANK:</strong> Otrzymują bonus do obrony (+1% obrony na każde 10 000 Power, maksymalnie do +50%).</li>
+                    <li><strong>Pozostałe klasy (Atak/Wsparcie):</strong> Otrzymują bonus do obrażeń (+1% obrażeń na każde 5 000 Power, maksymalnie do +100%).</li>
+                </ul>
+
+                <h3>Jak zdobywać punkty Power?</h3>
+                <ul>
+                    <li><strong>Stały atrybut przedmiotów:</strong> Każdy przedmiot generuje bazową wartość Power zależną od swojego Item Levelu.</li>
+                    <li><strong>Rzadkość (Rarity):</strong> Dodatkowa moc pochodząca z tieru przedmiotu (nie można posiadać dwóch bonusów Power z rzadkości na jednym przedmiocie).</li>
+                    <li><strong>Misje Codzienne (Daily Tasks):</strong> Stały zastrzyk punktów po ukończeniu zadań.</li>
+                    <li><strong>Misje Bossów (Boss Missions):</strong> Każdy zaliczony etap kumuluje stały bonus mocy.</li>
+                    <li><strong>Saga:</strong> Nagrody za postępy w głównej linii fabularnej.</li>
+                    <li><strong>Posągi (Statues):</strong> Odnalezienie i aktywacja posągu na mapie świata przyznaje permanentne +30 Power.</li>
+                </ul>
+                <blockquote><strong>Efekt Wizualny:</strong> Po osiągnięciu odpowiednich progów Power, outfit Twojej postaci zyska unikalną, animowaną aurę odzwierciedlającą jej potęgę. Shaders nie kumulują się – wyświetlana jest zawsze aura najwyższego progu.</blockquote>
             </section>
 
             <section id="rarity" class="system-content hidden">
-                <h2>System Rarity</h2>
-                <p>Opis stopni rzadkości przedmiotów (np. Common, Rare, Epic, Legendary). Jakie bonusy dają poszczególne tier-y.</p>
+                <h2>System Rzadkości (Raridade)</h2>
+                <p>System nakładający losowe, potężne modyfikatory i statystyki na przedmioty wyposażenia. Wartość bonusów skaluje się z Item Levelerem.</p>
+                
+                <h3>Szanse na Tiery Rzadkości (Podstawa: Item Level 250):</h3>
+                <table border="1" cellpadding="5" style="border-collapse: collapse; border-color: #333; width: 100%;">
+                    <thead>
+                        <tr style="background-color: #1e1e1e;">
+                            <th>Tier Rzadkości</th>
+                            <th>Szansa</th>
+                            <th>Liczba Atrybutów</th>
+                            <th>Mnożnik Atrybutu</th>
+                            <th>Mnożnik Max HP/Mana</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong style="color:#fff;">Normal</strong></td>
+                            <td>75%</td>
+                            <td>1 - 2</td>
+                            <td>x1</td>
+                            <td>+700</td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color:#1eff00;">Rare</strong></td>
+                            <td>16%</td>
+                            <td>1 - 2</td>
+                            <td>x1–2</td>
+                            <td>+1000–1400</td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color:#0070dd;">Epic</strong></td>
+                            <td>7%</td>
+                            <td>2 (stałe)</td>
+                            <td>x1–2</td>
+                            <td>+1000–1400</td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color:#a335ee;">Legendary</strong></td>
+                            <td>2%</td>
+                            <td>2 - 3</td>
+                            <td>x1–2</td>
+                            <td>+1000–2100</td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color:#ff8000;">Mythical</strong></td>
+                            <td>1%</td>
+                            <td>3 (stałe)</td>
+                            <td>x1–3</td>
+                            <td>+1000–2100</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Operacje u Kowala/Interfejsu:</h3>
+                <ul>
+                    <li><strong>Upgrade Rarity:</strong> Podnosi przedmiot do wyższego tieru. Wymaga surowców, waluty i obarczone jest szansą na niepowodzenie.</li>
+                    <li><strong>Reroll All Attributes:</strong> Losuje całkowicie nowe statystyki, zachowując obecną klasę rzadkości przedmiotu.</li>
+                    <li><strong>Modify Single Attribute:</strong> Pozwala podmienić tylko jeden, konkretny atrybut – idealne pod dopasowywanie unikalnych buildów postaci.</li>
+                    <li><strong>Randomize Attribute Value:</strong> Zachowuje wylosowane statystyki, ale zmienia losowo ich wartość liczbową (może polepszyć lub pogorszyć przedmiot).</li>
+                </ul>
+                <blockquote><strong>Zasada unikalności:</strong> Żaden atrybut nie może powtórzyć się dwukrotnie na tym samym przedmiocie (np. niemożliwe jest posiadanie 2x bonusu do szybkości walki).</blockquote>
             </section>
 
             <section id="saga" class="system-content hidden">
-                <h2>System Saga</h2>
-                <p>Opis systemu Sagi wzorowanego na świecie Dragon Ball. Jak przechodzić kolejne etapy historii.</p>
+                <h2>System Sag (Storyline)</h2>
+                <p>Główna oś fabularna serwera pozwalająca odtworzyć legendarną historię uniwersum Dragon Ball poprzez rozbudowane misje sekwencyjne.</p>
+                
+                <h3>Jak zacząć i realizować progres?</h3>
+                <ul>
+                    <li>Po rozpoczęciu rozgrywki i odebraniu Zestawu Startowego (<em>Kit Inicial</em>), otrzymasz kluczowy przedmiot: <strong>Saga Orb Link</strong>.</li>
+                    <li>Użycie (kliknięcie) tego przedmiotu automatycznie wywołuje dedykowany interfejs aktualnej sagi.</li>
+                    <li>Wszystkie misje w ramach danej sagi (pokonywanie wrogów, odnajdywanie lokacji, interakcje z NPC) muszą być wykonywane w ściśle określonej kolejności chronologicznej. Aktualny postęp pokazuje pasek wizualny (np. 5/6 ukończonych zadań).</li>
+                    <li><strong>Ograniczenia:</strong> Gracz może mieć aktywną tylko jedną sagę jednocześnie. Niektóre rozdziały posiadają minimalny wymóg poziomu postaci.</li>
+                </ul>
+
+                <h3>Nagrody i Przywileje:</h3>
+                <p>Ukończenie misji cząstkowych nagradza doświadczeniem i zenami. Zwieńczenie 100% danej sagi odblokowuje nagrody końcowe:</p>
+                <ul>
+                    <li>Ogromne pokłady waluty i punktów Power.</li>
+                    <li>Unikalne przedmioty legendarne i transformacje powiązane z daną sagą.</li>
+                    <li><strong>Dostęp do contentu:</strong> Odblokowanie nowych stref łowieckich, instancji oraz systemów.</li>
+                    <li><strong>Ukończenie Sagi Red Ribbon:</strong> Odblokowuje specjalną funkcję dla systemu <strong>Recall</strong> (możliwość tworzenia portalu powrotnego w dowolnym miejscu na mapie).</li>
+                </ul>
+                <blockquote><strong>Bezpieczeństwo:</strong> W przypadku śmierci i utraty plecaka, Twój <em>Saga Orb Link</em> nie przepada – zostanie automatycznie odesłany do depozytu (Depot).</blockquote>
             </section>
 
             <section id="survior" class="system-content hidden">
-                <h2>System Survivor</h2>
-                <p>Tutaj opisz tryb Survivor. Na czym polega przetrwanie, jak dołączyć i jakie są nagrody za fale wrogów.</p>
+                <h2>Wydarzenie Survivor (Przetrwanie)</h2>
+                <p>Instancjonowane wyzwanie wytrzymałościowe PvE, w którym gracze sprawdzają swoje limity w walce z nacierającymi hordami wrogów.</p>
+                
+                <h3>Zasady i Uczestnictwo:</h3>
+                <ul>
+                    <li><strong>How to join:</strong> Udaj się do NPC zlokalizowanego w Central City (tuż obok głównej świątyni).</li>
+                    <li><strong>Wymagania:</strong> Wydarzenie można wyzwać raz na 24 godziny. Wszystkie areny mogą być zajęte, co wymusza kolejkowanie graczy.</li>
+                    <li><strong>Mechanika walki:</strong> Wyzwanie składa się z <strong>20 fal (waves)</strong> o rosnącym stopniu trudności. Każda fala zawiera określoną liczbę potworów ze znacznie podbitym współczynnikiem HP oraz zadawanych obrażeń.</li>
+                    <li><strong>Warunek awansu:</strong> Musisz zgładzić wszystkie potwory z danej fali przed upływem wyznaczonego czasu. Śmierć postaci bądź przekroczenie limitu czasowego oznacza natychmiastowy koniec wydarzenia.</li>
+                </ul>
+
+                <h3>Nagrody:</h3>
+                <ul>
+                    <li>Pakiety doświadczenia, rzadkie przedmioty użytkowe i surowce (wysyłane na pocztę w Depot po opuszczeniu areny).</li>
+                    <li>Ukończenie pełnych 20 fal gwarantuje prestiżowy tytuł: <strong>Najwyższy Ocalały (Sobreviviente Supremo)</strong> oraz unikalne nagrody maksymalne.</li>
+                </ul>
             </section>
 
             <section id="boss" class="system-content hidden">
-                <h2>System Bossów</h2>
-                <p>Wszystko o bossach na serwerze. Czas odrodzenia (respawn time), lokacje lub unikalny drop.</p>
+                <h2>System Codziennych Bossów</h2>
+                <p>Mechanika pozwalająca graczom na codzienne toczenie pojedynków z potężnymi szefami w celu weryfikacji swoich umiejętności oraz zdobycia cennych skarbów.</p>
+                
+                <h3>Wybór Poziomu Trudności:</h3>
+                <p>Każdy boss może zostać wyzwany raz dziennie na jednym z trzech wybranych poziomów trudności. Wybór skaluje statystyki i modyfikuje nagrody:</p>
+                <ul>
+                    <li><strong>Łatwy (Fácil):</strong> EXP 80% | Zdrowie (HP) 25% | Obrażenia 50%</li>
+                    <li><strong>Normalny (Normal):</strong> EXP 150% | Zdrowie (HP) 70% | Obrażenia 70%</li>
+                    <li><strong>Trudny (Difícil):</strong> EXP 200% | Zdrowie (HP) 100% | Obrażenia 130%</li>
+                </ul>
+
+                <h3>Zasady Dropu i Power:</h3>
+                <ul>
+                    <li>Punkty Power przyznawane oszczędnie wyłącznie za ostateczne zgładzenie bossa. Wartość Power jest stała dla wszystkich poziomów trudności.</li>
+                    <li>Wyższe poziomy trudności drastycznie zwiększają współczynnik szansy na rzadki loot (ekskluzywne dropy) oraz dają znacznie więcej EXP.</li>
+                </ul>
             </section>
 
             <section id="statuet" class="system-content hidden">
-                <h2>System Statuet</h2>
-                <p>Opis systemu statuetek. Gdzie je zdobyć, jak je aktywować i jakie pasywne bonusy dają postaci.</p>
+                <h2>System Posągów (Statues)</h2>
+                <p>Specjalne struktury dekoracyjno-użytkowe, które gracze mogą umieścić w swoich domach, aby zyskiwać potężne, długotrwałe wzmocnienia (buffy) podczas wypraw łowieckich.</p>
+                
+                <h3>Zasady Aktywacji:</h3>
+                <ul>
+                    <li>Posąg musi znajdować się <strong>wewnątrz zakupionego domu (house)</strong>.</li>
+                    <li><strong>Własność:</strong> Pierwszy gracz, który kliknie na posąg po jego wytworzeniu/postawieniu, staje się jego prawnym właścicielem. Tylko właściciel może czerpać z niego profity.</li>
+                    <li><strong>Czas działania:</strong> Każdy buff działa przez <strong>12 godzin</strong>. Po użyciu, posąg aktywuje 24-godzinny czas odnowienia (cooldown).</li>
+                </ul>
+
+                <h3>Dostępne Posągi i ich Benefity:</h3>
+                <ul>
+                    <li><strong>Experience Statue:</strong> Zapewnia bonus +5% zdobywanego doświadczenia (EXP) przez 12h.</li>
+                    <li><strong>Loot Statue:</strong> Zapewnia bonus +10% szansy na drop przedmiotów (Loot) przez 12h.</li>
+                    <li><strong>Damage Statue:</strong> Zwiększa zadawane obrażenia (Damage) o +5% przez 12h.</li>
+                    <li><strong>Skills Statue:</strong> Podnosi poziomy umiejętności (Skills) o +8% przez 12h.</li>
+                    <li><strong>Chaos Statue:</strong> Zwiększa szansę na zrespienie Potwora Chaos o +3% przez 12h.</li>
+                </ul>
             </section>
 
             <section id="dimension" class="system-content hidden">
-                <h2>System Dimension</h2>
-                <p>Opis wymiarów (Dimensions). Jak do nich wejść i jakie unikalne potwory lub przedmioty można tam znaleźć.</p>
+                <h2>Wymiar DimensionZ</h2>
+                <p>Alternatywny, mroczny wymiar stworzony do zaawansowanych potyczek PvE oraz otwartej rywalizacji PvP.</p>
+                
+                <h3>Zasady i Specyfika Świata:</h3>
+                <ul>
+                    <li><strong>Jak wejść:</strong> Portal wejściowy otwierany jest automatycznie przez NPC Yama w Earth (strefa wejściowa na północ od miasta). Portal pojawia się w wyznaczonych godzinach harmonogramu.</li>
+                    <li><strong>Bezpieczne PvP (No Penalties):</strong> Wewnątrz DimensionZ strefa PvP jest w pełni odblokowana. Gracze mogą walczyć i eliminować się nawzajem bez obawy o otrzymanie fragów, czaszek (skulls) czy utratę punktów doświadczenia. Po opuszczeniu wymiaru status PvP wraca do normy.</li>
+                    <li><strong>Potwory Wymiarowe:</strong> Przeciwnicy w tym świecie posiadają unikalne wzmocnienia i dodatkowe bonusy dropu (20% więcej EXP oraz 20% większa szansa na Loot).</li>
+                    <li><strong>Jak wyjść:</strong> Aby bezpiecznie powrócić do standardowego świata, należy odnaleźć specjalną strefę wyjściową na mapie DimensionZ.</li>
+                </ul>
             </section>
 
             <section id="recall" class="system-content hidden">
-                <h2>System Recall</h2>
-                <p>Tutaj wpisz informacje o systemie Recall (np. przywoływanie, powroty do bazy lub mechanika teleportacji).</p>
+                <h2>System Recall (Instant Transmission)</h2>
+                <p>Mechanika błyskawicznej relokacji inspirowana legendarną techniką <em>Zanzoken / Instant Transmission</em> ze świata Dragon Ball.</p>
+                
+                <h3>Zasady Działania i Ograniczenia:</h3>
+                <ul>
+                    <li><strong>Aktywacja:</strong> Użyj kombinacji klawiszy <strong>CTRL + T</strong>, aby rozpocząć proces ładowania (canalização).</li>
+                    <li><strong>Czas skupienia:</strong> Wynosi 5 sekund. Wykonanie jakiegokolwiek ruchu, zaatakowanie potwora lub otrzymanie obrażeń w tym czasie natychmiast anuluje transmisję.</li>
+                    <li><strong>Czas odnowienia:</strong> Wynosi 10 sekund pomiędzy udanymi próbami użycia. Mechanika posiada unikalny efekt wizualny teleportacji.</li>
+                    <li><strong>Restrykcje bezpieczeństwa:</strong> System jest całkowicie zablokowany podczas walki z graczami (PZ Locked), wewnątrz stref rajdowych bossów oraz w trakcie wykonywania określonych zadań (Quests).</li>
+                    <li><strong>Modyfikator Sagi Red Ribbon:</strong> Gracze, którzy nie ukończyli sagi Red Ribbon, są zawsze teleportowani domyślnie do głównej świątyni. Osoby, które sfinalizowały tę sagę, zyskują możliwość utworzenia osobistego portalu powrotnego w miejscu, w którym aktualnie stoją (portal utrzymuje się 120 sekund i jest widoczny tylko dla twórcy).</li>
+                </ul>
             </section>
 
             <section id="event" class="system-content hidden">
-                <h2>System Eventów</h2>
-                <p>Harmonogram automatycznych eventów na serwerze lub opisy unikalnych wydarzeń organizowanych przez administrację.</p>
+                <h2>Harmonogram Wydarzeń (Events)</h2>
+                <p>Wszystkie wydarzenia automatyczne na serwerze uruchamiane są według strefy czasowej <strong>Brazylii (Horário de Brasília - BRT)</strong>. Monitoruj zegar wewnątrz gry, aby nie przegapić godzin startowych.</p>
+                
+                <h3>Główne Wydarzenia Cykliczne:</h3>
+                <ul>
+                    <li><strong>Wydarzenie Shenlong:</strong> Startuje codziennie o godzinie <strong>20:00 BRT</strong>. Lobby wejściowe zamyka się o 20:05 BRT, a event rusza natychmiast po zamknięciu zapisów. Wejście realizowane jest u NPC Yama (wymagany poziom: 300+, minimalny Power: 20 000 oraz posiadanie na koncie Wszystkich Wymiarowych Smoczych Kul).</li>
+                    <li><strong>Wydarzenie Battle / Cloud Warriors:</strong> Drużynowe starcia PvP aktywowane w określone dni tygodnia u NPC Yama (szczegóły w kafelku Cloud Warrior).</li>
+                </ul>
+                <blockquote><strong>Zabezpieczenia anty-cheat:</strong> Obowiązuje rygorystyczny limit nagród: tylko 1 zestaw nagród na jeden adres IP, co całkowicie wyklucza farmienie eventów za pomocą dodatkowych kont (mclogów). W przypadku zbyt niskiej frekwencji wydarzenie zostaje automatycznie anulowane.</blockquote>
             </section>
 
             <section id="cloud-warrior" class="system-content hidden">
-                <h2>System Cloud Warrior</h2>
-                <p>Opis mechaniki Cloud Warrior. Specjalne transformacje, zadania lub bonusy bojowe powiązane z tym systemem.</p>
+                <h2>Wydarzenie Cloud Warriors</h2>
+                <p>Masowe, drużynowe starcie PvP realizowane wewnątrz dedykowanej instancji bitewnej.</p>
+                
+                <h3>Zasady Podziału i Walki:</h3>
+                <ul>
+                    <li>Po wejściu przez portal u NPC Yama, system automatycznie i losowo przydziela graczy do dwóch zbalansowanych obozów: <strong>Frieza's Race</strong> oraz <strong>Cyborgs</strong>.</li>
+                    <li><strong>Czas trwania:</strong> Maksymalnie 10 minut. Po 1 minucie od wejścia ściany baz otwierają się i rozpoczyna się otwarta walka.</li>
+                    <li><strong>Warunek zwycięstwa:</strong> Wygrywa drużyna, która po upływie czasu zaliczy większą łączną liczbę zabójstw (Kills) na wrogach.</li>
+                    <li><strong>Dogrywka (Remis):</strong> W przypadku równej ilości zabójstw, czas wydarzenia zostaje przedłużony o 1 minutę. Jeśli remis nadal się utrzymuje, system losowo wyłania zwycięzcę.</li>
+                </ul>
+
+                <h3>Harmonogram Tygodniowy i Limity:</h3>
+                <ul>
+                    <li><strong>Poniedziałek, Wtorek, Czwartek, Piątek, Niedziela:</strong> Start o 19:00 BRT (Limit: 10 graczy).</li>
+                    <li><strong>Środa, Sobota:</strong> Start o 20:30 BRT (Limit: 10 graczy).</li>
+                </ul>
+
+                <h3>Nagrody dla Zwycięzców:</h3>
+                <p>Członkowie wygranej drużyny otrzymują nagrody wysyłane bezpośrednio do depozytu:</p>
+                <ul>
+                    <li><strong>20 sztuk Waluty Z:</strong> (Ikona pomarańczowego Z).</li>
+                    <li><strong>200 sztuk Fasolek Senzu:</strong> (Ikona zielonej fasolki).</li>
+                </ul>
             </section>
 
             <section id="market" class="system-content hidden">
-                <h2>System Marketu</h2>
-                <p>Jak działa handel między graczami. Instrukcja korzystania z marketu w grze lub na stronie.</p>
+                <h2>System Marketu (Handel)</h2>
+                <p>W pełni zautomatyzowany, asynchroniczny system wymiany handlowej pomiędzy graczami. Nie wymaga, aby obie strony transakcji były zalogowane w grze w tym samym czasie.</p>
+                
+                <h3>Zasady Wystawiania i Opłaty:</h3>
+                <ul>
+                    <li>Wystawiający określa cenę oraz ilość sprzedawanego towaru. Kupujący odbiera przedmiot bezpośrednio z poziomu interfejsu.</li>
+                    <li><strong>Podatek handlowy (Taxa de Venda):</strong> Podczas wystawiania pobierane jest 10% wartości przedmiotu jako opłata komisowa.</li>
+                    <li><strong>Zwrot podatku:</strong> Oferta wygasa automatycznie po <strong>48 godzinach</strong>. Jeśli przedmiot nie sprzedał się w tym czasie, wraca do właściciela, a opłata 10% jest w całości zwracana. Jeśli usuniesz ofertę ręcznie przed upływem czasu, opłata przepada.</li>
+                    <li><strong>Ograniczenia Marketu:</strong> Przedmioty oznaczone statusem <em>Unique Item</em> (Unikalne) mają całkowitą blokadę i nie mogą trafić na Market.</li>
+                    <li><strong>Limity Ogłoszeń:</strong> Konta Premium (Premium Account) mogą wystawić do 15 ofert jednocześnie. Konta darmowe (Free Account) posiadają limit do 8 ofert.</li>
+                </ul>
+
+                <h3>Zakładki Interfejsu:</h3>
+                <ol>
+                    <li><strong>Kup (Comprar):</strong> Przeglądanie i filtrowanie ofert całego serwera.</li>
+                    <li><strong>Sprzedaj (Vender):</strong> Zarządzanie własnymi ofertami i wystawianie ekwipunku.</li>
+                    <li><strong>Historia (Histórico):</strong> Wgląd w minione transakcje i zarobki.</li>
+                </ol>
+                <hr style="border-color:#333; margin:20px 0;">
+                <h3>Sprzedaż Postaci (Character Market):</h3>
+                <p>Unikalny podsystem pozwalający na legalną sprzedaż całego bohatera za walutę Premium Points. W momencie wystawienia postać zostaje wylogowana z gry i pojawia się w specjalnej sekcji Marketu na okres 3 dni. Inni gracze mają pełny wgląd w jej poziom, moc (Power) oraz aktualnie założony ekwipunek przed dokonaniem zakupu.</p>
             </section>
 
             <section id="boss-chaos" class="system-content hidden">
-                <h2>Boss Chaos</h2>
-                <p>Opis specjalnego Boss Chaos. Kiedy się pojawia, jak silny jest i co najcenniejszego można z niego zdobyć.</p>
+                <h2>Bossowie Chaos</h2>
+                <p>Elitarni, arcytrudni bossowie stworzeni z myślą o zaawansowanych graczach. Stanowią jedyne źródło potężnego ekwipunku z ochroną elementarną (odporności na żywioły).</p>
+                
+                <h3>Wymagania i Skalowanie Siły:</h3>
+                <ul>
+                    <li><strong>Klucz wejścia:</strong> Wyzwanie bosa wymaga posiadania określonej ilości surowca <strong>Chaos Essence</strong> (zdobywanego z Potworów Chaos). Esencja jest pobierana z ekwipunku dopiero w momencie pomyślnego zgładzenia bossa.</li>
+                    <li><strong>Skalowanie Progresywne:</strong> Bossowie automatycznie adaptują swoje zdrowie (HP), zadawane obrażenia oraz koszty wejścia (ilość Essence) na podstawie aktualnego poziomu gracza, który ich wyzywa.</li>
+                </ul>
+
+                <h3>Lista Bossów, Dropów i Lokacji:</h3>
+                <table border="1" cellpadding="5" style="border-collapse: collapse; border-color: #333; width: 100%;">
+                    <thead>
+                        <tr style="background-color: #1e1e1e;">
+                            <th>Nazwa Bossa</th>
+                            <th>Unikalny Set (Drop)</th>
+                            <th>Żywioł Ochrony</th>
+                            <th>Planeta / Lokacja</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mecha Wasp</td>
+                            <td><strong style="color:#1eff00;">Emerald Set</strong></td>
+                            <td>Ziemia / Natura</td>
+                            <td>Przycisk Lokalizacja na interfejsie</td>
+                        </tr>
+                        <tr>
+                            <td>Undead Skeleton Royale</td>
+                            <td><strong style="color:#e0e0e0;">Bone Set</strong></td>
+                            <td>Śmierć / Fizyczne</td>
+                            <td>Przycisk Lokalizacja na interfejsie</td>
+                        </tr>
+                        <tr>
+                            <td>Chaos Vegeta</td>
+                            <td><strong style="color:#ff9800;">Golden Set</strong></td>
+                            <td>Błyskawice / Energia</td>
+                            <td>Przycisk Lokalizacja na interfejsie</td>
+                        </tr>
+                        <tr>
+                            <td>Frozen Skeleton Warrior</td>
+                            <td><strong style="color:#0070dd;">Crystal Set</strong></td>
+                            <td>Lód / Mróz</td>
+                            <td>Przycisk Lokalizacja na interfejsie</td>
+                        </tr>
+                        <tr>
+                            <td>Dark Reaver</td>
+                            <td><strong style="color:#a335ee;">Daemon Set</strong></td>
+                            <td>Ogień / Mrok</td>
+                            <td>Przycisk Lokalizacja na interfejsie</td>
+                        </tr>
+                        <tr>
+                            <td>Deep Sea Plesiosaur</td>
+                            <td><strong style="color:#00f0ff;">Ocean Set</strong></td>
+                            <td>Woda / Płyny</td>
+                            <td>Przycisk Lokalizacja na interfejsie</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size:0.9rem; color:#888; margin-top:15px;">Pozostali Bossowie Fabularni/Rajdowi na mapie świata: <strong>Shenlong</strong> (Earth: x261, y125, z9), <strong>Oozaru Infernal</strong> (Ruudo: x1799, y1155, z9), <strong>Bills Sama</strong> (Vegeta: x673, y161, z11), <strong>Cell Ultimato</strong> (City 17: x702, y1206, z6), <strong>Undead Skeleton King</strong> (Boar's Island: x1008, y1061, z5), <strong>Demon Lord Dabura</strong> (Zelta: x1602, y544, z9), <strong>Rei Cold</strong> (M2: x946, y490, z7), <strong>Venomfang Weaver</strong> (Gardia: x225, y1120, z7), <strong>The Gravedigger</strong> (Sand City: x477, y946, z6).</p>
             </section>
 
             <section id="dungeon" class="system-content hidden">
-                <h2>System Dungeonów</h2>
-                <p>Lista instancji (dungeonów) na serwerze. Wymagane poziomy, limity osobowe w party oraz nagrody za ukończenie.</p>
+                <h2>System Dungeonów (Podziemia)</h2>
+                <p>Dungeons to tajne, instancjonowane lochy PvE, do których wejścia w postaci specjalnych portali otwierają się wyłącznie wewnątrz niebezpiecznego wymiaru <strong>DimensionZ</strong>.</p>
+                
+                <h3>How to find i wejść do Dungeonu?</h3>
+                <ul>
+                    <li><strong>Generowanie portali:</strong> Portale pojawiają się losowo podczas polowań na zwykłe stwory w DimensionZ (istnieje mała szansa na otwarcie szczeliny w trakcie walki). Na całej mapie wymiaru może istnieć maksymalnie 8 różnych lochów jednocześnie.</li>
+                    <li><strong>Czas życia portalu:</strong> Portal pozostaje otwarty na mapie do najbliższego zapisu serwera (server-save), chyba że jakaś drużyna wejdzie do środka i całkowicie go wyczyści (wtedy znika).</li>
+                </ul>
+
+                <h3>Przedmioty Pomocnicze (Dungeon Utilites):</h3>
+                <ul>
+                    <li><strong>Dungeon Finder:</strong> Specjalny radar, który po użyciu skanuje okoliczny obszar i wskazuje drogę do najbliższego portalu. Zużywa 1 ładunek na użycie. Do zdobycia z World Bossa w DimensionZ.</li>
+                    <li><strong>Dungeon Recharge:</strong> Służy do odnawiania ładunków w radarze Dungeon Finder. Można go zdobyć z World Bossa lub kupić w Mission Store za Task Points.</li>
+                </ul>
+
+                <h3>Interfejs Lochu i Główne Nagrody:</h3>
+                <p>Po kliknięciu na odnaleziony portal wyświetli się czytelny interfejs zawierający informacje o poziomie trudności (Tier), Twoim najlepszym czasie ukończenia (Seu Tempo), liczbie zaliczeń (Suas Conclusões) oraz globalnym rankingu Top 3 graczy.</p>
+                <p>Za pomyślne oczyszczenie Dungeonu gracze nagradzani są unikalnymi zasobami:</p>
+                <ul>
+                    <li><strong>Trinkets Especiais (Specjalne Akcesoria):</strong> Ekskluzywne przedmioty (amulety, pierścienie) z unikalnymi statystykami, niedostępne nigdzie indziej.</li>
+                    <li><strong>Powder (Proszek):</strong> Kluczowy materiał rzemieślniczy używany do ulepszania poziomów posiadanych przedmiotów u NPC Aprimorador de Itens.</li>
+                </ul>
             </section>
 
             <section id="torneio" class="system-content hidden">
-                <h2>System Torneio (Turnieje)</h2>
-                <p>Informacje o turniejach PvP (np. Budokai Tenkaichi). Jak się zapisać, zasady walki oraz nagrody dla mistrza.</p>
+                <h2>Torneio Mundial (Turniej Budokai)</h2>
+                <p>Oficjalny, zautomatyzowany tryb zaawansowanej rywalizacji rankingowej na serwerze, wzorowany na słynnych turniejach sztuk walki z Dragon Balla.</p>
+                
+                <h3>Rejestracja i Warunki Zapisów:</h3>
+                <ul>
+                    <li>Zapisów dokonuje się bezpośrednio u <strong>NPC Organizador do Torneio Mundial</strong>. Liczba drużyn biorących udział jest nieograniczona.</li>
+                    <li><strong>Wymóg drużyny:</strong> Podczas rejestracji lider musi zdefiniować unikalną nazwę teamu oraz wybrać ikonę reprezentacyjną.</li>
+                    <li>Wszyscy członkowie zgłaszanej ekipy muszą być online, posiadać wymagany poziom wpisowy oraz znajdować się w bezpiecznej strefie (Protection Zone). Opłata wpisowa pobierana jest automatycznie z konto bankowego lidera.</li>
+                </ul>
+
+                <h3>Rotacja Trybów Tygodniowych:</h3>
+                <p>Organizator turnieju co tydzień zmienia format rozgrywek spośród 4 dostępnych trybów:</p>
+                <ol>
+                    <li><strong>Solo:</strong> Klasyczne pojedynki 1v1 na arenie. Liczą się czyste statystyki postaci oraz umiejętności gracza.</li>
+                    <li><strong>Lure:</strong> Arena PvE. Zadaniem gracza jest przetrwanie i jak najefektywniejsze kontrolowanie/eliminowanie nacierających grup potworów (wymaga strategicznego podejścia).</li>
+                    <li><strong>Sync:</strong> Tryb pełnego balansu. Wszyscy uczestnicy otrzymują identyczne, zrównane poziomy (level) oraz umiejętności (skills). Wygrywa osoba wykazująca się najlepszą techniką gry (pure skill).</li>
+                    <li><strong>Lure Sync:</strong> Połączenie areny z potworami (PvE) oraz pełnego zrównania statystyk i poziomów graczy do jednej wartości.</li>
+                </ol>
+
+                <h3>Mechaniki Areny i Rozstrzyganie Remisów:</h3>
+                <ul>
+                    <li><strong>Turnieje Drużynowe (2x2 / 3x3):</strong> Wygrywa team posiadający więcej żywych członków w momencie upływu czasu. Jeśli siły są równe, o awansie decyduje automatyczny rzut monetą (losowanie 50/50).</li>
+                    <li><strong>Turnieje Solo:</strong> W przypadku remisu na koniec czasu, system natychmiast wykonuje rzut monetą 50/50.</li>
+                    <li><strong>Mechanika Antyremisowa (Death Zone):</strong> Po upływie 45% czasu przeznaczonego na walkę, na arenie aktywuje się strefa śmierci. Każda osoba w niej przebywająca zaczyna otrzymywać stale rosnące, progresywne obrażenia, co drastycznie przyspiesza eliminację i wymusza wyłonienie zwycięzcy.</li>
+                </ul>
+
+                <h3>Podział Puli Nagród (Premium Points):</h3>
+                <p>Opłaty wpisowe od wszystkich drużyn lądują w jednej puli. Po potrąceniu 15% podatku serwerowego na koszty techniczne, pula Premium Points dzielona jest następująco:</p>
+                <ul>
+                    <li><strong>1. miejsce (Mistrz):</strong> 50% całkowitej puli nagród.</li>
+                    <li><strong>2. miejsce:</strong> 30% całkowitej puli nagród.</li>
+                    <li><strong>3. miejsce:</strong> 20% całkowitej puli nagród.</li>
+                </ul>
             </section>
 
             <section id="vocations" class="system-content hidden">
-                <h2>System Profesji (Vocations)</h2>
-                <p>Opis dostępnych profesji na serwerze (np. Goku, Vegeta, Piccolo, Gohan itp.), ich ról w grze oraz drzewek transformacji.</p>
+                <h2>System Profesji (Troca de Vocação)</h2>
+                <p>Zaawansowany system wieloklasowości pozwalający graczom na elastyczne odblokowywanie, rozwijanie i przełączanie się pomiędzy wieloma bohaterami w ramach jednego konta.</p>
+                
+                <h3>Zarządzanie Bohaterami (Interfejs):</h3>
+                <p>Wygodny panel boczny pozwala na przeglądanie herosów za pomocą wyszukiwarki tekstowej oraz filtrów:</p>
+                <ul>
+                    <li><strong>Todos (Wszyscy):</strong> Lista absolutnie wszystkich herosów zaimplementowanych na serwerze.</li>
+                    <li><strong>Disponíveis (Dostępne):</strong> Wyświetla wyłącznie postacie, które zdążyłeś już pomyślnie odblokować.</li>
+                    <li><strong>Bloqueados (Zablokowane):</strong> Filtruje postacie, do których nie posiadasz jeszcze uprawnień.</li>
+                </ul>
+
+                <h3>Odblokowywanie i Zmiana (Trocar):</h3>
+                <ul>
+                    <li><strong>Koszt odblokowania:</strong> Aby permanentnie przypisać nowego, zablokowanego bohatera do swojego konta, należy zaznaczyć go w menu i uiścić jednorazową opłatę w wysokości <strong>525 Premium Points</strong>. Postać zostanie natychmiast aktywowana.</li>
+                    <li><strong>Koszt przełączenia (Trocar):</strong> Zmiana aktualnie używanego bohatera na innego, z odblokowanej wcześniej listy, kosztuje <strong>5 000 000 Zens (5KK)</strong> (pobierane bezpośrednio z plecaka lub konta bankowego). Kliknięcie przycisku wykonuje natychmiastowy reinstat i loguje Cię na nową postać.</li>
+                    <li><strong>Cooldown między klasami:</strong> W przypadku przełączenia się na bohatera reprezentującego INNY archetyp klasowy niż obecny, system nakłada <strong>2-godzinny czas odnowienia</strong> na kolejną zmianę profesji.</li>
+                </ul>
+
+                <h3>Główne Archetypy Klasowe:</h3>
+                <p>Każda postać w grze (np. Goku, Vegeta, Piccolo) przypisana jest do jednej z trzech głównych ról o unikalnym stylu gry i własnym drzewku umiejętności/transformacji:</p>
+                <ul>
+                    <li><strong>Ataque (Atak):</strong> Typowi wojownicy ofensywni nastawieni na wykręcanie jak najwyższych wskaźników obrażeń. Posiadają najwyższy potencjał destrukcyjny na serwerze.</li>
+                    <li><strong>Tanque (Tank):</strong> Potężni obrońcy charakteryzujący się ogromną pulą punktów życia (HP) oraz wysoką obroną bazową. Idealni do przyjmowania ataków najsilniejszych bossów.</li>
+                    <li><strong>Suporte (Wsparcie):</strong> Uniwersalne i wszechstronne postacie dysponujące zaawansowanymi technikami leczącymi, buffującymi oraz użytkowymi, niezbędnymi w każdym party.</li>
+                </ul>
             </section>
         </div>
     </main>
