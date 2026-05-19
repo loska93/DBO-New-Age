@@ -25,21 +25,28 @@
         .grid-container .tile {
             text-decoration: none !important;
             display: block;
-            color: #fff !important;
         }
 
-        /* Poprawiony styl: wymuszamy kolor czarny dla tekstu */
-.top-tile {
-        background: rgba(255, 255, 255, 0.6);
-        color: #000;
-        text-align: center;
-        font-weight: bold;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 8px;
-        text-decoration: none;
-    }
+        /* Specjalny styl dla jasnych kafelków (Postacie i Spells) */
+        .top-tile {
+            background: rgba(255, 255, 255, 0.7) !important;
+            color: #000 !important;
+            text-align: center;
+            font-weight: bold;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px !important;
+            text-decoration: none !important;
+            border: 1px solid rgba(255, 255, 255, 0.5) !important;
+        }
+
+        /* Hover dla jasnych kafelków */
+        .top-tile:hover {
+            background: rgba(255, 255, 255, 0.9) !important;
+            color: #000 !important;
+            border-color: #fff !important;
+        }
     </style>
 </head>
 <body>
