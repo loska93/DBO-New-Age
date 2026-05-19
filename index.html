@@ -28,11 +28,11 @@
             color: #fff !important;
         }
 
-/* Nowy styl: jaśniejszy, półprzezroczysty, z czarnym napisem */
+        /* Poprawiony styl: wymuszamy kolor czarny dla tekstu */
         .top-tile {
-            background: rgba(255, 255, 255, 0.6) !important; /* Jaśniejsze, półprzezroczyste tło */
-            color: #000 !important; /* Czarny tekst */
-            border: 1px solid rgba(255, 255, 255, 0.4) !important; /* Delikatna ramka */
+            background: rgba(255, 255, 255, 0.6) !important; 
+            color: #000000 !important; /* Wymuszony czarny */
+            border: 1px solid rgba(255, 255, 255, 0.4) !important;
             text-align: center;
             font-weight: bold;
             display: flex;
@@ -42,9 +42,11 @@
             transition: 0.3s;
         }
 
+        /* Wymuszamy czarny kolor również przy najechaniu */
         .top-tile:hover {
-            background: rgba(255, 255, 255, 0.8) !important; /* Jaśniejsze po najechaniu */
+            background: rgba(255, 255, 255, 0.8) !important;
             border-color: #fff !important;
+            color: #000000 !important; 
         }
     </style>
 </head>
