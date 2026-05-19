@@ -6,7 +6,7 @@
     <title>WIKI - Nasz Serwer Dragon Ball</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Prosty, bazowy styl dla kafelków (dopasuj go do swojego pliku CSS) */
+        /* Style kafelków */
         .tiles-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -15,6 +15,7 @@
             max-width: 1200px;
             margin: 0 auto;
         }
+        /* Zmieniliśmy div na link (a), więc resetujemy domyślny wygląd linku */
         .tile {
             background-color: #1e1e1e;
             color: #fff;
@@ -25,22 +26,14 @@
             transition: transform 0.2s, background-color 0.2s;
             border: 1px solid #333;
             font-weight: bold;
+            text-decoration: none; /* Usuwa podkreślenie tekstu */
+            display: block;
         }
         .tile:hover {
             transform: translateY(-5px);
             background-color: #2a2a2a;
             border-color: #ff9800;
-        }
-        .content-wrapper {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: #111;
-            border-radius: 8px;
-            border: 1px solid #222;
-        }
-        .hidden {
-            display: none;
+            color: #fff;
         }
     </style>
 </head>
@@ -52,56 +45,23 @@
     </header>
 
     <section class="tiles-container">
-        <div class="tile" onclick="loadSystem('chaos')">⚡ System Chaos</div>
-        <div class="tile" onclick="loadSystem('autoloot')">🎒 AutoLoot</div>
-        <div class="tile" onclick="loadSystem('misje')">📜 System Misji</div>
-        <div class="tile" onclick="loadSystem('serverinfo')">📊 Server Info</div>
-        <div class="tile" onclick="loadSystem('power-system')">🔥 Power System</div>
-        <div class="tile" onclick="loadSystem('rarity')">💎 System Rzadkości</div>
-        <div class="tile" onclick="loadSystem('saga')">🗺️ System Sag</div>
-        <div class="tile" onclick="loadSystem('survior')">⚔️ Survivor</div>
-        <div class="tile" onclick="loadSystem('boss')">👹 Bossowie</div>
-        <div class="tile" onclick="loadSystem('statuet')">🗿 Posągi (Statues)</div>
-        <div class="tile" onclick="loadSystem('dimension')">🌀 DimensionZ</div>
-        <div class="tile" onclick="loadSystem('recall')">✨ System Recall</div>
-        <div class="tile" onclick="loadSystem('event')">📅 Harmonogram</div>
-        <div class="tile" onclick="loadSystem('cloud-warrior')">☁️ Cloud Warriors</div>
-        <div class="tile" onclick="loadSystem('market')">⚖️ Market & Postacie</div>
-        <div class="tile" onclick="loadSystem('boss-chaos')">👑 Bossowie Chaos</div>
+        <a href="systems/chaos.html" class="tile">⚡ System Chaos</a>
+        <a href="systems/autoloot.html" class="tile">🎒 AutoLoot</a>
+        <a href="systems/misje.html" class="tile">📜 System Misji</a>
+        <a href="systems/serverinfo.html" class="tile">📊 Server Info</a>
+        <a href="systems/power-system.html" class="tile">🔥 Power System</a>
+        <a href="systems/rarity.html" class="tile">💎 System Rzadkości</a>
+        <a href="systems/saga.html" class="tile">🗺️ System Sag</a>
+        <a href="systems/survior.html" class="tile">⚔️ Survivor</a>
+        <a href="systems/boss.html" class="tile">👹 Bossowie</a>
+        <a href="systems/statuet.html" class="tile">🗿 Posągi (Statues)</a>
+        <a href="systems/dimension.html" class="tile">🌀 DimensionZ</a>
+        <a href="systems/recall.html" class="tile">✨ System Recall</a>
+        <a href="systems/event.html" class="tile">📅 Harmonogram</a>
+        <a href="systems/cloud-warrior.html" class="tile">☁️ Cloud Warriors</a>
+        <a href="systems/market.html" class="tile">⚖️ Market & Postacie</a>
+        <a href="systems/boss-chaos.html" class="tile">👑 Bossowie Chaos</a>
     </section>
-
-    <main id="content-container" class="content-wrapper hidden">
-        <div id="system-content-area"></div>
-    </main>
-
-    <script>
-        function loadSystem(systemName) {
-            const contentContainer = document.getElementById('content-container');
-            const contentArea = document.getElementById('system-content-area');
-
-            // Ładowanie pliku HTML z folderu "systems"
-            fetch(`systems/${systemName}.html`)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Nie udało się załadować opisu systemu.');
-                    }
-                    return response.text();
-                })
-                .then(html => {
-                    // Wstrzyknięcie zawartości i pokazanie kontenera
-                    contentArea.innerHTML = html;
-                    contentContainer.classList.remove('hidden');
-
-                    // Płynne przewinięcie ekranu do treści systemu
-                    contentContainer.scrollIntoView({ behavior: 'smooth' });
-                })
-                .catch(err => {
-                    console.error(err);
-                    contentArea.innerHTML = `<p style="color: red; text-align: center;">Błąd: Nie można załadować systemu "${systemName}". Upewnij się, że plik istnieje w folderze "systems".</p>`;
-                    contentContainer.classList.remove('hidden');
-                });
-        }
-    </script>
 
 </body>
 </html>
