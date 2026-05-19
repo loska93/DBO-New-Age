@@ -60,7 +60,7 @@ header h1 {
 }
 
 /* ==========================================================================
-   SIATKA KAFELKÓW (MENU GŁÓWNE)
+   SIATKA KAFELKÓW (MENU GŁÓWNE) - NOWY WYGLĄD MODERNY GLASS
    ========================================================================== */
 .grid-container {
     display: grid;
@@ -69,25 +69,38 @@ header h1 {
 }
 
 .tile {
-    background-color: #1e1e1e;
-    border: 2px solid #333;
-    border-radius: 8px;
+    /* Przezroczyste tło (65%) z ciemnym odcieniem z oryginalnej ramki */
+    background: rgba(30, 30, 30, 0.65) !important;
+    
+    /* Efekt rozmycia tła za kafelkiem */
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+    /* Cienki element definiujący krawędź "szkła" */
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 12px !important; /* Ładne zaokrąglenie rogów */
     padding: 35px 20px;
     text-align: center;
     font-weight: bold;
     font-size: 1.2rem;
     text-transform: uppercase;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+    
+    /* Głęboki, nowoczesny cień pod spodem */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
 }
 
 .tile:hover {
-    background-color: #ff9800;
-    color: #121212 !important;
+    /* Przy najechaniu lekko przyciemniamy i stabilizujemy tło */
+    background: rgba(30, 30, 30, 0.85) !important;
+    
+    /* Pojawia się pomarańczowa obwódka serwera i delikatny blask */
+    border-color: #ff9800 !important;
+    box-shadow: 0 5px 25px rgba(255, 152, 0, 0.25);
+    
     transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(255, 152, 0, 0.4);
-    border-color: #ff9800;
+    color: #fff !important; /* Tekst cały czas zostaje biały */
 }
 
 /* ==========================================================================
