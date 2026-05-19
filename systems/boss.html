@@ -4,33 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>System Bossów (Bosses) - WIKI</title>
-    <link rel="stylesheet" href="../style.css"> 
+    
+    <link rel="stylesheet" href="../style.css?v=101"> 
+    
     <style>
+        /* Tło pobierane lokalnie z folderu 'systems' - zablokowane na stałe jako tapeta */
+        body {
+            background-image: url('background.png') !important;
+            background-attachment: fixed !important;
+            background-position: center center !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+        }
+        
+        /* Usunięte stare tło i obramowanie, aby zadziałało 85% zaciemnienia i szkło z pliku CSS */
         .content-wrapper {
             max-width: 1125px;
             margin: 40px auto;
             padding: 30px;
-            background-color: #111;
-            color: #fff;
-            border-radius: 8px;
-            border: 1px solid #222;
-            font-family: sans-serif;
-            line-height: 1.6;
         }
-        .back-btn {
-            display: inline-block;
-            background-color: #ff9800;
-            color: #000;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            transition: background-color 0.2s;
-        }
-        .back-btn:hover {
-            background-color: #e08600;
-        }
+        
+        /* Dostosowanie tabel pod ciemny design 85% */
         table {
             border-collapse: collapse;
             width: 100%;
@@ -39,22 +33,36 @@
             font-size: 14px;
         }
         th, td {
-            border: 1px solid #333;
-            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 12px 15px;
         }
         th {
-            background-color: #1e1e1e;
+            background-color: rgba(0, 0, 0, 0.5); /* Półprzezroczyste, ciemne nagłówki tabel */
+            color: #ff9800;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.02); /* Subtelne wyróżnienie co drugiego wiersza */
         }
         ul {
             margin-bottom: 20px;
         }
+        
+        /* Odświeżone plakietki współrzędnych - nowoczesny szklany styl */
         .coord-badge {
-            background-color: #222;
+            background-color: rgba(0, 0, 0, 0.4);
             color: #ff9800;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-family: monospace;
-            border: 1px solid #333;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            font-size: 13px;
+            border: 1px solid rgba(255, 152, 0, 0.25);
+            display: inline-block;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
@@ -71,7 +79,7 @@
 
         <table>
             <thead>
-                <tr style="background-color: #1e1e1e;">
+                <tr>
                     <th>Poziom Trudności</th>
                     <th>Punkty Życia (Health)</th>
                     <th>Obrażenia (Damage)</th>
@@ -80,19 +88,19 @@
             </thead>
             <tbody>
                 <tr>
-                    <td style="color: #4da6ff; font-weight: bold;">🟢 Łatwy (Fácil)</td>
+                    <td style="color: #40c4ff; font-weight: bold; text-shadow: 0 0 10px rgba(64,196,255,0.15);">🟢 Łatwy (Fácil)</td>
                     <td>25%</td>
                     <td>50%</td>
                     <td>80%</td>
                 </tr>
                 <tr>
-                    <td style="color: #ffbb33; font-weight: bold;">🟡 Normalny (Normal)</td>
+                    <td style="color: #ffb300; font-weight: bold; text-shadow: 0 0 10px rgba(255,179,0,0.15);">🟡 Normalny (Normal)</td>
                     <td>70%</td>
                     <td>70%</td>
                     <td>150%</td>
                 </tr>
                 <tr>
-                    <td style="color: #ff4d4d; font-weight: bold;">🔴 Trudny (Difícil)</td>
+                    <td style="color: #ff5252; font-weight: bold; text-shadow: 0 0 10px rgba(255,82,82,0.15);">🔴 Trudny (Difícil)</td>
                     <td>100%</td>
                     <td>130%</td>
                     <td>200%</td>
@@ -100,7 +108,7 @@
             </tbody>
         </table>
 
-        <blockquote style="background: #222; padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0;">
+        <blockquote style="background: rgba(0, 0, 0, 0.4); padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0; border-radius: 0 8px 8px 0;">
             <strong>Zależność Nagród od Trudności:</strong><br>
             Wartość zdobywanych punktów <strong>Power</strong> za zabicie bossa pozostaje niezmienna dla wszystkich poziomów trudności. Jednak walka na wyższych progach (np. Trudnym) gwarantuje drastycznie więcej punktów EXP oraz znacznie lepsze szanse na rzadki, ekskluzywny loot.
         </blockquote>
@@ -110,7 +118,7 @@
 
         <table>
             <thead>
-                <tr style="background-color: #1e1e1e;">
+                <tr>
                     <th>Nazwa Bossa</th>
                     <th>Planeta / Lokacja</th>
                     <th>Dokładna Pozycja (Coordenadas)</th>
@@ -142,7 +150,7 @@
             </tbody>
         </table>
 
-        <blockquote style="background: #222; padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0;">
+        <blockquote style="background: rgba(0, 0, 0, 0.4); padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0; border-radius: 0 8px 8px 0;">
             <strong>Ważne Uwagi (Observações Importantes):</strong><br>
             • Każdy boss z powyższej listy może być wyzwany przez gracza tylko <strong>1 raz na dobę</strong>.<br>
             • Przedmioty z dropu są unikalne dla każdego przeciwnika i mocno powiązane z wybranym stopniem wyzwania.<br>
