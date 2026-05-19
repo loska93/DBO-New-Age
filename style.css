@@ -42,25 +42,18 @@ header h1 {
 .welcome-text {
     font-size: 1.15rem;
     line-height: 1.6;
-    
-    /* Zmiana koloru na bardzo głęboki, wyrazisty ciemny */
     color: #111111 !important; 
-    font-weight: 600; /* Lekkie pogrubienie, żeby litery były wyraźniejsze */
-    
-    /* Magiczny trik: delikatny jasny blask wokół ciemnych liter, 
-       dzięki czemu tekst dosłownie "odkleja się" od ciemnego tła */
+    font-weight: 600; 
     text-shadow: 0 1px 2px rgba(255, 255, 255, 0.4), 
                  0 0 8px rgba(255, 255, 255, 0.2);
-                 
     max-width: 750px;
     margin: 0 auto;
 }
 
-/* Kolor dla nazwy serwera, żeby odznaczał się w tekście */
 .welcome-text .highlight {
     color: #ff9800 !important;
     font-weight: 800;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* Ciemny cień pod pomarańczowym napisem */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .container {
@@ -92,6 +85,7 @@ header h1 {
     cursor: pointer;
     transition: all 0.4s ease;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+    color: #fff !important; /* Domyślny biały napis */
 }
 
 .tile:hover {
@@ -103,20 +97,32 @@ header h1 {
 }
 
 /* ==========================================================================
-   PODSTRONY SYSTEMÓW & KONTENERY TEKSTOWE (MOCNIEJ ZACIEMNIONE)
+   SPECJALNE KAFELKI NA GÓRZE (JASNE Z CZARNYM NAPISEM)
+   ========================================================================== */
+.top-tile {
+    background: rgba(255, 255, 255, 0.7) !important;
+    color: #000 !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+.top-tile:hover {
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: #000 !important;
+    border-color: #fff !important;
+}
+
+/* ==========================================================================
+   PODSTRONY SYSTEMÓW & KONTENERY TEKSTOWE
    ========================================================================== */
 .content-wrapper {
     width: 100%;
     max-width: 1200px; 
-    
-    /* ZMIANA: Mocniejsze zaciemnienie (0.85) i pełny efekt rozmytego szkła */
     background: rgba(0, 0, 0, 0.85) !important; 
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
-    
     padding: 40px;
-    border-radius: 12px; /* Zaokrąglenie dopasowane do kafelków */
-    border: 1px solid rgba(255, 255, 255, 0.08) !important; /* Delikatna szklana krawędź */
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
     box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
     margin: 0 0 30px 0; 
 }
@@ -143,7 +149,7 @@ header h1 {
 }
 
 /* ==========================================================================
-   IKONY SPOŁECZNOŚCIOWE (DÓŁ STRONY)
+   IKONY SPOŁECZNOŚCIOWE
    ========================================================================== */
 .social-links {
     text-align: center;
