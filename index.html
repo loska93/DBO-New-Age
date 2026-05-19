@@ -28,22 +28,23 @@
             color: #fff !important;
         }
 
-        /* Nowy styl dla jasnych kafelków Postacie i Spells */
+/* Nowy styl: jaśniejszy, półprzezroczysty, z czarnym napisem */
         .top-tile {
-            background: #f0f0f0 !important;
-            color: #000 !important;
-            border: 2px solid #ddd !important;
+            background: rgba(255, 255, 255, 0.6) !important; /* Jaśniejsze, półprzezroczyste tło */
+            color: #000 !important; /* Czarny tekst */
+            border: 1px solid rgba(255, 255, 255, 0.4) !important; /* Delikatna ramka */
             text-align: center;
             font-weight: bold;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 8px;
-            transition: 0.2s;
+            transition: 0.3s;
         }
+
         .top-tile:hover {
-            background: #e0e0e0 !important;
-            border-color: #bbb !important;
+            background: rgba(255, 255, 255, 0.8) !important; /* Jaśniejsze po najechaniu */
+            border-color: #fff !important;
         }
     </style>
 </head>
