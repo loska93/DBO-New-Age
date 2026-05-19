@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmonogram Wydarzeń (Events) - WIKI</title>
+    <link rel="stylesheet" href="../style.css"> 
+    <style>
+        .content-wrapper {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #111;
+            color: #fff;
+            border-radius: 8px;
+            border: 1px solid #222;
+            font-family: sans-serif;
+            line-height: 1.6;
+        }
+        .back-btn {
+            display: inline-block;
+            background-color: #ff9800;
+            color: #000;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            transition: background-color 0.2s;
+        }
+        .back-btn:hover {
+            background-color: #e08600;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            text-align: left;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 10px;
+        }
+        th {
+            background-color: #1e1e1e;
+        }
+        ul {
+            margin-bottom: 20px;
+        }
+        .highlight-time {
+            color: #ff9800;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-wrapper">
+        <a href="../index.html" class="back-btn">&larr; Powrót do Menu</a>
+
+        <h2>Harmonogram Wydarzeń Automatycznych (Events)</h2>
+        
+        <blockquote style="background: #222; padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0;">
+            <strong>Ważna strefa czasowa:</strong><br>
+            Wszystkie wydarzenia na serwerze odbywają się według <strong>czasu brazylijskiego (Horário de Brasília - BRT)</strong>. Aby nie przegapić godzin wejścia na instancje, zawsze kontroluj i sugeruj się zegarem wyświetlanym bezpośrednio w grze (In-game Clock).
+        </blockquote>
+
+        <h3>🐲 Wydarzenie Shenlong (Evento Shenlong):</h3>
+        <p>Codzienne, epickie starcie z legendarnym smokiem:</p>
+        <ul>
+            <li><strong>Rozpoczęcie zapisów:</strong> Codziennie o godzinie <span class="highlight-time">20:00 BRT</span>.</li>
+            <li><strong>Zamknięcie lobby:</strong> Dokładnie o godzinie <span class="highlight-time">20:05 BRT</span>. Po tej minucie wejście na arenę zostaje zablokowane.</li>
+            <li><strong>Start walki:</strong> Wydarzenie oraz najazd startują natychmiast po zamknięciu lobby rezerwacyjnego.</li>
+            <li><strong>Miejsce wejścia:</strong> Aby dołączyć, należy udać się i porozmawiać z <strong>NPC Yama</strong>.</li>
+        </ul>
+
+        <h3>⚔️ Wydarzenie Battle / Cloud Warriors:</h3>
+        <p>Automatyczne potyczki PvP i wyzwania bojowe ze ścisłym limitem uczestników. Portal wejściowy tworzy się automatycznie w pobliżu <strong>NPC Yama</strong> o wyznaczonych godzinach:</p>
+
+        <table>
+            <thead>
+                <tr style="background-color: #1e1e1e;">
+                    <th>Dzień Tygodnia</th>
+                    <th>Godzina Rozpoczęcia (Czas BRT)</th>
+                    <th>Limit Uczestników</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>📅 Poniedziałek</td><td><span class="highlight-time">19:00 BRT</span></td><td>Maksymalnie 10 graczy</td></tr>
+                <tr><td>📅 Wtorek</td><td><span class="highlight-time">19:00 BRT</span></td><td>Maksymalnie 10 graczy</td></tr>
+                <tr><td>📅 Środa</td><td><span class="highlight-time">20:30 BRT</span></td><td>Maksymalnie 10 graczy</td></tr>
+                <tr><td>📅 Czwartek</td><td><span class="highlight-time">19:00 BRT</span></td><td>Maksymalnie 10 graczy</td></tr>
+                <tr><td>📅 Piątek</td><td><span class="highlight-time">19:00 BRT</span></td><td>Maksymalnie 10 graczy</td></tr>
+                <tr><td>📅 Sobota</td><td><span class="highlight-time">20:30 BRT</span></td><td>Maksymalnie 10 graczy</td></tr>
+                <tr><td>📅 Niedziela</td><td><span class="highlight-time">19:00 BRT</span></td><td>Maksymalnie 10 graczy</td></tr>
+            </tbody>
+        </table>
+
+        <blockquote style="background: #222; padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0;">
+            <strong>Wskazówki i Uwagi (Observações):</strong><br>
+            • Zawsze przybywaj pod wyznaczone miejsce na kilka minut przed oficjalnym startem, aby nie przegapić momentu otwarcia lobby rezerwacyjnego.<br>
+            • Wszystkie portale eventowe generują się automatycznie na współrzędnych <strong>NPC Yama</strong> dokładnie o sekundach wskazanych w harmonogramie. Jeśli spóźnisz się choćby o minutę, stracisz szansę na slot!
+        </blockquote>
+    </div>
+
+</body>
+</html>
