@@ -3,7 +3,6 @@
    ========================================================================== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #193860; /* TWÓJ NOWY KOLOR TŁA Z SERWERA */
     color: #e0e0e0;
     margin: 0;
     padding: 40px 20px;
@@ -14,6 +13,13 @@ body {
     justify-content: center;  
     align-items: center;      
     min-height: 100vh;        
+
+    /* NOWOŚĆ: Obrazkowe tło na KAŻDEJ podstronie */
+    background-image: url('../background.png'); /* Wyjście z folderu systems po obrazek */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 *, *::before, *::after {
@@ -60,7 +66,7 @@ header h1 {
 }
 
 /* ==========================================================================
-   SIATKA KAFELKÓW (MENU GŁÓWNE) - NOWY WYGLĄD MODERNY GLASS
+   SIATKA KAFELKÓW (MENU GŁÓWNE) - WYGLĄD GLASSMORPHISM
    ========================================================================== */
 .grid-container {
     display: grid;
@@ -69,16 +75,11 @@ header h1 {
 }
 
 .tile {
-    /* Przezroczyste tło (65%) z ciemnym odcieniem z oryginalnej ramki */
     background: rgba(30, 30, 30, 0.65) !important;
-    
-    /* Efekt rozmycia tła za kafelkiem */
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-
-    /* Cienki element definiujący krawędź "szkła" */
     border: 1px solid rgba(255, 255, 255, 0.08) !important;
-    border-radius: 12px !important; /* Ładne zaokrąglenie rogów */
+    border-radius: 12px !important;
     padding: 35px 20px;
     text-align: center;
     font-weight: bold;
@@ -86,34 +87,33 @@ header h1 {
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.4s ease;
-    
-    /* Głęboki, nowoczesny cień pod spodem */
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
 }
 
 .tile:hover {
-    /* Przy najechaniu lekko przyciemniamy i stabilizujemy tło */
     background: rgba(30, 30, 30, 0.85) !important;
-    
-    /* Pojawia się pomarańczowa obwódka serwera i delikatny blask */
     border-color: #ff9800 !important;
     box-shadow: 0 5px 25px rgba(255, 152, 0, 0.25);
-    
     transform: translateY(-5px);
-    color: #fff !important; /* Tekst cały czas zostaje biały */
+    color: #fff !important;
 }
 
 /* ==========================================================================
-   PODSTRONY SYSTEMÓW & KONTENERY TEKSTOWE
+   PODSTRONY SYSTEMÓW - NOWA RAMKA JAK KAFELKI (PÓŁPRZEZROCZYSTA / SZKŁO)
    ========================================================================== */
 .content-wrapper {
     width: 100%;
     max-width: 1200px; 
-    background-color: #1e1e1e; 
+    
+    /* Zmiana z ciemnego bloku na styl szklanego kafelka */
+    background: rgba(30, 30, 30, 0.65) !important;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    
     padding: 40px;
-    border-radius: 8px;
-    border: 1px solid #333;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 12px; /* Zaokrąglenie pasujące do kafelków */
+    border: 1px solid rgba(255, 255, 255, 0.08); /* Delikatna ramka szkła */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
     margin: 0 0 30px 0; 
 }
 
@@ -149,15 +149,14 @@ header h1 {
 
 .social-links a {
     color: #fff;
-    font-size: 2rem; /* Wielkość ikonek */
+    font-size: 2rem;
     margin: 0 15px;
     transition: color 0.2s ease, transform 0.2s ease;
     display: inline-block;
     text-decoration: none;
 }
 
-/* Efekt najechania myszką na ikonę społecznościową */
 .social-links a:hover {
-    color: #ff9800; /* Zmiana koloru na pomarańczowy z DB */
-    transform: scale(1.2); /* Lekkie powiększenie przy najechaniu */
+    color: #ff9800; 
+    transform: scale(1.2); 
 }
