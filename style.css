@@ -1,23 +1,21 @@
 /* ==========================================================================
-   GLOBALNE USTAWIENIA OKNA PRZEGLĄDARKI (Wprowadzające centrowanie w pionie/poziomie)
+   GLOBALNE USTAWIENIA OKNA PRZEGLĄDARKI
    ========================================================================== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #121212;
+    background-color: #193860; /* TWÓJ NOWY KOLOR TŁA Z SERWERA */
     color: #e0e0e0;
     margin: 0;
-    padding: 40px 20px; /* Bezpieczny wewnętrzny margines przy przewijaniu długich tekstów */
+    padding: 40px 20px;
     box-sizing: border-box;
 
-    /* Magia Flexboxa: Centruje całą zawartość strony idealnie na środku monitora */
     display: flex;
-    flex-direction: column;   /* Układa elementy (header, container itp.) w pionie */
-    justify-content: center;  /* Centrowanie w pionie (w połączeniu z min-height) */
-    align-items: center;      /* Centrowanie w poziomie */
-    min-height: 100vh;        /* Wymusza, by wysokość body była równa wysokości ekranu */
+    flex-direction: column;   
+    justify-content: center;  
+    align-items: center;      
+    min-height: 100vh;        
 }
 
-/* Zabezpieczenie, aby wszystkie elementy poprawnie liczyły swoją szerokość */
 *, *::before, *::after {
     box-sizing: inherit;
 }
@@ -29,23 +27,32 @@ header {
     text-align: center;
     margin-bottom: 40px;
     width: 100%;
-    max-width: 1200px; /* Zgranie szerokości z siatką kafelków */
+    max-width: 900px;
 }
 
 header h1 {
-    color: #ff9800; /* Pomarańczowy kolor przewodzący (w stylu Dragon Ball) */
+    color: #ff9800; 
     font-size: 2.5rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-top: 0;
+    margin: 0 0 15px 0;
+    font-weight: 800;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-header p {
-    color: #888;
+.welcome-text {
     font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ccc;
+    max-width: 750px;
+    margin: 0 auto;
 }
 
-/* Główny kontener siatki menu */
+.welcome-text .highlight {
+    color: #ff9800;
+    font-weight: bold;
+}
+
 .container {
     width: 100%;
     max-width: 1200px;
@@ -61,7 +68,6 @@ header p {
     gap: 20px;
 }
 
-/* Styl pojedynczego kafelka */
 .tile {
     background-color: #1e1e1e;
     border: 2px solid #333;
@@ -76,67 +82,28 @@ header p {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-/* Efekt po najechaniu myszką na kafelek */
 .tile:hover {
     background-color: #ff9800;
-    color: #121212;
+    color: #121212 !important;
     transform: translateY(-5px);
     box-shadow: 0 5px 20px rgba(255, 152, 0, 0.4);
     border-color: #ff9800;
 }
 
-/* Klasa pomocnicza do ukrywania elementów */
-.hidden {
-    display: none !important;
-}
-
 /* ==========================================================================
    PODSTRONY SYSTEMÓW & KONTENERY TEKSTOWE
    ========================================================================== */
-
-/* Tradycyjne okno opisu wbudowane w stronę główną */
-.system-content {
-    width: 100%;
-    max-width: 1200px; /* Identyczna szerokość na równi z kafelkami */
-    background-color: #1e1e1e;
-    padding: 40px;
-    border-radius: 8px;
-    border-left: 5px solid #ff9800;
-    margin-top: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-.system-content h2 {
-    color: #ff9800;
-    margin-top: 0;
-    font-size: 2rem;
-    border-bottom: 1px solid #333;
-    padding-bottom: 10px;
-}
-
-.system-content p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #ccc;
-}
-
-/* Dedykowany kontener dla podstron w folderze /systems/ */
 .content-wrapper {
     width: 100%;
-    max-width: 1200px; /* WYRÓWNANIE: Dokładnie ta sama szerokość co siatka w menu */
-    background-color: #1e1e1e; /* Dopasowane do #1e1e1e z Twoich stylów */
+    max-width: 1200px; 
+    background-color: #1e1e1e; 
     padding: 40px;
     border-radius: 8px;
     border: 1px solid #333;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    margin: 0; /* Wyłączone, bo Flexbox na body odpowiada teraz za marginesy */
+    margin: 0 0 30px 0; 
 }
 
-/* ==========================================================================
-   ELEMENTY INTERFEJSU (PRZYCISKI)
-   ========================================================================== */
-
-/* Przycisk powrotu na stronie głównej (#back-btn) oraz na podstronach (.back-btn) */
 #back-btn, .back-btn {
     display: inline-block;
     background-color: #ff9800;
@@ -149,11 +116,35 @@ header p {
     border-radius: 5px;
     cursor: pointer;
     margin-bottom: 20px;
-    text-decoration: none; /* Zapobiega podkreślaniu tekstu, jeśli użyto jako link <a> */
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    text-decoration: none; 
+    transition: background-color 0.2s ease;
     text-align: center;
 }
 
 #back-btn:hover, .back-btn:hover {
     background-color: #e68a00;
+}
+
+/* ==========================================================================
+   NOWA SEKCJA: IKONY SPOŁECZNOŚCIOWE (DÓŁ STRONY)
+   ========================================================================== */
+.social-links {
+    text-align: center;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 2rem; /* Wielkość ikonek */
+    margin: 0 15px;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+    text-decoration: none;
+}
+
+/* Efekt najechania myszką na ikonę społecznościową */
+.social-links a:hover {
+    color: #ff9800; /* Zmiana koloru na pomarańczowy z DB */
+    transform: scale(1.2); /* Lekkie powiększenie przy najechaniu */
 }
