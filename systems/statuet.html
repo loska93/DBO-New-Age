@@ -4,52 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>System Posągów (Statues) - WIKI</title>
-    <link rel="stylesheet" href="../style.css"> 
+    
+    <link rel="stylesheet" href="../style.css?v=101"> 
+    
     <style>
+        /* Tło zablokowane na stałe jako tapeta */
+        body {
+            background-image: url('background.png') !important;
+            background-attachment: fixed !important;
+            background-position: center center !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+        }
+        
         .content-wrapper {
             max-width: 1125px;
             margin: 40px auto;
             padding: 30px;
-            background-color: #111;
-            color: #fff;
-            border-radius: 8px;
-            border: 1px solid #222;
-            font-family: sans-serif;
-            line-height: 1.6;
         }
-        .back-btn {
-            display: inline-block;
-            background-color: #ff9800;
-            color: #000;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            transition: background-color 0.2s;
-        }
-        .back-btn:hover {
-            background-color: #e08600;
-        }
+        
+        /* Stylizacja tabel */
         table {
             border-collapse: collapse;
             width: 100%;
             margin: 20px 0;
             text-align: left;
+            font-size: 14px;
         }
         th, td {
-            border: 1px solid #333;
-            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 12px 15px;
         }
         th {
-            background-color: #1e1e1e;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ff9800;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
         }
-        ul {
-            margin-bottom: 20px;
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.02);
         }
+        
         .statue-name {
             font-weight: bold;
             color: #ff9800;
+        }
+        
+        ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
         }
     </style>
 </head>
@@ -64,47 +72,31 @@
         <h3>Lista Dostępnych Posągów i Bonusów:</h3>
         <table>
             <thead>
-                <tr style="background-color: #1e1e1e;">
+                <tr>
                     <th>Nazwa Posągu</th>
                     <th>Oferowany Bonus (Czas Trwania: 12h)</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><span class="statue-name">📈 Experience Statue</span></td>
-                    <td>Zwiększa zdobywane doświadczenie o <strong>+5%</strong>.</td>
-                </tr>
-                <tr>
-                    <td><span class="statue-name">💰 Loot Statue</span></td>
-                    <td>Zwiększa szansę na drop (loot) o <strong>+10%</strong>.</td>
-                </tr>
-                <tr>
-                    <td><span class="statue-name">⚔️ Damage Statue</span></td>
-                    <td>Zwiększa zadawane obrażenia bojowe o <strong>+5%</strong>.</td>
-                </tr>
-                <tr>
-                    <td><span class="statue-name">✨ Skills Statue</span></td>
-                    <td>Zwiększa poziom wszystkich umiejętności bojowych postaci o <strong>+8%</strong>.</td>
-                </tr>
-                <tr>
-                    <td><span class="statue-name">⚡ Chaos Statue</span></td>
-                    <td>Daje dodatkowe <strong>+3% szansy</strong> na zrodzenie się potworów typu Chaos.</td>
-                </tr>
+                <tr><td><span class="statue-name">📈 Experience Statue</span></td><td>Zwiększa zdobywane doświadczenie o <strong>+5%</strong>.</td></tr>
+                <tr><td><span class="statue-name">💰 Loot Statue</span></td><td>Zwiększa szansę na drop (loot) o <strong>+10%</strong>.</td></tr>
+                <tr><td><span class="statue-name">⚔️ Damage Statue</span></td><td>Zwiększa zadawane obrażenia bojowe o <strong>+5%</strong>.</td></tr>
+                <tr><td><span class="statue-name">✨ Skills Statue</span></td><td>Zwiększa poziom wszystkich umiejętności bojowych postaci o <strong>+8%</strong>.</td></tr>
+                <tr><td><span class="statue-name">⚡ Chaos Statue</span></td><td>Daje dodatkowe <strong>+3% szansy</strong> na zrodzenie się potworów typu Chaos.</td></tr>
             </tbody>
         </table>
 
         <h3>Wymagania i Zasady Aktywacji Posągu:</h3>
-        <p>Aby móc w pełni korzystać z dobrodziejstw systemu, należy pamiętać o kilku kluczowych mechanikach restrykcyjnych:</p>
         <ul>
-            <li><strong>Lokalizacja posągu:</strong> Statua musi być bezwzględnie umieszczona i rozłożona <strong>wewnątrz zakupionego domu (house)</strong>.</li>
-            <li><strong>Weryfikacja Właściciela:</strong> Tylko prawowity właściciel danej statui (<em>dono da estátua</em>) może kliknąć na nią w celu pobrania buffa. </li>
-            <li><strong>Jak przypisać posąg?</strong> Pierwszy gracz, który wejdzie w interakcję (kliknie) z posągiem zaraz po jego wytworzeniu/postawieniu, zostaje permanentnie zapisany jako jego jedyny właściciel.</li>
-            <li><strong>Czas odnowienia (Cooldown):</strong> Ten sam posąg po użyciu blokuje się na dokładnie <strong>24 godziny</strong>. Dopiero po upływie tej doby właściciel może podejść i aktywować go ponownie na kolejne 12 godzin.</li>
+            <li><strong>Lokalizacja posągu:</strong> Statua musi być umieszczona i rozłożona <strong>wewnątrz zakupionego domu (house)</strong>.</li>
+            <li><strong>Weryfikacja Właściciela:</strong> Tylko prawowity właściciel danej statui może kliknąć na nią w celu pobrania buffa.</li>
+            <li><strong>Jak przypisać posąg?</strong> Pierwszy gracz, który wejdzie w interakcję z posągiem zaraz po jego postawieniu, zostaje permanentnie zapisany jako jego jedyny właściciel.</li>
+            <li><strong>Czas odnowienia (Cooldown):</strong> Ten sam posąg po użyciu blokuje się na dokładnie <strong>24 godziny</strong>. Dopiero po upływie tej doby właściciel może podejść i aktywować go ponownie.</li>
         </ul>
 
-        <blockquote style="background: #222; padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0;">
+        <blockquote style="background: rgba(0, 0, 0, 0.4); padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0; border-radius: 0 8px 8px 0;">
             <strong>Podsumowanie Strategiczne:</strong><br>
-            Rozmieszczanie i regularne aktywowanie posągów w swoim domku to jedna z najbardziej opłacalnych form pasywnego wzmacniania postaci na serwerze. Optymalne zarządzanie cooldownami pozwala mieć wybrane buffy aktywne przez połowę każdego dnia!
+            Rozmieszczanie i regularne aktywowanie posągów w swoim domku to jedna z najbardziej opłacalnych form pasywnego wzmacniania postaci. Optymalne zarządzanie cooldownami pozwala mieć wybrane buffy aktywne przez połowę każdego dnia!
         </blockquote>
     </div>
 
