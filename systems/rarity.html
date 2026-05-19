@@ -4,33 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>System Rzadkości (Rarity) - WIKI</title>
-    <link rel="stylesheet" href="../style.css"> 
+    
+    <link rel="stylesheet" href="../style.css?v=101"> 
+    
     <style>
+        /* Tło pobierane lokalnie z folderu 'systems' - zablokowane na stałe jako tapeta */
+        body {
+            background-image: url('background.png') !important;
+            background-attachment: fixed !important;
+            background-position: center center !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+        }
+        
         .content-wrapper {
             max-width: 1125px;
             margin: 40px auto;
             padding: 30px;
-            background-color: #111;
-            color: #fff;
-            border-radius: 8px;
-            border: 1px solid #222;
-            font-family: sans-serif;
-            line-height: 1.6;
         }
-        .back-btn {
-            display: inline-block;
-            background-color: #ff9800;
-            color: #000;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            transition: background-color 0.2s;
-        }
-        .back-btn:hover {
-            background-color: #e08600;
-        }
+        
+        /* Dostosowanie tabel pod ciemny design */
         table {
             border-collapse: collapse;
             width: 100%;
@@ -39,21 +32,27 @@
             font-size: 14px;
         }
         th, td {
-            border: 1px solid #333;
-            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 12px 10px;
         }
         th {
-            background-color: #1e1e1e;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ff9800;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
         }
-        ul {
-            margin-bottom: 20px;
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.02);
         }
-        /* Kolory rzadkości */
-        .tier-normal { color: #aaaaaa; font-weight: bold; }
+
+        /* Kolory rzadkości - poprawione dla lepszej czytelności na ciemnym tle */
+        .tier-normal { color: #cccccc; font-weight: bold; }
         .tier-rare { color: #33b5e5; font-weight: bold; }
-        .tier-epic { color: #a660ff; font-weight: bold; }
+        .tier-epic { color: #c48eff; font-weight: bold; }
         .tier-legendary { color: #ffbb33; font-weight: bold; }
-        .tier-mythical { color: #ff4444; font-weight: bold; }
+        .tier-mythical { color: #ff5555; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -75,18 +74,18 @@
 
         <h3>Kategorie Modyfikacji Przedmiotów (Interfejs Rarity):</h3>
         <ul>
-            <li><strong>Upgrade Rarity (Ulepszenie rzadkości):</strong> Pozwala ulepszyć rzadkość przedmiotu na wyższy poziom, podnosząc jego dotychczasowe wartości. Każdy przeskok ma swój określony koszt w walucie, specjalnych przedmiotach oraz procentową szansę na sukces.</li>
-            <li><strong>Reroll All Attributes (Zmiana wszystkich atrybutów):</strong> Losuje całkowicie nowy zestaw bonusów, zachowując aktualny poziom rzadkości przedmiotu. Przydatne, gdy trafisz wysoki tier (np. Legendary), ale z niesatysfakcjonującymi statystykami.</li>
-            <li><strong>Modify Single Attribute (Modyfikacja jednego atrybutu):</strong> Zastępuje tylko jeden, wybrany przez Ciebie atrybut innym, losowym. Pozwala to na idealne dopasowanie przedmiotu pod Twój konkretny build postaci bez psucia pozostałych dobrych bonusów.</li>
-            <li><strong>Randomize Attribute Value (Losowanie wartości):</strong> Zachowuje obecny typ atrybutu, ale losuje na nowo jego wartość liczbową/procentową z przedziału danej rzadkości. Może to drastycznie zwiększyć (lub zmniejszyć) potencjał przedmiotu.</li>
+            <li><strong>Upgrade Rarity (Ulepszenie rzadkości):</strong> Pozwala ulepszyć rzadkość przedmiotu na wyższy poziom, podnosząc jego dotychczasowe wartości.</li>
+            <li><strong>Reroll All Attributes (Zmiana wszystkich atrybutów):</strong> Losuje całkowicie nowy zestaw bonusów, zachowując aktualny poziom rzadkości przedmiotu.</li>
+            <li><strong>Modify Single Attribute (Modyfikacja jednego atrybutu):</strong> Zastępuje tylko jeden, wybrany przez Ciebie atrybut innym, losowym.</li>
+            <li><strong>Randomize Attribute Value (Losowanie wartości):</strong> Zachowuje obecny typ atrybutu, ale losuje na nowo jego wartość liczbową z przedziału danej rzadkości.</li>
         </ul>
 
         <h3>Tabela Możliwych Atrybutów:</h3>
-        <p><em>*Poniższa tabela przedstawia przykładowe wartości obliczone dynamicznie dla przedmiotu na <strong>250 poziom (Level)</strong>. Wartości te rosną proporcjonalnie wraz z poziomem bazowym przedmiotu.</em></p>
+        <p><em>*Poniższa tabela przedstawia przykładowe wartości obliczone dynamicznie dla przedmiotu na <strong>250 poziom (Level)</strong>.</em></p>
 
         <table>
             <thead>
-                <tr style="background-color: #1e1e1e;">
+                <tr>
                     <th>Atrybut</th>
                     <th>Mnożnik</th>
                     <th class="tier-normal">Normal</th>
@@ -97,85 +96,21 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td style="text-align: left; font-weight: bold;">✨ Ki Level</td>
-                    <td>x1</td>
-                    <td>1 – 2</td>
-                    <td>1 – 2</td>
-                    <td>1 – 2</td>
-                    <td>1 – 3</td>
-                    <td>1 – 3</td>
-                </tr>
-                <tr>
-                    <td style="text-align: left; font-weight: bold;">🪓 Axe Skill</td>
-                    <td>x1</td>
-                    <td>1 – 2</td>
-                    <td>1 – 2</td>
-                    <td>1 – 2</td>
-                    <td>1 – 3</td>
-                    <td>1 – 3</td>
-                </tr>
-                <tr>
-                    <td style="text-align: left; font-weight: bold;">⚔️ Sword Skill</td>
-                    <td>x1</td>
-                    <td>1 – 2</td>
-                    <td>1 – 2</td>
-                    <td>1 – 2</td>
-                    <td>1 – 3</td>
-                    <td>1 – 3</td>
-                </tr>
-                <tr>
-                    <td style="text-align: left; font-weight: bold;">👊 Fist Skill</td>
-                    <td>x1</td>
-                    <td>1 – 2</td>
-                    <td>1 – 2</td>
-                    <td>1 – 2</td>
-                    <td>1 – 3</td>
-                    <td>1 – 3</td>
-                </tr>
-                <tr>
-                    <td style="text-align: left; font-weight: bold;">❤️ Maks. Życie (HP)</td>
-                    <td>x700</td>
-                    <td>100 – 1400</td>
-                    <td>100 – 1400</td>
-                    <td>100 – 1400</td>
-                    <td>100 – 2100</td>
-                    <td>100 – 2100</td>
-                </tr>
-                <tr>
-                    <td style="text-align: left; font-weight: bold;">🔷 Maks. Ki (Mana)</td>
-                    <td>x700</td>
-                    <td>100 – 1400</td>
-                    <td>100 – 1400</td>
-                    <td>100 – 1400</td>
-                    <td>100 – 2100</td>
-                    <td>100 – 2100</td>
-                </tr>
-                <tr>
-                    <td style="text-align: left; font-weight: bold;">💚 Heal Spell</td>
-                    <td>x100</td>
-                    <td>10 – 200</td>
-                    <td>10 – 200</td>
-                    <td>10 – 200</td>
-                    <td>10 – 300</td>
-                    <td>10 – 300</td>
-                </tr>
-                <tr>
-                    <td style="text-align: left; font-weight: bold; color: #ff9800;">🔥 Power (Moc)</td>
-                    <td>x95</td>
-                    <td>855 – 2850</td>
-                    <td>998 – 3325</td>
-                    <td>1140 – 3800</td>
-                    <td>1283 – 4275</td>
-                    <td>1425 – 4750</td>
-                </tr>
+                <tr><td style="text-align: left; font-weight: bold;">✨ Ki Level</td><td>x1</td><td>1 – 2</td><td>1 – 2</td><td>1 – 2</td><td>1 – 3</td><td>1 – 3</td></tr>
+                <tr><td style="text-align: left; font-weight: bold;">🪓 Attack Speed Skill</td><td>x1</td><td>1 – 2</td><td>1 – 2</td><td>1 – 2</td><td>1 – 3</td><td>1 – 3</td></tr>
+                <tr><td style="text-align: left; font-weight: bold;">⚔️ Sword Skill</td><td>x1</td><td>1 – 2</td><td>1 – 2</td><td>1 – 2</td><td>1 – 3</td><td>1 – 3</td></tr>
+                <tr><td style="text-align: left; font-weight: bold;">👊 Glove Skill</td><td>x1</td><td>1 – 2</td><td>1 – 2</td><td>1 – 2</td><td>1 – 3</td><td>1 – 3</td></tr>
+                <tr><td style="text-align: left; font-weight: bold;">❤️ Maks. Życie</td><td>x700</td><td>100 – 1400</td><td>100 – 1400</td><td>100 – 1400</td><td>100 – 2100</td><td>100 – 2100</td></tr>
+                <tr><td style="text-align: left; font-weight: bold;">🔷 Maks. Ki</td><td>x700</td><td>100 – 1400</td><td>100 – 1400</td><td>100 – 1400</td><td>100 – 2100</td><td>100 – 2100</td></tr>
+                <tr><td style="text-align: left; font-weight: bold;">💚 Heal Spell</td><td>x100</td><td>10 – 200</td><td>10 – 200</td><td>10 – 200</td><td>10 – 300</td><td>10 – 300</td></tr>
+                <tr><td style="text-align: left; font-weight: bold; color: #ff9800;">🔥 Power (Moc)</td><td>x95</td><td>855 – 2850</td><td>998 – 3325</td><td>1140 – 3800</td><td>1283 – 4275</td><td>1425 – 4750</td></tr>
             </tbody>
         </table>
 
-        <blockquote style="background: #222; padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0;">
+        <blockquote style="background: rgba(0, 0, 0, 0.4); padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0; border-radius: 0 8px 8px 0;">
             <strong>Ważne Uwagi (Observações Importantes):</strong><br>
-            • <strong>Zasada unikalności:</strong> Żaden atrybut nie może się powtórzyć w obrębie jednego przedmiotu. Każdy bonus może wylosować się tylko jeden jedyny raz na przedmiot (np. niemożliwe jest posiadanie dwóch bonusów do Sword Skill).<br>
-            • Skalowanie przedmiotu opiera się bezpośrednio na jego poziomie bazowym (Tierze przedmiotu) oraz poziomie rzadkości (Rarity).
+            • <strong>Zasada unikalności:</strong> Żaden atrybut nie może się powtórzyć w obrębie jednego przedmiotu. Każdy bonus może wylosować się tylko jeden jedyny raz.<br>
+            • Skalowanie przedmiotu opiera się bezpośrednio na jego poziomie bazowym oraz poziomie rzadkości.
         </blockquote>
     </div>
 
