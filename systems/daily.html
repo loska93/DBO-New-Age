@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Misji (Challenges) - WIKI</title>
+    <link rel="stylesheet" href="../style.css"> 
+    <style>
+        .content-wrapper {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #111;
+            color: #fff;
+            border-radius: 8px;
+            border: 1px solid #222;
+            font-family: sans-serif;
+            line-height: 1.6;
+        }
+        .back-btn {
+            display: inline-block;
+            background-color: #ff9800;
+            color: #000;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            transition: background-color 0.2s;
+        }
+        .back-btn:hover {
+            background-color: #e08600;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            text-align: left;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 10px;
+        }
+        th {
+            background-color: #1e1e1e;
+        }
+        ul {
+            margin-bottom: 20px;
+        }
+        .wiki-img {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .wiki-img img {
+            border: 1px solid #333;
+            border-radius: 6px;
+            padding: 5px;
+            background-color: #0c0c0c;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-wrapper">
+        <a href="../index.html" class="back-btn">&larr; Powrót do Menu</a>
+
+        <h2>System Misji (Challenges)</h2>
+        <p>System Challenges oferuje cotygodniowe misje z wartościowymi nagrodami. Po ukończeniu zadań, gracz gromadzi <strong>Task Points</strong>, które może wymienić w specjalnym Mission Store.</p>
+
+        <h3>Energia Cotygodniowa (Energia Semanal):</h3>
+        <p>Każdy gracz posiada <strong>21 punktów energii na tydzień</strong> na realizację misji. Energia oraz pula zadań są generowane automatycznie podczas każdego poniedziałkowego server-save. Po wyczerpaniu energii konieczne będzie odczekanie na kolejny cotygodniowy reset.</p>
+
+        <h3>Jak działają misje:</h3>
+        <p>W każdym cyklu gracz otrzymuje <strong>3 losowe misje</strong> wygenerowane na podstawie jego Poziomu oraz Power (Mocy). Postęp wygląda następująco:</p>
+        <ul>
+            <li>Po ukończeniu wszystkich 3 misji, główna nagroda (<strong>Reward</strong>) staje się dostępna do odebrania.</li>
+            <li>Po kliknięciu przycisku <strong>Claim</strong> na nagrodzie, system automatycznie generuje 3 nowe misje.</li>
+            <li>Cykl powtarza się od nowa, aż do momentu, gdy Twoja cotygodniowa energia (21 punktów) w pełni się wyczerpie.</li>
+        </ul>
+
+        <h3>Nagrody z misji:</h3>
+        <p>Po ukończeniu każdej pojedynczej misji, gracz otrzymuje stałe nagrody, których wartości zwiększają się w zależności od poziomu trudności wylosowanego zadania:</p>
+        <ul>
+            <li><strong>Power:</strong> Zwiększa permanentnie atrybuty postaci.</li>
+            <li><strong>Doświadczenie (EXP):</strong> Przyczynia się do szybszego rozwoju poziomu.</li>
+            <li><strong>Seeds:</strong> Cenny zasób używany w różnych systemach gry.</li>
+            <li><strong>Task Points:</strong> Ekskluzywna waluta przeznaczona do zakupów w Mission Store.</li>
+        </ul>
+
+        <h3>Zmiana misji (Troca de missões):</h3>
+        <p>W przypadku otrzymania misji, której nie chcesz lub nie jesteś w stanie zrealizować, możliwa jest jej zmiana (reroll). Służy do tego przycisk zmiany w interfejsie misji. Po jego kliknięciu możesz wybrać jedną z dwóch form płatności:</p>
+        <ul>
+            <li><strong>Gold:</strong> Płatność standardowym złotem zdobytym w grze.</li>
+            <li><strong>Premium Points:</strong> Płatność za pomocą waluty premium.</li>
+        </ul>
+
+        <h3>Postęp misji (Wymagany Poziom i Power):</h3>
+        <p>Misje są ściśle dopasowane do siły Twojego bohatera. System weryfikuje <strong>oba wymagania jednocześnie</strong> i wybiera najwyższą możliwą grupę misji, do której postać jest aktualnie uprawniona.</p>
+
+        <h3>Mission Store & NPC Damak:</h3>
+        <p>W Mission Store u <strong>NPC Damak</strong> gracz może wymienić zdobyte Task Points na przedmioty, które pomogą postaci stać się silniejszą. Wszystkie przedmioty zakupione w tym sklepie są <strong>przypisane do postaci</strong> – oznacza to, że nie mogą być przekazywane innym graczom ani wystawiane na handel.</p>
+
+        <p><strong>Lokalizacja NPC Damak na mapie:</strong></p>
+        <div class="wiki-img">
+            <img src="misje-mapa.png" alt="Lokalizacja NPC Damak">
+        </div>
+
+        <h3>Tabela Grup i Wymagań Misji:</h3>
+        <table>
+            <thead>
+                <tr style="background-color: #1e1e1e;">
+                    <th>Grupa</th>
+                    <th>Min. Poziom</th>
+                    <th>Min. Power</th>
+                    <th>Klasyfikacja Typu Misji</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>10</td><td>0</td><td>Misje Początkowe (Missões Iniciais)</td></tr>
+                <tr><td>2</td><td>50</td><td>210</td><td>Misje Średniozaawansowane I (Intermediárias I)</td></tr>
+                <tr><td>3</td><td>180</td><td>2.791</td><td>Misje Średniozaawansowane II (Intermediárias II)</td></tr>
+                <tr><td>4</td><td>220</td><td>4.000</td><td>Misje Zaawansowane I (Avançadas I)</td></tr>
+                <tr><td>5</td><td>300</td><td>5.000</td><td>Misje Zaawansowane II (Avançadas II)</td></tr>
+                <tr><td>6</td><td>400</td><td>19.871</td><td>Misje Epickie (Missões Épicas)</td></tr>
+                <tr><td>7</td><td>600</td><td>45.781</td><td>Misje Legendarne (Missões Lendárias)</td></tr>
+            </tbody>
+        </table>
+
+        <blockquote style="background: #222; padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0;">
+            <strong>Ważne Uwagi (Observações Importantes):</strong><br>
+            • Misje oraz punkty energii są resetowane w każdy poniedziałek podczas server-save.<br>
+            • Po wyczerpaniu 21 punktów energii, nie ma możliwości robienia kolejnych zadań aż do następnego resetu.<br>
+            • Task Points mogą być użyte <u>wyłącznie</u> w sklepie u NPC Damak.<br>
+            • Wszystkie nagrody rzeczowe ze sklepu są zablokowane na postaci (character-bound).
+        </blockquote>
+    </div>
+
+</body>
+</html>
