@@ -5,11 +5,21 @@
     <title>Postacie - DBO New Age</title>
     <link rel="stylesheet" href="../style.css">
     <style>
+        /* Przywrócone tło */
+        body {
+            background-image: url('../background.png') !important;
+            background-attachment: fixed !important;
+            background-position: center center !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+        }
+
         .chars-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 10px; margin-bottom: 40px; }
-        .char-tile { background: #1e1e1e; border: 2px solid #333; border-radius: 6px; aspect-ratio: 1/1; cursor: pointer; transition: 0.2s; }
+        .char-tile { background: rgba(0,0,0,0.6); border: 2px solid #333; border-radius: 6px; aspect-ratio: 1/1; cursor: pointer; transition: 0.2s; }
         .char-tile:hover { border-color: #ff9800; transform: scale(1.05); }
         .char-tile img { width: 100%; height: 100%; border-radius: 4px; object-fit: cover; }
-        .desc-box { display: none; background: rgba(0,0,0,0.85); padding: 25px; border-left: 4px solid #ff9800; margin-top: 20px; color: #fff; }
+        
+        .desc-box { display: none; background: rgba(0,0,0,0.85); padding: 25px; border-left: 4px solid #ff9800; margin-top: 20px; color: #fff; border-radius: 0 8px 8px 0; }
         .desc-box.active { display: block; }
     </style>
 </head>
