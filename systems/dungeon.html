@@ -4,36 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>System Dungeons (Podziemia) - WIKI</title>
-    <link rel="stylesheet" href="../style.css"> 
+    
+    <link rel="stylesheet" href="../style.css?v=101"> 
+    
     <style>
+        /* Tło pobierane lokalnie z folderu 'systems' - zablokowane na stałe jako tapeta */
+        body {
+            background-image: url('background.png') !important;
+            background-attachment: fixed !important;
+            background-position: center center !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+        }
+        
+        /* Usunięte stare tło i obramowanie, aby zadziałało 85% zaciemnienia i szkło z pliku CSS */
         .content-wrapper {
             max-width: 1125px;
             margin: 40px auto;
             padding: 30px;
-            background-color: #111;
-            color: #fff;
-            border-radius: 8px;
-            border: 1px solid #222;
-            font-family: sans-serif;
-            line-height: 1.6;
         }
-        .back-btn {
-            display: inline-block;
-            background-color: #ff9800;
-            color: #000;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            transition: background-color 0.2s;
-        }
-        .back-btn:hover {
-            background-color: #e08600;
-        }
+        
         ul {
             margin-bottom: 20px;
         }
+        
+        /* Dostosowanie tabel pod ciemny design 85% */
         table {
             border-collapse: collapse;
             width: 100%;
@@ -42,15 +37,26 @@
             font-size: 14px;
         }
         th, td {
-            border: 1px solid #333;
-            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 12px 15px;
         }
         th {
-            background-color: #1e1e1e;
-        }
-        .highlight-item {
+            background-color: rgba(0, 0, 0, 0.5); /* Półprzezroczyste, ciemne nagłówki tabel */
             color: #ff9800;
             font-weight: bold;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.02); /* Subtelne wyróżnienie co drugiego wiersza */
+        }
+        
+        /* Nowoczesne wyróżnienie unikalnych przedmiotów */
+        .highlight-item {
+            color: #ffb300; /* Ciepły, wyraźny odcień pomarańczowego */
+            font-weight: bold;
+            text-shadow: 0 0 8px rgba(255, 179, 0, 0.2);
         }
     </style>
 </head>
@@ -82,9 +88,10 @@
 
         <h3>Przedmioty Wspomagające Szukanie (Nawigacja):</h3>
         <p>Aby ułatwić i usprawnić proces poszukiwania aktywnych lochów, wprowadzono dwa dedykowane przedmioty mechaniczne:</p>
+
         <table>
             <thead>
-                <tr style="background-color: #1e1e1e;">
+                <tr>
                     <th>Nazwa Przedmiotu</th>
                     <th>Działanie i Funkcja</th>
                     <th>Jak zdobyć?</th>
@@ -111,7 +118,7 @@
             <li><strong>Powder (Proszek):</strong> Bezcenny pył rzemieślniczy wykorzystywany do zwiększania ogólnego poziomu i statystyk przedmiotów u <strong>NPC Aprimorador de Itens</strong> (Ulepszacz Przedmiotów).</li>
         </ul>
 
-        <blockquote style="background: #222; padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0;">
+        <blockquote style="background: rgba(0, 0, 0, 0.4); padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0; border-radius: 0 8px 8px 0;">
             <strong>Ważne Uwagi (Observações Importantes):</strong><br>
             • <strong>Czyszczenie mapy:</strong> Wszystkie niewyczyszczone portale, które stoją na mapie, są bezpowrotnie kasowane w momencie porannego <em>Server-Save</em>.<br>
             • <strong>Działanie wykrywacza:</strong> <em>Dungeon Finder</em> nie generuje nowych portali! Narzędzie to służy wyłącznie do wskazywania kierunku do przejść, które zrodziły się już naturalnie w wyniku huntów graczy.<br>
