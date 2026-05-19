@@ -4,45 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>System Chaos - WIKI</title>
-    <link rel="stylesheet" href="../style.css"> 
+    
+    <link rel="stylesheet" href="../style.css?v=101"> 
+    
     <style>
+        /* Tło pobierane lokalnie z folderu 'systems' - zablokowane na stałe jako tapeta */
+        body {
+            background-image: url('background.png') !important;
+            background-attachment: fixed !important;
+            background-position: center center !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+        }
+        
+        /* Usunięte stare tło i obramowanie, aby zadziałało 85% zaciemnienia i szkło z pliku CSS */
         .content-wrapper {
             max-width: 1125px;
             margin: 40px auto;
             padding: 30px;
-            background-color: #111;
-            color: #fff;
-            border-radius: 8px;
-            border: 1px solid #222;
-            font-family: sans-serif;
-            line-height: 1.6;
         }
-        .back-btn {
-            display: inline-block;
-            background-color: #ff9800;
-            color: #000;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            transition: background-color 0.2s;
-        }
-        .back-btn:hover {
-            background-color: #e08600;
-        }
+        
+        /* Dostosowanie tabel pod ciemny design 85% */
         table {
             border-collapse: collapse;
             width: 100%;
             margin: 20px 0;
+            text-align: left;
+            font-size: 14px;
         }
         th, td {
-            border: 1px solid #333;
-            padding: 10px;
-            text-align: left;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 12px 15px;
         }
         th {
-            background-color: #1e1e1e;
+            background-color: rgba(0, 0, 0, 0.5); /* Półprzezroczyste, ciemne nagłówki tabel */
+            color: #ff9800;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.02); /* Subtelne wyróżnienie co drugiego wiersza */
+        }
+        ul {
+            margin-bottom: 20px;
+        }
+        
+        /* Stylizacja obrazka lootu dostosowana pod efekt szklanego menu */
+        .wiki-img {
+            text-align: center;
+            margin: 25px 0;
+        }
+        .wiki-img img {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            padding: 6px;
+            background-color: rgba(0, 0, 0, 0.4);
+            max-width: 100%;
         }
     </style>
 </head>
@@ -61,11 +80,11 @@
             <li><strong>Doświadczenie (EXP):</strong> +30% po pokonaniu.</li>
         </ul>
 
-<h3>Dodatkowy Loot (Szansa Progresywna):</h3>
+        <h3>Dodatkowy Loot (Szansa Progresywna):</h3>
         <p>Oprócz normalnego lootu, potwory Chaos mogą dropić dodatkowe epickie przedmioty. Dodatkowy loot jest dostosowywany do rekomendowanego poziomu potwora. System skaluje się w sposób progresywny między poziomem 10 aż do poziomu 500 – im silniejszy potwór, tym większe szanse na rzadkie nagrody:</p>
 
-        <div style="text-align: center; margin: 20px 0;">
-            <img src="chaos-loot.png" alt="Chaos Loot" style="border: 1px solid #333; border-radius: 6px; padding: 8px; background-color: #0c0c0c; max-width: 100%;">
+        <div class="wiki-img">
+            <img src="chaos-loot.png" alt="Chaos Loot">
         </div>
 
         <table>
@@ -81,7 +100,7 @@
                 <tr><td>Poziom 200</td><td>+3.5% dodatkowej szansy</td></tr>
                 <tr><td>Poziom 300</td><td>+5% dodatkowej szansy</td></tr>
                 <tr><td>Poziom 400</td><td>+6.5% dodatkowej szansy</td></tr>
-                <tr><td>Poziom 500 lub powyżej</td><td>+8% sandstone szansy</td></tr>
+                <tr><td>Poziom 500 lub powyżej</td><td>+8% dodatkowej szansy</td></tr>
             </tbody>
         </table>
 
@@ -89,13 +108,13 @@
         <p>Esencja Chaosu to ekskluzywny zasób dropiony przez Potwory Chaos. Każdy pokonany potwór Chaos dropi dokładnie <strong>1 Esencję Chaosu</strong> i jest to jedyny sposób, aby ją zdobyć.</p>
         <p>Zasób ten jest używany do uzyskania dostępu do <strong>Bossów Chaos</strong>, gdzie możliwe jest zdobycie ekskluzywnych zestawów ekwipunku (setów) z ochronami żywiołowymi, takich jak między innymi: <em>Emerald Set, Crystal Set, Ocean Set</em>.</p>
 
-        <blockquote style="background: #222; padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0;">
+        <blockquote style="background: rgba(0, 0, 0, 0.4); padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0; border-radius: 0 8px 8px 0;">
             <strong>Ważne Uwagi:</strong><br>
             • Tylko normalne potwory mogą narodzić się jako Chaos.<br>
             • Potwór zachowuje swój normalny loot + otrzymuje dodatkowy loot z tabeli.<br>
             • Nazwa "Chaos" zawsze identyfikuje te potwory w grze.<br>
             • Esencja Chaosu nie posiada żadnego innego źródła pozyskania oprócz Potworów Chaos.
-</blockquote>
+        </blockquote>
     </div>
 
 </body>
