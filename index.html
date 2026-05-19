@@ -6,7 +6,7 @@
     <title>DBO New Age</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-<style>
+    <style>
         body {
             background-image: url('background.png'); 
             background-position: center center;
@@ -14,24 +14,18 @@
             background-attachment: fixed;
             background-size: cover;
         }
-        .server-logo {
-            max-width: 120px !important;
-            height: auto;
-            margin-bottom: 10px;
-        }
+        .server-logo { max-width: 120px !important; height: auto; margin-bottom: 10px; }
         .logo-wrapper { margin-bottom: 15px; }
         
-        /* Zapewniamy, że wszystkie kafelki są równe */
         .tile {
             text-decoration: none !important;
-            display: flex !important; /* Używamy flex do centrowania */
-            align-items: center;      /* W pionie */
-            justify-content: center;  /* W poziomie */
-            min-height: 100px;        /* Stała minimalna wysokość */
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            min-height: 100px;
             padding: 20px !important;
         }
 
-        /* Specjalny styl dla jasnych kafelków */
         .top-tile {
             background: rgba(255, 255, 255, 0.7) !important;
             color: #000 !important;
@@ -39,14 +33,8 @@
             border-radius: 12px !important;
             border: 1px solid rgba(255, 255, 255, 0.5) !important;
         }
+        .top-tile:hover { background: rgba(255, 255, 255, 0.9) !important; }
 
-        .top-tile:hover {
-            background: rgba(255, 255, 255, 0.9) !important;
-            color: #000 !important;
-            border-color: #fff !important;
-        }
-
-        /* Ujednolicenie siatki */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -54,12 +42,7 @@
             width: 100%;
         }
 
-        /* Zabezpieczenie mobilne */
-        @media (max-width: 650px) {
-            .top-nav-grid {
-                grid-template-columns: 1fr !important;
-            }
-        }
+        @media (max-width: 650px) { .top-nav-grid { grid-template-columns: 1fr !important; } }
     </style>
 </head>
 <body>
@@ -70,7 +53,7 @@
         </div>
         <h1>DBO New Age</h1>
         <p class="welcome-text">
-            Wikipedia z serwera <span class="highlight">DBO New Age</span> przetłumaczona na język polski. Wszystkie informacje z wikipedii serwera przetłumaczone znajdują się tutaj.
+            Wikipedia z serwera <span class="highlight">DBO New Age</span> przetłumaczona na język polski.
         </p>
     </header>
 
@@ -84,10 +67,15 @@
         <h2 style="text-align: center;">Systemy Gry</h2>
         <div class="grid-container">
             <a href="systems/cam.html" class="tile">Cam</a>
-                        <a href="systems/chaos.html" class="tile">System Chaos</a>
+            <a href="systems/stamina.html" class="tile">Stamina</a>
+            <a href="systems/chaos.html" class="tile">System Chaos</a>
             <a href="systems/autoloot.html" class="tile">AutoLoot</a>
-            <a href="systems/misje.html" class="tile">System Misji</a>
+            <a href="systems/quest.html" class="tile">Quest</a>
             <a href="systems/serverinfo.html" class="tile">Server Info</a>
+            <a href="systems/craft.html" class="tile">System Craft</a>
+            <a href="systems/misje.html" class="tile">System Misji</a>
+            <a href="systems/loot.html" class="tile">Loot</a>
+            <a href="systems/fishing.html" class="tile">Lowienie</a>
             <a href="systems/power-system.html" class="tile">Power System</a>
             <a href="systems/rarity.html" class="tile">System Rzadkości</a>
             <a href="systems/saga.html" class="tile">System Sag</a>
@@ -98,16 +86,13 @@
             <a href="systems/recall.html" class="tile">System Recall</a>
             <a href="systems/event.html" class="tile">Event</a>
             <a href="systems/cloud-warrior.html" class="tile">Cloud Warriors</a>
-            <a href="systems/market.html" class="tile">Market & Postacie</a>
+            <a href="systems/market.html" class="tile">Market</a>
             <a href="systems/boss-chaos.html" class="tile">Bossowie Chaos</a>
+            <a href="systems/dungeon.html" class="tile">Dungeon</a>
+            <a href="systems/torneio.html" class="tile">Turnieje</a>
+            <a href="systems/vocations.html" class="tile">Postacie</a>
         </div>
     </section>
-
-    <div class="social-links">
-        <a href="https://discord.gg/zn6xYP79mB" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61589597902425" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.youtube.com/@DBONewAge_oficial" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-    </div>
 
 </body>
 </html>
