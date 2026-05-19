@@ -4,49 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bossowie Chaos - WIKI</title>
-    <link rel="stylesheet" href="../style.css"> 
+    
+    <link rel="stylesheet" href="../style.css?v=101"> 
+    
     <style>
+        /* Tło pobierane lokalnie z folderu 'systems' - zablokowane na stałe jako tapeta */
+        body {
+            background-image: url('background.png') !important;
+            background-attachment: fixed !important;
+            background-position: center center !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+        }
+        
+        /* Usunięte stare tło i obramowanie, aby zadziałało 85% zaciemnienia i szkło z pliku CSS */
         .content-wrapper {
             max-width: 1125px;
             margin: 40px auto;
             padding: 30px;
-            background-color: #111;
-            color: #fff;
-            border-radius: 8px;
-            border: 1px solid #222;
-            font-family: sans-serif;
-            line-height: 1.6;
         }
-        .back-btn {
-            display: inline-block;
-            background-color: #ff9800;
-            color: #000;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            transition: background-color 0.2s;
-        }
-        .back-btn:hover {
-            background-color: #e08600;
-        }
+        
+        /* Stylizacja przycisków lokacji, aby pasowały do nowoczesnego szklanego stylu */
         .loc-btn {
             display: inline-block;
-            background-color: #222;
+            background-color: rgba(0, 0, 0, 0.4);
             color: #ff9800;
-            padding: 4px 10px;
+            padding: 6px 14px;
             text-decoration: none;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: bold;
-            border-radius: 4px;
-            border: 1px solid #ff9800;
-            transition: all 0.2s;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 152, 0, 0.4);
+            transition: all 0.2s ease-in-out;
         }
         .loc-btn:hover {
             background-color: #ff9800;
-            color: #000;
+            color: #121212;
+            border-color: #ff9800;
+            box-shadow: 0 0 10px rgba(255, 152, 0, 0.3);
         }
+        
+        /* Dostosowanie tabel pod ciemny design 85% */
         table {
             border-collapse: collapse;
             width: 100%;
@@ -55,18 +53,27 @@
             font-size: 14px;
         }
         th, td {
-            border: 1px solid #333;
-            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 12px 15px;
         }
         th {
-            background-color: #1e1e1e;
+            background-color: rgba(0, 0, 0, 0.5); /* Ciemniejsze nagłówki tabel */
+            color: #ff9800;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.02); /* Bardzo delikatne, estetyczne wyróżnienie co drugiego wiersza */
         }
         ul {
             margin-bottom: 20px;
         }
         .essence-highlight {
-            color: #a660ff;
+            color: #b77eff; /* Lekko podbity fiolet pod ciemne tło */
             font-weight: bold;
+            text-shadow: 0 0 8px rgba(183, 126, 255, 0.2);
         }
     </style>
 </head>
@@ -90,7 +97,7 @@
 
         <table>
             <thead>
-                <tr style="background-color: #1e1e1e;">
+                <tr>
                     <th>Przedział Poziomu</th>
                     <th>Punkty Życia (HP)</th>
                     <th>Poziom Przedmiotu (Item Lv)</th>
@@ -103,28 +110,28 @@
                     <td><strong>100 – 200</strong></td>
                     <td>200 000 HP</td>
                     <td>150 Item Level</td>
-                    <td style="color: #00c851;">100% (Bazowe)</td>
+                    <td style="color: #00e676; font-weight: bold;">100% (Bazowe)</td>
                     <td class="essence-highlight">300 szt.</td>
                 </tr>
                 <tr>
                     <td><strong>201 – 300</strong></td>
                     <td>450 000 HP</td>
                     <td>250 Item Level</td>
-                    <td style="color: #ffbb33;">160%</td>
+                    <td style="color: #ffb300; font-weight: bold;">160%</td>
                     <td class="essence-highlight">350 szt.</td>
                 </tr>
                 <tr>
                     <td><strong>301 – 400</strong></td>
                     <td>700 000 HP</td>
                     <td>350 Item Level</td>
-                    <td style="color: #ff4444;">400%</td>
+                    <td style="color: #ff5252; font-weight: bold;">400%</td>
                     <td class="essence-highlight">700 szt.</td>
                 </tr>
                 <tr>
                     <td><strong>401+</strong></td>
-                    <td style="color: #ff4444; font-weight: bold;">1 200 000 HP</td>
+                    <td style="color: #ff5252; font-weight: bold;">1 200 000 HP</td>
                     <td style="color: #ff9800; font-weight: bold;">450 Item Level</td>
-                    <td style="color: #ff4444; font-weight: bold;">550%</td>
+                    <td style="color: #ff5252; font-weight: bold;">550%</td>
                     <td class="essence-highlight">1000 szt.</td>
                 </tr>
             </tbody>
@@ -135,7 +142,7 @@
 
         <table>
             <thead>
-                <tr style="background-color: #1e1e1e;">
+                <tr>
                     <th>Nazwa Bossa</th>
                     <th>Upuszczany Zestaw (Set Drop)</th>
                     <th>Nawigacja na Mapie</th>
@@ -144,38 +151,38 @@
             <tbody>
                 <tr>
                     <td><strong>Mecha Wasp</strong></td>
-                    <td style="color: #00c851; font-weight: bold;">🟢 Emerald Set</td>
+                    <td style="color: #00e676; font-weight: bold; text-shadow: 0 0 10px rgba(0,230,118,0.15);">🟢 Emerald Set</td>
                     <td><a href="loc-mecha-wasp.html" class="loc-btn">📍 Pokaż Pozycję</a></td>
                 </tr>
                 <tr>
                     <td><strong>Undead Skeleton Royale</strong></td>
-                    <td style="color: #aaaaaa; font-weight: bold;">⚪ Bone Set</td>
+                    <td style="color: #cccccc; font-weight: bold; text-shadow: 0 0 10px rgba(204,204,204,0.15);">⚪ Bone Set</td>
                     <td><a href="loc-skeleton-royale.html" class="loc-btn">📍 Pokaż Pozycję</a></td>
                 </tr>
                 <tr>
                     <td><strong>Chaos Vegeta</strong></td>
-                    <td style="color: #ffbb33; font-weight: bold;">🟡 Golden Set</td>
+                    <td style="color: #ffb300; font-weight: bold; text-shadow: 0 0 10px rgba(255,179,0,0.15);">🟡 Golden Set</td>
                     <td><a href="loc-chaos-vegeta.html" class="loc-btn">📍 Pokaż Pozycję</a></td>
                 </tr>
                 <tr>
                     <td><strong>Frozen Skeleton Warrior</strong></td>
-                    <td style="color: #33b5e5; font-weight: bold;">🔵 Crystal Set</td>
+                    <td style="color: #40c4ff; font-weight: bold; text-shadow: 0 0 10px rgba(64,196,255,0.15);">🔵 Crystal Set</td>
                     <td><a href="loc-frozen-skeleton.html" class="loc-btn">📍 Pokaż Pozycję</a></td>
                 </tr>
                 <tr>
                     <td><strong>Dark Reaver</strong></td>
-                    <td style="color: #cc0000; font-weight: bold;">🔴 Daemon Set</td>
+                    <td style="color: #ff5252; font-weight: bold; text-shadow: 0 0 10px rgba(255,82,82,0.15);">🔴 Daemon Set</td>
                     <td><a href="loc-dark-reaver.html" class="loc-btn">📍 Pokaż Pozycję</a></td>
                 </tr>
                 <tr>
                     <td><strong>Deep Sea Plesiosaur</strong></td>
-                    <td style="color: #4da6ff; font-weight: bold;">🔵 Ocean Set</td>
+                    <td style="color: #29b6f6; font-weight: bold; text-shadow: 0 0 10px rgba(41,182,246,0.15);">🔵 Ocean Set</td>
                     <td><a href="loc-plesiosaur.html" class="loc-btn">📍 Pokaż Pozycję</a></td>
                 </tr>
             </tbody>
         </table>
 
-        <blockquote style="background: #222; padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0;">
+        <blockquote style="background: rgba(0, 0, 0, 0.4); padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0; border-radius: 0 8px 8px 0;">
             <strong>Ważne Uwagi (Observações Importantes):</strong><br>
             • Ponieważ Potwory Chaosu pojawiają się niespodziewanie na losowych lokacjach, zawsze zachowuj czujność i pełne punkty życia podczas rutynowych huntów.<br>
             • Zestawy odpornościowe (elementalne) są kluczowym elementem przygotowania postaci do najtrudniejszych rajdów i instancji PvE na serwerze.
