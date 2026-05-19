@@ -4,33 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wielki Turniej Świata (Torneio) - WIKI</title>
-    <link rel="stylesheet" href="../style.css"> 
+    
+    <link rel="stylesheet" href="../style.css?v=101"> 
+    
     <style>
+        /* Tło zablokowane na stałe jako tapeta */
+        body {
+            background-image: url('background.png') !important;
+            background-attachment: fixed !important;
+            background-position: center center !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+        }
+        
         .content-wrapper {
             max-width: 1125px;
             margin: 40px auto;
             padding: 30px;
-            background-color: #111;
-            color: #fff;
-            border-radius: 8px;
-            border: 1px solid #222;
-            font-family: sans-serif;
-            line-height: 1.6;
         }
-        .back-btn {
-            display: inline-block;
-            background-color: #ff9800;
-            color: #000;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            transition: background-color 0.2s;
-        }
-        .back-btn:hover {
-            background-color: #e08600;
-        }
+        
+        /* Stylizacja tabel */
         table {
             border-collapse: collapse;
             width: 100%;
@@ -39,26 +32,37 @@
             font-size: 14px;
         }
         th, td {
-            border: 1px solid #333;
-            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 12px 15px;
         }
         th {
-            background-color: #1e1e1e;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ff9800;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
         }
-        ul {
-            margin-bottom: 20px;
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.02);
         }
+        
         .wiki-img {
             text-align: center;
-            margin: 20px 0;
+            margin: 30px 0;
         }
         .wiki-img img {
-            border: 1px solid #333;
-            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
             padding: 5px;
-            background-color: #0c0c0c;
+            background-color: rgba(0, 0, 0, 0.3);
             max-width: 100%;
+            transition: transform 0.3s ease;
         }
+        .wiki-img img:hover {
+            transform: scale(1.02);
+        }
+        
         .mode-title {
             font-weight: bold;
             color: #ff9800;
@@ -71,15 +75,14 @@
         <a href="../index.html" class="back-btn">&larr; Powrót do Menu</a>
 
         <h2>Wielki Turniej Świata (Torneio Mundial)</h2>
-        <p><strong>Torneio Mundial</strong> to oficjalny, najbardziej prestiżowy tryb rywalizacji na serwerze. Oferuje on różnorodne formaty starć, system rejestracji drużynowej oraz gigantyczne nagrody w postaci <strong>Premium Points</strong> dla najlepszych wojowników. To tutaj gracze mogą ostatecznie dowieść, kto jest najsilniejszy w uniwersum.</p>
+        <p><strong>Torneio Mundial</strong> to oficjalny, najbardziej prestiżowy tryb rywalizacji na serwerze. Oferuje różnorodne formaty starć, system rejestracji drużynowej oraz gigantyczne nagrody w postaci <strong>Premium Points</strong> dla najlepszych wojowników.</p>
 
         <h3>Zapisy i Warunki Rejestracji:</h3>
-        <p>Aby wziąć udział w rozgrywkach, należy zgłosić się do specjalnego zarządcy zawodów:</p>
         <ul>
             <li><strong>NPC Organizator:</strong> Rejestracji dokonuje się u <em>NPC Organizador do Torneio Mundial</em>.</li>
-            <li><strong>Kreator Drużyny:</strong> Każda ekipa przed wysłaniem zgłoszenia musi zdefiniować swoją unikalną nazwę oraz wybrać ikonę/herb drużyny.</li>
-            <li><strong>Opłata Wpisowa (Taxa):</strong> Koszt zapisu jest pobierany bezpośrednio z banku lidera formacji w momencie finalizacji zgłoszenia. Liczba miejsc na liście nie jest ograniczona.</li>
-            <li><strong>Status Graczy:</strong> W ułamku sekundy zatwierdzania zapisu, wszyscy zgłaszani członkowie drużyny muszą znajdować się na profilach <strong>Online</strong> oraz stać wewnątrz strefy ochronnej (<strong>Protection Zone</strong>).</li>
+            <li><strong>Kreator Drużyny:</strong> Każda ekipa musi zdefiniować nazwę oraz herb.</li>
+            <li><strong>Opłata Wpisowa:</strong> Pobierana bezpośrednio z banku lidera w momencie zgłoszenia.</li>
+            <li><strong>Status Graczy:</strong> W momencie zapisu członkowie muszą być <strong>Online</strong> i przebywać w <strong>Protection Zone</strong>.</li>
         </ul>
 
         <div class="wiki-img">
@@ -87,66 +90,56 @@
         </div>
 
         <h3>Rotacyjne Tryby Tygodniowe:</h3>
-        <p>Aktualny styl i zasady walki na dany tydzień są odgórnie ustalane przez organizatora. Zawody mogą odbywać się w 4 odmiennych trybach:</p>
-
         <table>
             <thead>
-                <tr style="background-color: #1e1e1e;">
-                    <th style="width: 25%;">Tryb (Modo)</th>
-                    <th>Opis i Charakterystyka Walki (Descrição)</th>
+                <tr>
+                    <th style="width: 25%;">Tryb</th>
+                    <th>Opis i Charakterystyka Walki</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td><span class="mode-title">⚔️ Solo</span></td>
-                    <td>Bezpośrednie starcia 1 na 1. Liczą się czyste, surowe statystyki Twojej postaci, posiadany ekwipunek oraz build. Brak jakiegokolwiek skalowania siły.</td>
+                    <td>Bezpośrednie starcia 1 na 1. Liczą się czyste statystyki, ekwipunek i build.</td>
                 </tr>
                 <tr>
                     <td><span class="mode-title">👹 Lure</span></td>
-                    <td>Specjalna arena najeżona agresywnymi potworami. Kluczem do sukcesu nie jest walka z ludźmi, a bezbłędna strategia, kontrola agresji mobów oraz szybkość ich eliminacji.</td>
+                    <td>Arena najeżona potworami. Kluczem jest strategia, kontrola agresji mobów i ich eliminacja.</td>
                 </tr>
                 <tr>
                     <td><span class="mode-title">⚖️ Sync</span></td>
-                    <td>Tryb e-sportowy. System nakłada na wszystkich uczestników <strong>identyczny poziom (Level) oraz poziomy umiejętności (Skills)</strong>. Wygrywa gracz o wyższych umiejętnościach manualnych i lepszym zgraniu.</td>
+                    <td>Tryb e-sportowy: system nakłada na uczestników <strong>identyczny poziom i umiejętności</strong>.</td>
                 </tr>
                 <tr>
                     <td><span class="mode-title">🌀 Lure Sync</span></td>
-                    <td>Połączenie idealnie zbalansowanych statystyk postaci (równe poziomy i skille dla każdego) z wyzwaniem na arenie pełnej potworów. Wymaga perfekcyjnej mechaniki gry.</td>
+                    <td>Połączenie zbalansowanych statystyk (równe poziomy) z wyzwaniem areny pełnej potworów.</td>
                 </tr>
             </tbody>
         </table>
 
         <h3>Mechanika Antyremisowa – Death Zone:</h3>
-        <p>Aby zapobiec uciekaniu i celowemu przedłużaniu walk przez pasywnych graczy, na arenie zaimplementowano bezwzględny system eliminacji:</p>
         <ul>
-            <li><strong>Aktywacja strefy:</strong> Dokładnie po upływie <strong>45% regulaminowego czasu walki</strong>, na arenie automatycznie włącza się Strefa Śmierci (<em>Death Zone</em>).</li>
-            <li><strong>Działanie:</strong> Gracze przebywający na ringu zaczynają otrzymywać progresywne obrażenia (im dłużej trwa pojedynek po aktywacji strefy, tym większy damage uderza w postać), co wymusza agresywne starcie i wyłania ostatecznego zwycięzcę.</li>
+            <li><strong>Aktywacja:</strong> Po 45% czasu walki włącza się <em>Death Zone</em>.</li>
+            <li><strong>Działanie:</strong> Gracze otrzymują progresywne obrażenia, co wymusza agresywne zakończenie pojedynku.</li>
         </ul>
 
         <div class="wiki-img">
-            <img src="image_db6fc7.png" alt="Prezentacja Działania Death Zone oraz Interfejsu Nagród">
+            <img src="image_db6fc7.png" alt="Death Zone oraz Interfejs Nagród">
         </div>
 
-        <h4>Rozstrzygnięcia w przypadku upływu czasu (Limit Czasu):</h4>
+        <h3>Pula Nagród (Premiação):</h3>
+        <p>Całkowita nagroda formowana jest z opłat wpisowych (po potrąceniu 15% podatku serwerowego):</p>
         <ul>
-            <li><strong>Turnieje Drużynowe (2x2 oraz 3x3):</strong> Wygrywa ten skład, który w momencie końca zegara utrzymał przy życiu większą liczbę zawodników. Jeśli stan żywych graczy w obu ekipach jest remisowy, o awansie decyduje bezstronny, automatyczny rzut monetą (losowanie 50/50).</li>
-            <li><strong>Turnieje Solo (1x1):</strong> W przypadku idealnego remisu na punkty życia, system natychmiastowo wykonuje losowanie 50/50, wskazując awansującego gracza.</li>
+            <li>🥇 <strong>1. Miejsce:</strong> 50% puli Premium Points.</li>
+            <li>🥈 <strong>2. Miejsce:</strong> 30% puli Premium Points.</li>
+            <li>🥉 <strong>3. Miejsce:</strong> 20% puli Premium Points.</li>
         </ul>
 
-        <h3>Pula Nagród i Finanse (Premiação):</h3>
-        <p>Turniej posiada ogromną stopę zwrotu. Całkowita nagroda formowana jest bezpośrednio z opłat wpisowych wniesionych przez wszystkie zapisane składy. Po potrąceniu stałego 15% podatku serwerowego (na koszty organizacji i utrzymania), cała reszta trafia na podium:</p>
-        <ul>
-            <li>🥇 <strong>1. Miejsce:</strong> Otrzymuje <strong>50%</strong> zgromadzonej puli Premium Points.</li>
-            <li>🥈 <strong>2. Miejsce:</strong> Otrzymuje <strong>30%</strong> zgromadzonej puli Premium Points.</li>
-            <li>🥉 <strong>3. Miejsce:</strong> Otrzymuje <strong>20%</strong> zgromadzonej puli Premium Points.</li>
-        </ul>
-
-        <blockquote style="background: #222; padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0;">
-            <strong>Ważne Uwagi (Observações Importantes):</strong><br>
-            • Harmonogram turnieju jest ściśle określony. Odliczanie czasu pozostałego do startu kolejnych eliminacji możesz sprawdzić w interfejsie u NPC Organizatora.<br>
-            • <strong>Kodeks Kultury:</strong> Używanie wulgarnych, prowokacyjnych lub obraźliwych nazw drużyn skutkuje natychmiastową dyskwalifikacją całego zespołu z turnieju.<br>
-            • Zespoły zdyskwalifikowane tracą wszelkie prawa do jakichkolwiek nagród, nawet jeśli przed decyzją sędziowską zdołały wywalczyć miejsce na podium.<br>
-            • Pamiętaj, że w trybach <strong>Sync</strong> oraz <strong>Lure Sync</strong> wyposażenie i poziom postaci z normalnego świata nie mają znaczenia. Tam liczą się tylko Twoje palce i refleks!
+        <blockquote style="background: rgba(0, 0, 0, 0.4); padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0; border-radius: 0 8px 8px 0;">
+            <strong>Ważne Uwagi:</strong><br>
+            • Kodeks Kultury: Obraźliwe nazwy drużyn skutkują natychmiastową dyskwalifikacją.<br>
+            • Tryby <strong>Sync</strong> całkowicie niwelują różnice w ekwipunku – liczy się tylko refleks!<br>
+            • Harmonogram sprawdzisz bezpośrednio u NPC Organizatora.
         </blockquote>
     </div>
 
