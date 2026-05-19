@@ -6,8 +6,7 @@
     <title>DBO New Age</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-<style>
-        /* Styl tła TYLKO dla strony głównej - poprawiona ścieżka */
+    <style>
         body {
             background-image: url('background.png'); 
             background-position: center center;
@@ -15,21 +14,21 @@
             background-attachment: fixed;
             background-size: cover;
         }
-
-        /* Styl dla malutkiego logo */
         .server-logo {
             max-width: 120px !important;
             height: auto;
             margin-bottom: 10px;
         }
-        .logo-wrapper {
-            margin-bottom: 15px;
-        }
-        /* Zabezpieczenie wyglądu kafelków */
+        .logo-wrapper { margin-bottom: 15px; }
         .grid-container .tile {
             text-decoration: none !important;
             display: block;
             color: #fff !important;
+        }
+        /* Styl dla wyróżnionego kafelka Postacie */
+        .char-tile-main {
+            border: 2px solid #ff9800 !important;
+            background: rgba(255, 152, 0, 0.1) !important;
         }
     </style>
 </head>
@@ -39,15 +38,21 @@
         <div class="logo-wrapper">
             <img src="logo.png" alt="DBO New Age Logo" class="server-logo">
         </div>
-        
         <h1>DBO New Age</h1>
-        
         <p class="welcome-text">
             Wikipedia z serwera <span class="highlight">DBO New Age</span> przetłumaczona na język polski. Wszystkie informacje z wikipedii serwera przetłumaczone znajdują się tutaj.
         </p>
     </header>
 
     <section class="container">
+        <h2 style="text-align: center; margin-top: 20px;">Postacie</h2>
+        <div class="grid-container" style="margin-bottom: 40px;">
+            <a href="characters/characters.html" class="tile char-tile-main">
+                <i class="fas fa-users" style="margin-right: 8px;"></i> Przeglądaj Postacie
+            </a>
+        </div>
+
+        <h2 style="text-align: center;">Systemy Gry</h2>
         <div class="grid-container">
             <a href="systems/chaos.html" class="tile">System Chaos</a>
             <a href="systems/autoloot.html" class="tile">AutoLoot</a>
