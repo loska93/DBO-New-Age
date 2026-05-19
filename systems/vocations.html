@@ -4,62 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>System Profesji i Wymiany Postaci - WIKI</title>
-    <link rel="stylesheet" href="../style.css"> 
+    
+    <link rel="stylesheet" href="../style.css?v=101"> 
+    
     <style>
+        /* Tło zablokowane na stałe */
+        body {
+            background-image: url('background.png') !important;
+            background-attachment: fixed !important;
+            background-position: center center !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+        }
+        
         .content-wrapper {
             max-width: 1125px;
             margin: 40px auto;
             padding: 30px;
-            background-color: #111;
-            color: #fff;
-            border-radius: 8px;
-            border: 1px solid #222;
-            font-family: sans-serif;
-            line-height: 1.6;
         }
-        .back-btn {
-            display: inline-block;
-            background-color: #ff9800;
-            color: #000;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            transition: background-color 0.2s;
-        }
-        .back-btn:hover {
-            background-color: #e08600;
-        }
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin: 20px 0;
-            text-align: left;
-            font-size: 14px;
-        }
-        th, td {
-            border: 1px solid #333;
-            padding: 10px;
-        }
-        th {
-            background-color: #1e1e1e;
-        }
-        ul {
-            margin-bottom: 20px;
-        }
+        
         .filter-badge {
-            background-color: #222;
+            background-color: rgba(255, 255, 255, 0.1);
             color: #ff9800;
-            padding: 2px 6px;
+            padding: 2px 8px;
             border-radius: 4px;
             font-family: monospace;
-            border: 1px solid #333;
+            border: 1px solid rgba(255, 255, 255, 0.2);
             font-weight: bold;
         }
+        
         .role-attack { color: #ff4d4d; font-weight: bold; }
         .role-tank { color: #4da6ff; font-weight: bold; }
         .role-support { color: #00c851; font-weight: bold; }
+        
+        ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -68,53 +52,52 @@
         <a href="../index.html" class="back-btn">&larr; Powrót do Menu</a>
 
         <h2>System Wymiany i Odblokowywania Profesji (Vocations)</h2>
-        <p>Innowacyjny system <strong>Troca de Vocação</strong> pozwala graczom na dynamiczne odblokowywanie nowych bohaterów oraz swobodne przełączanie się między nimi na jednej postaci bazowej. Każdy wojownik reprezentuje odmienną klasę, posiada unikalny zestaw umiejętności (Spells) oraz własny, charakterystyczny styl prowadzenia walki.</p>
+        <p>Innowacyjny system <strong>Troca de Vocação</strong> pozwala graczom na dynamiczne odblokowywanie nowych bohaterów oraz swobodne przełączanie się między nimi na jednej postaci bazowej. Każdy wojownik reprezentuje odmienną klasę, posiada unikalny zestaw umiejętności (Spells) oraz własny styl walki.</p>
 
         <h3>Nawigacja w Interfejsie (Filtry):</h3>
-        <p>Specjalny panel wyboru postaci został wyposażony w zaawansowaną wyszukiwarkę tekstową <em>(Procurar por nome)</em> oraz wygodne filtry kategoryzacyjne, ułatwiające zarządzanie Twoją kolekcją wojowników:</p>
+        <p>Panel wyboru postaci wyposażony jest w zaawansowaną wyszukiwarkę oraz filtry kategoryzacyjne:</p>
         <ul>
-            <li><span class="filter-badge">Todos</span> – Wyświetla kompletną listę absolutnie wszystkich bohaterów zaimplementowanych na serwerze.</li>
-            <li><span class="filter-badge">Disponíveis</span> – Filtruje widok, pokazując wyłącznie te postacie, które zdążyłeś już pomyślnie odblokować.</li>
-            <li><span class="filter-badge">Bloqueados</span> – Pokazuje postacie, których jeszcze nie posiadasz na swoim koncie.</li>
-            <li><span class="filter-badge">Ataque / Tanque / Suporte</span> – Segreguje bohaterów pod kątem ich głównej roli i przeznaczenia na polu bitwy.</li>
+            <li><span class="filter-badge">Todos</span> – Pełna lista bohaterów serwera.</li>
+            <li><span class="filter-badge">Disponíveis</span> – Tylko odblokowani bohaterowie.</li>
+            <li><span class="filter-badge">Bloqueados</span> – Postacie do odblokowania.</li>
+            <li><span class="filter-badge">Ataque / Tanque / Suporte</span> – Segregacja według roli na polu bitwy.</li>
         </ul>
 
         <h3>Instrukcja Zarządzania Bohaterami:</h3>
         
         <h4>1. Odblokowywanie Nowego Wojownika (Desbloquear)</h4>
-        <p>Gdy zaznaczysz na liście zablokowaną postać, w panelu bocznym pojawi się dedykowany przycisk <strong>Desbloquear</strong>.</p>
+        <p>W panelu zaznacz zablokowaną postać i użyj przycisku <strong>Desbloquear</strong>.</p>
         <ul>
-            <li><strong>Koszt odblokowania:</strong> Stała i jednorazowa opłata wynosząca <strong>525 Premium Points</strong>.</li>
-            <li><strong>Efekt:</strong> Wybrany bohater zostaje przypisany do Twojego konta na stałe. System natychmiastowo i automatycznie zaloguje Cię na nowo zakupioną postać.</li>
+            <li><strong>Koszt:</strong> 525 Premium Points (jednorazowo).</li>
+            <li><strong>Efekt:</strong> Bohater przypisany na stałe, automatyczne przelogowanie.</li>
         </ul>
 
         <h4>2. Zmiana Aktywnej Postaci (Trocar)</h4>
-        <p>Jeśli klikniesz na ikonę bohatera, którego zakupiłeś już wcześniej, w panelu aktywuje się funkcja <strong>Trocar</strong>.</p>
+        <p>Jeśli posiadasz już postać, w panelu aktywuje się przycisk <strong>Trocar</strong>.</p>
         <ul>
-            <li><strong>Koszt operacji:</strong> Każdorazowe przełączenie kosztuje <strong>5 000 000 Zens (5KK)</strong>. Waluta może być pobrana bezpośrednio z Twojego plecaka lub konta bankowego.</li>
-            <li><strong>Efekt:</strong> Twoja postać momentalnie transformuje w wybranego bohatera wraz z całym jego zestawem technik.</li>
+            <li><strong>Koszt:</strong> 5 000 000 Zens (5KK) z plecaka lub banku.</li>
+            <li><strong>Efekt:</strong> Natychmiastowa transformacja w wybranego bohatera.</li>
         </ul>
 
-        <h3>Archetypy Klasowe i Restrykcje (Cooldown):</h3>
-        <p>Wszyscy dostępni w grze bohaterowie zostali podzieleni na trzy zbalansowane klasy bojowe:</p>
+        <h3>Archetypy Klasowe:</h3>
         <ul>
-            <li><span class="role-attack">⚔️ Atak (Ataque):</span> Postacie nastawione na generowanie potężnych obrażeń seryjnych. Posiadają najwyższy potencjał ofensywny na serwerze.</li>
-            <li><span class="role-tank">🛡️ Tank (Tanque):</span> Niezwykle wytrzymali herosi, charakteryzujący się ogromną pulą punktów życia (HP) oraz potężnymi współczynnikami obrony.</li>
-            <li><span class="role-support">✨ Wsparcie (Suporte):</span> Wszechstronni i mobilni bohaterowie, dysponujący technikami leczniczymi, wzmacniającymi oraz umiejętnościami kontroli tłumu (CC).</li>
+            <li><span class="role-attack">⚔️ Atak (Ataque):</span> Maksymalny potencjał ofensywny.</li>
+            <li><span class="role-tank">🛡️ Tank (Tanque):</span> Najwyższa wytrzymałość i obrona.</li>
+            <li><span class="role-support">✨ Wsparcie (Suporte):</span> Leczenie, wzmocnienia i kontrola tłumu (CC).</li>
         </ul>
 
-        <blockquote style="background: #222; padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0;">
+        <blockquote style="background: rgba(0, 0, 0, 0.4); padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0; border-radius: 0 8px 8px 0;">
             <strong>⏱️ System 2-godzinnego Cooldownu Międzyklasowego:</strong><br>
-            W momencie, gdy zmieniasz lub odblokowujesz postać reprezentującą <strong>inną klasę</strong> niż ta, którą grasz obecnie (np. zmieniasz <span class="role-attack">Atak</span> na <span class="role-support">Wsparcie</span>), system nakłada globalną blokadę trwającą <strong>2 godziny</strong>.<br><br>
-            • W trakcie trwania tego odliczania ponowna zmiana na postacie z pozostałych dwóch klas jest całkowicie zablokowana.<br>
-            • <strong>Wyjątek:</strong> Wymiana bohaterów w obrębie tej samej, nowo wybranej klasy (np. ze Wsparcia "A" na Wsparcie "B") działa bez żadnych limitów i opóźnień.
+            Zmiana na postać z **innej klasy** (np. Atak na Wsparcie) nakłada globalną blokadę trwającą <strong>2 godziny</strong>.<br>
+            • W trakcie odliczania zmiana na trzecią klasę jest niemożliwa.<br>
+            • <strong>Wyjątek:</strong> Wymiana w obrębie tej samej klasy (np. ze Wsparcia A na Wsparcie B) jest natychmiastowa i bez limitów.
         </blockquote>
 
-        <h3>Ważne Uwagi Eksploatacyjne (Observações):</h3>
+        <h3>Ważne Uwagi (Observações):</h3>
         <ul>
-            <li><strong>Gdzie dokonać zmiany?</strong> Wymiana profesji nie jest dostępna z poziomu standardowego menu czy stref bezpiecznych. Całą operację można przeprowadzić wyłącznie wchodząc w interakcję ze specjalną <strong>Maszyną Wymiany (Máquina de Troca)</strong>, która znajduje się w bezpiecznych <strong>podziemiach głównej świątyni</strong>.</li>
-            <li><strong>Trwałość:</strong> Raz odblokowane postacie nigdy nie przepadają i zostają przypisane do Twojego profilu bezterminowo.</li>
-            <li><strong>Koszty:</strong> Pamiętaj, że opłata w Premium Points jest wnoszona tylko raz za dany wzorzec bohatera, natomiast podatek 5KK Zens pobierany jest za <u>każdą</u> wykonaną roszadę.</li>
+            <li><strong>Gdzie dokonać zmiany?</strong> Operację przeprowadza się w <strong>Maszynie Wymiany (Máquina de Troca)</strong>, znajdującej się w podziemiach głównej świątyni.</li>
+            <li><strong>Trwałość:</strong> Odblokowane postacie zostają na koncie bezterminowo.</li>
+            <li><strong>Koszty:</strong> PP płacisz raz za postać, natomiast podatek 5KK pobierany jest za każdą wykonaną roszadę.</li>
         </ul>
     </div>
 
