@@ -27,7 +27,7 @@
             display: block;
         }
 
-        /* Specjalny styl dla jasnych kafelków (Postacie i Spells) */
+        /* Specjalny styl dla jasnych kafelków */
         .top-tile {
             background: rgba(255, 255, 255, 0.7) !important;
             color: #000 !important;
@@ -41,11 +41,17 @@
             border: 1px solid rgba(255, 255, 255, 0.5) !important;
         }
 
-        /* Hover dla jasnych kafelków */
         .top-tile:hover {
             background: rgba(255, 255, 255, 0.9) !important;
             color: #000 !important;
             border-color: #fff !important;
+        }
+
+        /* Zabezpieczenie mobilne */
+        @media (max-width: 650px) {
+            .top-nav-grid {
+                grid-template-columns: 1fr !important; /* Na telefonach 1 kolumna */
+            }
         }
     </style>
 </head>
@@ -62,7 +68,8 @@
     </header>
 
     <section class="container">
-        <div class="grid-container" style="margin-bottom: 30px; grid-template-columns: repeat(2, 1fr);">
+        <div class="grid-container top-nav-grid" style="margin-bottom: 30px; grid-template-columns: repeat(3, 1fr);">
+            <a href="jak-zagrac.html" class="tile top-tile">Jak zagrać?</a>
             <a href="characters/characters.html" class="tile top-tile">Postacie</a>
             <a href="spells/spells.html" class="tile top-tile">Spells</a>
         </div>
