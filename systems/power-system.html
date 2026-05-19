@@ -3,39 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Power System - WIKI</title>
-    <link rel="stylesheet" href="../style.css"> 
+    <title>Power System (System Mocy) - WIKI</title>
+    
+    <link rel="stylesheet" href="../style.css?v=101"> 
+    
     <style>
+        /* Tło pobierane lokalnie z folderu 'systems' - zablokowane na stałe jako tapeta */
+        body {
+            background-image: url('background.png') !important;
+            background-attachment: fixed !important;
+            background-position: center center !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+        }
+        
         .content-wrapper {
-             max-width: 1125px;
+            max-width: 1125px;
             margin: 40px auto;
             padding: 30px;
-            background-color: #111;
-            color: #fff;
-            border-radius: 8px;
-            border: 1px solid #222;
-            font-family: sans-serif;
-            line-height: 1.6;
         }
-        .back-btn {
-            display: inline-block;
-            background-color: #ff9800;
-            color: #000;
-            padding: 10px 20px;
-            text-decoration: none;
+        
+        /* Dostosowanie tabel pod ciemny design */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            text-align: left;
+            font-size: 14px;
+        }
+        th, td {
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 12px 15px;
+        }
+        th {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ff9800;
             font-weight: bold;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            transition: background-color 0.2s;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
         }
-        .back-btn:hover {
-            background-color: #e08600;
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.02);
         }
+        
+        /* Stylizacja przycisków nawigacyjnych */
         .wiki-btn {
             display: inline-block;
-            background-color: #333;
+            background-color: rgba(255, 152, 0, 0.1);
             color: #ff9800;
-            padding: 8px 15px;
+            padding: 10px 20px;
             text-decoration: none;
             font-weight: bold;
             border-radius: 4px;
@@ -47,31 +64,17 @@
             background-color: #ff9800;
             color: #000;
         }
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin: 20px 0;
-            text-align: left;
-        }
-        th, td {
-            border: 1px solid #333;
-            padding: 10px;
-        }
-        th {
-            background-color: #1e1e1e;
-        }
-        ul {
-            margin-bottom: 20px;
-        }
+        
+        /* Stylizacja zrzutów ekranu */
         .wiki-img {
             text-align: center;
-            margin: 20px 0;
+            margin: 25px 0;
         }
         .wiki-img img {
-            border: 1px solid #333;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 6px;
-            padding: 5px;
-            background-color: #0c0c0c;
+            padding: 6px;
+            background-color: rgba(0, 0, 0, 0.4);
             max-width: 100%;
         }
     </style>
@@ -93,7 +96,7 @@
         <h3>Obliczanie Bonusów:</h3>
         <table>
             <thead>
-                <tr style="background-color: #1e1e1e;">
+                <tr>
                     <th>Statystyka</th>
                     <th>Przelicznik punktowy</th>
                     <th>Maksymalny Limit Bonusów</th>
@@ -123,10 +126,10 @@
         <h3>Jak zdobyć punkty Power?</h3>
         <ul>
             <li><strong>Atrybut Stały ekwipunku:</strong> Wszystkie przedmioty posiadają bazową ilość Power opartą na ich poziomie (Tierze). Im wyższy poziom przedmiotu, tym więcej punktów Mocy gwarantuje.</li>
-            <li><strong>Atrybut Rzadkości (Rarity):</strong> Dowolny przedmiot może otrzymać losowy, dodatkowy bonus do Power poprzez system rzadkości. Atrybut ten nie może się powtórzyć (niemożliwe jest posiadanie dwóch osobnych bonusów Power z rzadkości w jednym przedmiocie).</li>
+            <li><strong>Atrybut Rzadkości (Rarity):</strong> Dowolny przedmiot może otrzymać losowy, dodatkowy bonus do Power poprzez system rzadkości. Atrybut ten nie może się powtórzyć.</li>
             <li><strong>Daily Tasks (Misje codzienne):</strong> Po ukończeniu każdego zadania dziennego, postać otrzymuje stałą, określoną w skrypcie ilość Power.</li>
-            <li><strong>Boss Missions:</strong> Każdy ukończony etap w tym systemie przyznaje potężny zastrzyk dodatkowej Mocy, kumulując się z pozostałymi zyskami.</li>
-            <li><strong>System Sag (Saga):</strong> Punkty przyznawane są za ukończenie konkretnych misji fabularnych lub za całkowite domknięcie całych linii sag.</li>
+            <li><strong>Boss Missions:</strong> Każdy ukończony etap w tym systemie przyznaje potężny zastrzyk dodatkowej Mocy.</li>
+            <li><strong>System Sag (Saga):</strong> Punkty przyznawane są za ukończenie konkretnych misji fabularnych.</li>
             <li><strong>Posągi (Statues):</strong> Rozsiane w sekretnych miejscach na całej mapie. Każda odnaleziona i aktywowana przez gracza statua przyznaje permanentnie <strong>+30 Power</strong>.</li>
         </ul>
         
@@ -134,7 +137,7 @@
             <a href="statuet.html" class="wiki-btn">🗿 Zobacz Lokalizację Posągów</a>
         </div>
 
-        <blockquote style="background: #222; padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0;">
+        <blockquote style="background: rgba(0, 0, 0, 0.4); padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0; border-radius: 0 8px 8px 0;">
             <strong>Ważne Uwagi (Observações Importantes):</strong><br>
             • Całkowity poziom Power posiada maksymalny limit wynoszący <strong>500 000 punktów</strong>.<br>
             • Wizualne efekty shaderów nie kumulują się na postaci – postać zawsze będzie wyświetlać wyłącznie aurę przypisaną do najwyższego osiągniętego progu mocy.
