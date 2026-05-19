@@ -20,15 +20,30 @@
             margin-bottom: 10px;
         }
         .logo-wrapper { margin-bottom: 15px; }
+        
+        /* Styl dla wszystkich kafelków */
         .grid-container .tile {
             text-decoration: none !important;
             display: block;
             color: #fff !important;
         }
-        /* Styl dla wyróżnionego kafelka Postacie */
-        .char-tile-main {
-            border: 2px solid #ff9800 !important;
-            background: rgba(255, 152, 0, 0.1) !important;
+
+        /* Nowy styl dla jasnych kafelków Postacie i Spells */
+        .top-tile {
+            background: #f0f0f0 !important;
+            color: #000 !important;
+            border: 2px solid #ddd !important;
+            text-align: center;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            transition: 0.2s;
+        }
+        .top-tile:hover {
+            background: #e0e0e0 !important;
+            border-color: #bbb !important;
         }
     </style>
 </head>
@@ -44,10 +59,10 @@
         </p>
     </header>
 
-<section class="container">
+    <section class="container">
         <div class="grid-container" style="margin-bottom: 30px; grid-template-columns: repeat(2, 1fr);">
-            <a href="characters/characters.html" class="tile char-tile-main">Postacie</a>
-            <a href="spells/spells.html" class="tile spell-tile-main">Spells</a>
+            <a href="characters/characters.html" class="tile top-tile">Postacie</a>
+            <a href="spells/spells.html" class="tile top-tile">Spells</a>
         </div>
 
         <h2 style="text-align: center;">Systemy Gry</h2>
