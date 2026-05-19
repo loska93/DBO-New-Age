@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power System - WIKI</title>
+    <link rel="stylesheet" href="../style.css"> 
+    <style>
+        .content-wrapper {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #111;
+            color: #fff;
+            border-radius: 8px;
+            border: 1px solid #222;
+            font-family: sans-serif;
+            line-height: 1.6;
+        }
+        .back-btn {
+            display: inline-block;
+            background-color: #ff9800;
+            color: #000;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            transition: background-color 0.2s;
+        }
+        .back-btn:hover {
+            background-color: #e08600;
+        }
+        .wiki-btn {
+            display: inline-block;
+            background-color: #333;
+            color: #ff9800;
+            padding: 8px 15px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            border: 1px solid #ff9800;
+            transition: all 0.2s;
+            margin-top: 10px;
+        }
+        .wiki-btn:hover {
+            background-color: #ff9800;
+            color: #000;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            text-align: left;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 10px;
+        }
+        th {
+            background-color: #1e1e1e;
+        }
+        ul {
+            margin-bottom: 20px;
+        }
+        .wiki-img {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .wiki-img img {
+            border: 1px solid #333;
+            border-radius: 6px;
+            padding: 5px;
+            background-color: #0c0c0c;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-wrapper">
+        <a href="../index.html" class="back-btn">&larr; Powrót do Menu</a>
+
+        <h2>Power System (System Mocy)</h2>
+        <p>System Power zwiększa ogólną moc bojową (<em>poder de combate</em>) gracza, przyznając ekskluzywne i potężne bonusy wraz z jego postępem w grze. W zależności od wybranej profesji, Power wpływa bezpośrednio na zadawane obrażenia lub zdolności defensywne.</p>
+
+        <h3>Działanie według Klas:</h3>
+        <ul>
+            <li><strong>Klasy typu Tank:</strong> Otrzymują procentowy bonus do obrony, obliczany bezpośrednio na podstawie ich aktualnej wartości Power.</li>
+            <li><strong>Inne Klasy (DPS/Casterzy):</strong> Otrzymują procentowy bonus do obrażeń, zwiększając tym samym siłę wszystkich swoich umiejętności oraz ataków.</li>
+        </ul>
+
+        <h3>Obliczanie Bonusów:</h3>
+        <table>
+            <thead>
+                <tr style="background-color: #1e1e1e;">
+                    <th>Statystyka</th>
+                    <th>Przelicznik punktowy</th>
+                    <th>Maksymalny Limit Bonusów</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="color: #ff4d4d; font-weight: bold;">⚔️ Obrażenia (Dano)</td>
+                    <td><strong>+1% obrażeń</strong> na każde 5 000 Power</td>
+                    <td>Maksymalnie <strong>+100%</strong></td>
+                </tr>
+                <tr>
+                    <td style="color: #4da6ff; font-weight: bold;">🛡️ Obrona (Defesa)</td>
+                    <td><strong>+1% obrony</strong> na każde 10 000 Power</td>
+                    <td>Maksymalnie <strong>+50%</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Specjalne Shadery (Efekty Wizualne):</h3>
+        <p>Gdy gracz osiąga określone progi Mocy, jego strój (outfit) otrzymuje unikalną, animowaną aurę reprezentującą jego potęgę na serwerze:</p>
+        
+        <div class="wiki-img">
+            <img src="power-auras.png" alt="Prezentacja Shaderów i Aur Power System">
+        </div>
+
+        <h3>Jak zdobyć punkty Power?</h3>
+        <ul>
+            <li><strong>Atrybut Stały ekwipunku:</strong> Wszystkie przedmioty posiadają bazową ilość Power opartą na ich poziomie (Tierze). Im wyższy poziom przedmiotu, tym więcej punktów Mocy gwarantuje.</li>
+            <li><strong>Atrybut Rzadkości (Rarity):</strong> Dowolny przedmiot może otrzymać losowy, dodatkowy bonus do Power poprzez system rzadkości. Atrybut ten nie może się powtórzyć (niemożliwe jest posiadanie dwóch osobnych bonusów Power z rzadkości w jednym przedmiocie).</li>
+            <li><strong>Daily Tasks (Misje codzienne):</strong> Po ukończeniu każdego zadania dziennego, postać otrzymuje stałą, określoną w skrypcie ilość Power.</li>
+            <li><strong>Boss Missions:</strong> Każdy ukończony etap w tym systemie przyznaje potężny zastrzyk dodatkowej Mocy, kumulując się z pozostałymi zyskami.</li>
+            <li><strong>System Sag (Saga):</strong> Punkty przyznawane są za ukończenie konkretnych misji fabularnych lub za całkowite domknięcie całych linii sag.</li>
+            <li><strong>Posągi (Statues):</strong> Rozsiane w sekretnych miejscach na całej mapie. Każda odnaleziona i aktywowana przez gracza statua przyznaje permanentnie <strong>+30 Power</strong>.</li>
+        </ul>
+        
+        <div style="text-align: center; margin-bottom: 25px;">
+            <a href="statuet.html" class="wiki-btn">🗿 Zobacz Lokalizację Posągów</a>
+        </div>
+
+        <blockquote style="background: #222; padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0;">
+            <strong>Ważne Uwagi (Observações Importantes):</strong><br>
+            • Całkowity poziom Power posiada maksymalny limit wynoszący <strong>500 000 punktów</strong>.<br>
+            • Wizualne efekty shaderów nie kumulują się na postaci – postać zawsze będzie wyświetlać wyłącznie aurę przypisaną do najwyższego osiągniętego progu mocy.
+        </blockquote>
+    </div>
+
+</body>
+</html>
