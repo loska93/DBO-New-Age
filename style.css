@@ -1,14 +1,35 @@
+/* ==========================================================================
+   GLOBALNE USTAWIENIA OKNA PRZEGLĄDARKI (Wprowadzające centrowanie w pionie/poziomie)
+   ========================================================================== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #121212;
     color: #e0e0e0;
     margin: 0;
-    padding: 20px;
+    padding: 40px 20px; /* Bezpieczny wewnętrzny margines przy przewijaniu długich tekstów */
+    box-sizing: border-box;
+
+    /* Magia Flexboxa: Centruje całą zawartość strony idealnie na środku monitora */
+    display: flex;
+    flex-direction: column;   /* Układa elementy (header, container itp.) w pionie */
+    justify-content: center;  /* Centrowanie w pionie (w połączeniu z min-height) */
+    align-items: center;      /* Centrowanie w poziomie */
+    min-height: 100vh;        /* Wymusza, by wysokość body była równa wysokości ekranu */
 }
 
+/* Zabezpieczenie, aby wszystkie elementy poprawnie liczyły swoją szerokość */
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* ==========================================================================
+   NAGŁÓWEK I KONTENERY GŁÓWNE
+   ========================================================================== */
 header {
     text-align: center;
     margin-bottom: 40px;
+    width: 100%;
+    max-width: 1200px; /* Zgranie szerokości z siatką kafelków */
 }
 
 header h1 {
@@ -16,6 +37,7 @@ header h1 {
     font-size: 2.5rem;
     text-transform: uppercase;
     letter-spacing: 2px;
+    margin-top: 0;
 }
 
 header p {
@@ -23,12 +45,16 @@ header p {
     font-size: 1.1rem;
 }
 
+/* Główny kontener siatki menu */
 .container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Styl siatki kafelków (automatycznie dopasowuje się do ekranu) */
+/* ==========================================================================
+   SIATKA KAFELKÓW (MENU GŁÓWNE)
+   ========================================================================== */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -64,8 +90,14 @@ header p {
     display: none !important;
 }
 
-/* Styl okna z opisem systemu */
+/* ==========================================================================
+   PODSTRONY SYSTEMÓW & KONTENERY TEKSTOWE
+   ========================================================================== */
+
+/* Tradycyjne okno opisu wbudowane w stronę główną */
 .system-content {
+    width: 100%;
+    max-width: 1200px; /* Identyczna szerokość na równi z kafelkami */
     background-color: #1e1e1e;
     padding: 40px;
     border-radius: 8px;
@@ -88,8 +120,25 @@ header p {
     color: #ccc;
 }
 
-/* Przycisk powrotu do menu głównego */
-#back-btn {
+/* Dedykowany kontener dla podstron w folderze /systems/ */
+.content-wrapper {
+    width: 100%;
+    max-width: 1200px; /* WYRÓWNANIE: Dokładnie ta sama szerokość co siatka w menu */
+    background-color: #1e1e1e; /* Dopasowane do #1e1e1e z Twoich stylów */
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin: 0; /* Wyłączone, bo Flexbox na body odpowiada teraz za marginesy */
+}
+
+/* ==========================================================================
+   ELEMENTY INTERFEJSU (PRZYCISKI)
+   ========================================================================== */
+
+/* Przycisk powrotu na stronie głównej (#back-btn) oraz na podstronach (.back-btn) */
+#back-btn, .back-btn {
+    display: inline-block;
     background-color: #ff9800;
     color: #121212;
     border: none;
@@ -100,9 +149,11 @@ header p {
     border-radius: 5px;
     cursor: pointer;
     margin-bottom: 20px;
-    transition: background-color 0.2s ease;
+    text-decoration: none; /* Zapobiega podkreślaniu tekstu, jeśli użyto jako link <a> */
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    text-align: center;
 }
 
-#back-btn:hover {
+#back-btn:hover, .back-btn:hover {
     background-color: #e68a00;
 }
