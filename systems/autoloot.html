@@ -4,33 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>System AutoLoot - WIKI</title>
-    <link rel="stylesheet" href="../style.css"> 
+    
+    <link rel="stylesheet" href="../style.css?v=100"> 
+    
     <style>
+        /* Tło pobierane lokalnie z folderu 'systems' */
+        body {
+            background-image: url('background.png') !important;
+        }
+        
+        /* Usunięte stare kolory tła i obramowania, aby zadziałał efekt szkła z pliku CSS */
         .content-wrapper {
             max-width: 1125px;
             margin: 40px auto;
             padding: 30px;
-            background-color: #111;
-            color: #fff;
-            border-radius: 8px;
-            border: 1px solid #222;
-            font-family: sans-serif;
-            line-height: 1.6;
         }
-        .back-btn {
-            display: inline-block;
-            background-color: #ff9800;
-            color: #000;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            transition: background-color 0.2s;
-        }
-        .back-btn:hover {
-            background-color: #e08600;
-        }
+        
+        /* Stylizacja tabeli i elementów wewnętrznych pod nowy design */
         table {
             border-collapse: collapse;
             width: 100%;
@@ -38,11 +28,11 @@
             text-align: center;
         }
         th, td {
-            border: 1px solid #333;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 10px;
         }
         th {
-            background-color: #1e1e1e;
+            background-color: rgba(0, 0, 0, 0.4); /* Półprzezroczyste nagłówki tabeli */
         }
         ul {
             margin-bottom: 20px;
@@ -52,10 +42,10 @@
             margin: 20px 0;
         }
         .wiki-img img {
-            border: 1px solid #333;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 6px;
             padding: 5px;
-            background-color: #0c0c0c;
+            background-color: rgba(0, 0, 0, 0.5);
             max-width: 100%;
         }
     </style>
@@ -76,7 +66,7 @@
             <li><strong>Lista Zablokowanych Przedmiotów (Lista de Itens Bloqueados):</strong> Aby zapobiec automatycznemu zbieraniu określonych przedmiotów, kliknij na <strong>Otwórz listę przedmiotów (Abrir lista de itens)</strong>. Dodaj przedmioty, których nie chcesz zbierać na listę zablokowanych i kliknij na <strong>Save Changes</strong>, aby zapisać zmiany. Bez zapisania, zmiany nie zostaną zastosowane!</li>
         </ul>
 
-        <blockquote style="background: #222; padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0;">
+        <blockquote style="background: rgba(0, 0, 0, 0.4); padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0; border-radius: 0 8px 8px 0;">
             <strong>Ważna Uwaga:</strong><br>
             Zawsze gdy dodasz lub zmienisz przedmioty na liście zablokowanych, pamiętaj, aby kliknąć na <strong>Save Changes</strong>. W przeciwnym razie zmiany nie zostaną zastosowane.
         </blockquote>
