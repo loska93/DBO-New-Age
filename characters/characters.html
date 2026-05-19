@@ -2,33 +2,15 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Postacie - WIKI</title>
+    <title>Postacie - DBO New Age</title>
     <link rel="stylesheet" href="../style.css">
     <style>
-        html { scroll-behavior: smooth; } /* Płynne przewijanie */
-        
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            gap: 10px;
-            margin: 30px 0;
-        }
-        .char-tile {
-            background: #222;
-            border: 1px solid #444;
-            border-radius: 4px;
-            aspect-ratio: 1/1;
-            transition: 0.2s;
-        }
+        .chars-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 10px; margin-bottom: 40px; }
+        .char-tile { background: #1e1e1e; border: 2px solid #333; border-radius: 6px; aspect-ratio: 1/1; cursor: pointer; transition: 0.2s; }
         .char-tile:hover { border-color: #ff9800; transform: scale(1.05); }
-        .char-tile img { width: 100%; height: 100%; object-fit: cover; }
-
-        .char-desc {
-            padding: 20px;
-            background: #111;
-            border-bottom: 1px solid #222;
-            min-height: 200px;
-        }
+        .char-tile img { width: 100%; height: 100%; border-radius: 4px; object-fit: cover; }
+        .desc-box { display: none; background: rgba(0,0,0,0.85); padding: 25px; border-left: 4px solid #ff9800; margin-top: 20px; color: #fff; }
+        .desc-box.active { display: block; }
     </style>
 </head>
 <body>
@@ -36,20 +18,91 @@
     <a href="../index.html" class="back-btn">&larr; Powrót</a>
     <h2>Wybierz Postać</h2>
 
-    <div class="grid-container">
-        <a href="#goku" class="char-tile"><img src="avatars/goku.png" alt="Goku"></a>
-        <a href="#vegeta" class="char-tile"><img src="avatars/vegeta.png" alt="Vegeta"></a>
-        <a href="#gohan" class="char-tile"><img src="avatars/gohan.png" alt="Gohan"></a>
+    <div class="chars-grid">
+        <div class="char-tile" onclick="showChar('goku')"><img src="avatars/goku.png" alt="Goku"></div>
+        <div class="char-tile" onclick="showChar('vegeta')"><img src="avatars/vegeta.png" alt="Vegeta"></div>
+        <div class="char-tile" onclick="showChar('piccolo')"><img src="avatars/piccolo.png" alt="Piccolo"></div>
+        <div class="char-tile" onclick="showChar('c17')"><img src="avatars/c17.png" alt="C17"></div>
+        <div class="char-tile" onclick="showChar('trunks')"><img src="avatars/trunks.png" alt="Trunks"></div>
+        <div class="char-tile" onclick="showChar('cell')"><img src="avatars/cell.png" alt="Cell"></div>
+        <div class="char-tile" onclick="showChar('moro')"><img src="avatars/moro.png" alt="Moro"></div>
+        <div class="char-tile" onclick="showChar('bergamo')"><img src="avatars/bergamo.png" alt="Bergamo"></div>
+        <div class="char-tile" onclick="showChar('broly')"><img src="avatars/broly.png" alt="Broly"></div>
+        <div class="char-tile" onclick="showChar('c18')"><img src="avatars/c18.png" alt="C18"></div>
+        <div class="char-tile" onclick="showChar('uub')"><img src="avatars/uub.png" alt="Uub"></div>
+        <div class="char-tile" onclick="showChar('freeza')"><img src="avatars/freeza.png" alt="Freeza"></div>
+        <div class="char-tile" onclick="showChar('cooler')"><img src="avatars/cooler.png" alt="Cooler"></div>
+        <div class="char-tile" onclick="showChar('dende')"><img src="avatars/dende.png" alt="Dende"></div>
+        <div class="char-tile" onclick="showChar('tsuful')"><img src="avatars/tsuful.png" alt="Tsuful"></div>
+        <div class="char-tile" onclick="showChar('kuririn')"><img src="avatars/kuririn.png" alt="Kuririn"></div>
+        <div class="char-tile" onclick="showChar('kaioshin')"><img src="avatars/kaioshin.png" alt="Kaioshin"></div>
+        <div class="char-tile" onclick="showChar('janemba')"><img src="avatars/janemba.png" alt="Janemba"></div>
+        <div class="char-tile" onclick="showChar('tenshinhan')"><img src="avatars/tenshinhan.png" alt="Tenshinhan"></div>
+        <div class="char-tile" onclick="showChar('raditz')"><img src="avatars/raditz.png" alt="Raditz"></div>
+        <div class="char-tile" onclick="showChar('turles')"><img src="avatars/turles.png" alt="Turles"></div>
+        <div class="char-tile" onclick="showChar('gohan')"><img src="avatars/gohan.png" alt="Gohan"></div>
+        <div class="char-tile" onclick="showChar('gotenks')"><img src="avatars/gotenks.png" alt="Gotenks"></div>
+        <div class="char-tile" onclick="showChar('shenron')"><img src="avatars/shenron.png" alt="Shenron"></div>
+        <div class="char-tile" onclick="showChar('vegetto')"><img src="avatars/vegetto.png" alt="Vegetto"></div>
+        <div class="char-tile" onclick="showChar('tapion')"><img src="avatars/tapion.png" alt="Tapion"></div>
+        <div class="char-tile" onclick="showChar('kame')"><img src="avatars/kame.png" alt="Mestre Kame"></div>
+        <div class="char-tile" onclick="showChar('kagome')"><img src="avatars/kagome.png" alt="Kagome"></div>
+        <div class="char-tile" onclick="showChar('zaiko')"><img src="avatars/zaiko.png" alt="Zaiko"></div>
+        <div class="char-tile" onclick="showChar('bills')"><img src="avatars/bills.png" alt="Bills"></div>
+        <div class="char-tile" onclick="showChar('zamasu')"><img src="avatars/zamasu.png" alt="Zamasu"></div>
+        <div class="char-tile" onclick="showChar('goku_black')"><img src="avatars/goku_black.png" alt="Goku Black"></div>
+        <div class="char-tile" onclick="showChar('jiren')"><img src="avatars/jiren.png" alt="Jiren"></div>
+        <div class="char-tile" onclick="showChar('android21')"><img src="avatars/android21.png" alt="Android 21"></div>
+        <div class="char-tile" onclick="showChar('boo')"><img src="avatars/boo.png" alt="Boo"></div>
+        <div class="char-tile" onclick="showChar('chilled')"><img src="avatars/chilled.png" alt="Chilled"></div>
+        <div class="char-tile" onclick="showChar('king_vegeta')"><img src="avatars/king_vegeta.png" alt="King Vegeta"></div>
     </div>
 
-    <div id="goku" class="char-desc">
-        <h3>Goku</h3>
-        <p>Opis postaci Goku po polsku...</p>
-    </div>
-    <div id="vegeta" class="char-desc">
-        <h3>Vegeta</h3>
-        <p>Opis postaci Vegeta po polsku...</p>
-    </div>
+    <div id="goku" class="desc-box"><h3>Goku: Instinto Superior</h3><p>Zwiększa obrażenia o 10% przez 30s i pozwala uniknąć kolejnych 50 otrzymanych ataków.</p></div>
+    <div id="vegeta" class="desc-box"><h3>Vegeta: Frenesi</h3><p>Zwiększa obrażenia o 20% przez 30s, ale zużywa HP co sekundę działania efektu.</p></div>
+    <div id="piccolo" class="desc-box"><h3>Piccolo: Chobakuretsumaha</h3><p>Zwiększa HP o 80% na 30s oraz daje +20 do skilli obronnych tarczy.</p></div>
+    <div id="c17" class="desc-box"><h3>Android 17: Energy Barrier</h3><p>Pełna niewrażliwość na obrażenia przez 4s oraz odbicie wszystkich otrzymanych ataków.</p></div>
+    <div id="trunks" class="desc-box"><h3>Trunks: Flash Temporal</h3><p>Trunks zaznacza pozycję. Po 6s wraca do niej. Jeśli zginie w trakcie, teleportuje go do zaznaczonego punktu.</p></div>
+    <div id="cell" class="desc-box"><h3>Cell: Copy Ability</h3><p>Kopiuje zdolność specjalną innego gracza (wyjątki: Freeza, Chilled, Boo).</p></div>
+    <div id="moro" class="desc-box"><h3>Moro: Soul Harvest</h3><p>Drenuje HP w obszarze (2x2) co 0.5s. 35% obrażeń zamienia w manę, nadmiar tworzy tarczę energetyczną.</p></div>
+    <div id="bergamo" class="desc-box"><h3>Bergamo: Furious Wolf</h3><p>Zwiększa prędkość ruchu o 500 pkt na 20s. Przez pierwsze 4s pozostaje niewidzialny.</p></div>
+    <div id="broly" class="desc-box"><h3>Broly: Saiyan Berserk</h3><p>Zwiększa atak i obronę o 10%. Atakujący go przeciwnicy otrzymują debuff -10% do ataku i obrony.</p></div>
+    <div id="c18" class="desc-box"><h3>Android 18: Energy Boost</h3><p>Life Leech (leczenie 15% obrażeń) przez 20s. Atakujący przeciwnicy otrzymują debuff -10%.</p></div>
+    <div id="uub" class="desc-box"><h3>Uub: Transfiguration Beam</h3><p>Zamienia cel w czekoladę i unieruchamia na 2s.</p></div>
+    <div id="freeza" class="desc-box"><h3>Freeza: Divine Missile</h3><p>Atak w plecy stunuje na 3s. Atak z przodu paraliżuje na 2.5s.</p></div>
+    <div id="cooler" class="desc-box"><h3>Cooler: Toxic Rejuvenation</h3><p>Leczenie w czasie dla siebie i party w strefie działania toksyny przez 15s.</p></div>
+    <div id="dende" class="desc-box"><h3>Dende: Resurrection</h3><p>Jeśli sojusznik umrze w zaznaczonym obszarze (6s), zostanie wskrzeszony z pełnym HP.</p></div>
+    <div id="tsuful" class="desc-box"><h3>Tsuful: Body Manipulation</h3><p>Zamiana miejscami z celem, kradzież stroju na 15s i 2s niewrażliwości.</p></div>
+    <div id="kuririn" class="desc-box"><h3>Kuririn: Solar Flare</h3><p>Wszystkie postacie w obszarze 2x2 zostają uciszone (silenced) na 3s.</p></div>
+    <div id="kaioshin" class="desc-box"><h3>Kaioshin: Divinity Aura</h3><p>Obszar 4x4: Zwiększa obrażenia party o 15% na 15s.</p></div>
+    <div id="janemba" class="desc-box"><h3>Janemba: Perfect Distorcion</h3><p>Odwraca sterowanie przeciwnika na 3s (ruch w przeciwną stronę).</p></div>
+    <div id="tenshinhan" class="desc-box"><h3>Tenshinhan: Multi Form</h3><p>Tworzy 4 klony. Możliwość zamiany miejscami z jednym z nich.</p></div>
+    <div id="raditz" class="desc-box"><h3>Raditz: Begone</h3><p>Skok na cel i podrzucenie (Knock Up) na 2s.</p></div>
+    <div id="turles" class="desc-box"><h3>Turles: Power Fruit</h3><p>Tworzy owoc zwiększający HP o 30% i obronę przed technikami o 10% na 30s.</p></div>
+    <div id="gohan" class="desc-box"><h3>Gohan: Super Strength</h3><p>Zamiana w Oozaru: obrażenia melee x2, 20% ochrony, brak używania technik na 20s.</p></div>
+    <div id="gotenks" class="desc-box"><h3>Gotenks: Ghost Spectre</h3><p>Tworzy 3 goniące duszki, które wybuchają zadając obrażenia obszarowe.</p></div>
+    <div id="shenron" class="desc-box"><h3>Shenron: Dragonic Absorb</h3><p>50% obrażeń otrzymanych zamienianych jest w manę.</p></div>
+    <div id="vegetto" class="desc-box"><h3>Vegetto: Vegetto Blue</h3><p>Transformacja zwiększająca obrażenia o 20% na 20s.</p></div>
+    <div id="tapion" class="desc-box"><h3>Tapion: Melodic Enchantment</h3><p>Niewidzialność na 15s. Ataki w plecy celu zadają 50% obrażeń krytycznych ekstra.</p></div>
+    <div id="kame" class="desc-box"><h3>Mestre Kame: Energy Boost</h3><p>Obszar 4x4: Zwiększa prędkość i Ki o 30% na 15s. Ujawnia niewidzialnych przeciwników.</p></div>
+    <div id="kagome" class="desc-box"><h3>Kagome: Vital Transcendence</h3><p>25% otrzymanych obrażeń zmienia w regenerację HP przez 15s.</p></div>
+    <div id="zaiko" class="desc-box"><h3>Zaiko: Saikosai Fortress</h3><p>Zwiększa obronę o 20% na 20s.</p></div>
+    <div id="bills" class="desc-box"><h3>Bills: Divine Hakai</h3><p>Potężny cios zadający ogromne obrażenia i podrzucający (Knock Up) na 2s.</p></div>
+    <div id="zamasu" class="desc-box"><h3>Zamasu: Divinity Protection</h3><p>Obszar 4x4: Zmniejsza otrzymywane obrażenia sojuszników o 20% na 15s.</p></div>
+    <div id="goku_black" class="desc-box"><h3>Goku Black: Divine Black</h3><p>Niewidzialność na 5s, klon odciągający uwagę, zwiększenie ataku o 10%.</p></div>
+    <div id="jiren" class="desc-box"><h3>Jiren: Justice Strong</h3><p>+40% do ataku rękawicami na 15s. Atakujący go przeciwnicy tracą 10% obrony.</p></div>
+    <div id="android21" class="desc-box"><h3>Android 21: Molecular Mayhem</h3><p>Redukcja obrażeń o 15% i zmniejszenie obrony celu o 15% na 15s.</p></div>
+    <div id="boo" class="desc-box"><h3>Boo: Majin Immortality</h3><p>Pasywa: Po otrzymaniu śmiertelnego ciosu Boo regeneruje 30% HP na sekundę.</p></div>
+    <div id="chilled" class="desc-box"><h3>Chilled: Cold Precision</h3><p>Pasywa: Automatyczny reset cooldownu umiejętności Physics Razor (Paralyze) po 80s.</p></div>
+    <div id="king_vegeta" class="desc-box"><h3>King Vegeta: Royal Saiyan Pride</h3><p>Pasywa: Atak rośnie wraz z utratą HP. Pokonywanie wrogów daje bonusy do ataku na 60s.</p></div>
+
 </div>
+
+<script>
+    function showChar(id) {
+        document.querySelectorAll('.desc-box').forEach(box => box.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+    }
+</script>
 </body>
 </html>
