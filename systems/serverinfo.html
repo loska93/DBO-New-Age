@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informacje o Serwerze - WIKI</title>
+    <link rel="stylesheet" href="../style.css"> 
+    <style>
+        .content-wrapper {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #111;
+            color: #fff;
+            border-radius: 8px;
+            border: 1px solid #222;
+            font-family: sans-serif;
+            line-height: 1.6;
+        }
+        .back-btn {
+            display: inline-block;
+            background-color: #ff9800;
+            color: #000;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            transition: background-color 0.2s;
+        }
+        .back-btn:hover {
+            background-color: #e08600;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            text-align: left;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 10px;
+        }
+        th {
+            background-color: #1e1e1e;
+        }
+        ul {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-wrapper">
+        <a href="../index.html" class="back-btn">&larr; Powrót do Menu</a>
+
+        <h2>Informacje ogólne o Serwerze</h2>
+
+        <h3>System PK / Czaszki (Skulls):</h3>
+        <p>Zasady naliczania fragów oraz kary za nieuzasadnione zabijanie graczy prezentują się następująco:</p>
+        <table>
+            <thead>
+                <tr style="background-color: #1e1e1e;">
+                    <th>Typ Czaszki</th>
+                    <th>Limity Fragów (1 dzień / 7 dni / 30 dni)</th>
+                    <th>Czas Trwania</th>
+                    <th>Dodatkowe Kary po Śmierci</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="color: #ff4d4d; font-weight: bold;">🔴 Red Skull</td>
+                    <td>20 fragów / 140 fragów / 560 fragów</td>
+                    <td>2 dni</td>
+                    <td>Utrata ekwipunku (zależnie od ustawień serwera).</td>
+                </tr>
+                <tr>
+                    <td style="color: #000; font-weight: bold; background-color: #333; text-align: center;">⚫ Black Skull</td>
+                    <td>30 fragów / 210 fragów / 600 fragów</td>
+                    <td>6 dni</td>
+                    <td>Odrodzenie postaci z <strong>80% HP</strong> oraz <strong>0% Many</strong>.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Ochrony i Blokady czasowe (Locks):</h3>
+        <ul>
+            <li><strong>Protection Level (Ochrona nowicjusza):</strong> Trwa do poziomu 50. Po jego przekroczeniu postać może brać udział w walkach PvP.</li>
+            <li><strong>PZ Locked (Blokada strefy ochronnej):</strong> Wynosi 60 sekund po zaatakowaniu innego gracza.</li>
+            <li><strong>Hunting Duration (Czas walki z potworem):</strong> Wynosi 25 sekund.</li>
+            <li><strong>White Skull (Biała czaszka):</strong> Znika po upływie 10 minut od ostatniego agresywnego działania.</li>
+        </ul>
+
+        <h3>Zasady Ogólne:</h3>
+        <ul>
+            <li><strong>Multi-Client:</strong> Maksymalnie 2 postacie mogą być zalogowane w tym samym czasie z jednego konta.</li>
+            <li><strong>Gildie:</strong> Minimalny poziom postaci wymagany do stworzenia własnej gildii wynosi 100.</li>
+            <li><strong>Domy (Houses):</strong> Minimalny poziom postaci wymagany do zakupu domku wynosi 100.</li>
+        </ul>
+
+        <h3>Party i Wspólne Doświadczenie (Shared EXP):</h3>
+        <p>Aby dzielenie punktów doświadczenia w grupie działało prawidłowo, muszą zostać spełnione następujące kryteria:</p>
+        <ul>
+            <li><strong>Zasięg dzielenia (SQM):</strong> Maksymalnie 30 SQM-ów w osiach X/Y oraz różnica maksymalnie 1 piętra (Z) między członkami grupy.</li>
+            <li><strong>Maksymalna różnica poziomu:</strong> Różnica levela między najniższym a najwyższym poziomem w party nie może przekraczać 2/3 poziomu najwyższego gracza.</li>
+            <li><strong>Bonus doświadczenia w grupie:</strong> Wynosi <strong>+20%</strong> za każdego uczestniczącego członka drużyny.</li>
+            <li><strong>Limit bonusu:</strong> Skaluje się maksymalnie do 3 członków (co daje <strong>+60% EXP</strong>). Jeśli w party znajduje się więcej niż 3 graczy, bonus nadal jest naliczany, ale bierze pod uwagę tylko 3 członków.</li>
+            <li><strong>Minimalny czas aktywności:</strong> Każdy członek party musi brać aktywny udział w polowaniu przez minimum 2 minuty, aby kwalifikować się do podziału i bonusów.</li>
+        </ul>
+
+        <h3>Kara do EXP za Poziom Sugerowany potwora:</h3>
+        <p>Każdy potwór na serwerze posiada przypisany poziom sugerowany, wskazujący idealny przedział na efektywny hunt. Polowanie na potwory o zbyt niskim poziomie w stosunku do Twojego levela wiąże się z progresywną redukcją doświadczenia:</p>
+        
+        <table>
+            <thead>
+                <tr style="background-color: #1e1e1e;">
+                    <th>Różnica Poziomów</th>
+                    <th>Otrzymywane Doświadczenie (EXP)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Różnica do 99 poziomów</td><td><strong>100%</strong> (Doświadczenie normalne, bez żadnej kary)</td></tr>
+                <tr><td>Różnica od 100 do 199 poziomów</td><td><strong>50%</strong> (Doświadczenie zredukowane o połowę)</td></tr>
+                <tr><td>Różnica 200 poziomów lub więcej</td><td><strong>0%</strong> (Postać nie otrzymuje żadnego doświadczenia)</td></tr>
+            </tbody>
+        </table>
+
+        <blockquote style="background: #222; padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0;">
+            <strong>Przykład Działania Kary:</strong><br>
+            • Jeśli potwór ma sugerowany poziom 200, a Ty masz level 350 (różnica wynosi 150 poziomów), otrzymasz tylko 50% doświadczenia.<br>
+            • Jeśli z tym samym potworem będziesz walczyć na poziomie 400 lub wyższym (różnica 200+), nie otrzymasz za niego ani jednego punktu EXP.
+        </blockquote>
+    </div>
+
+</body>
+</html>
