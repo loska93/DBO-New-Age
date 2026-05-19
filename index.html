@@ -6,7 +6,7 @@
     <title>DBO New Age</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
+<style>
         body {
             background-image: url('background.png'); 
             background-position: center center;
@@ -21,23 +21,22 @@
         }
         .logo-wrapper { margin-bottom: 15px; }
         
-        /* Styl dla wszystkich kafelków */
-        .grid-container .tile {
+        /* Zapewniamy, że wszystkie kafelki są równe */
+        .tile {
             text-decoration: none !important;
-            display: block;
+            display: flex !important; /* Używamy flex do centrowania */
+            align-items: center;      /* W pionie */
+            justify-content: center;  /* W poziomie */
+            min-height: 100px;        /* Stała minimalna wysokość */
+            padding: 20px !important;
         }
 
         /* Specjalny styl dla jasnych kafelków */
         .top-tile {
             background: rgba(255, 255, 255, 0.7) !important;
             color: #000 !important;
-            text-align: center;
             font-weight: bold;
-            display: flex !important;
-            align-items: center;
-            justify-content: center;
             border-radius: 12px !important;
-            text-decoration: none !important;
             border: 1px solid rgba(255, 255, 255, 0.5) !important;
         }
 
@@ -47,10 +46,18 @@
             border-color: #fff !important;
         }
 
+        /* Ujednolicenie siatki */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+
         /* Zabezpieczenie mobilne */
         @media (max-width: 650px) {
             .top-nav-grid {
-                grid-template-columns: 1fr !important; /* Na telefonach 1 kolumna */
+                grid-template-columns: 1fr !important;
             }
         }
     </style>
