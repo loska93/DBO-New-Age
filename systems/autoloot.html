@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System AutoLoot - WIKI</title>
+    <link rel="stylesheet" href="../style.css"> 
+    <style>
+        .content-wrapper {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #111;
+            color: #fff;
+            border-radius: 8px;
+            border: 1px solid #222;
+            font-family: sans-serif;
+            line-height: 1.6;
+        }
+        .back-btn {
+            display: inline-block;
+            background-color: #ff9800;
+            color: #000;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            transition: background-color 0.2s;
+        }
+        .back-btn:hover {
+            background-color: #e08600;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 10px;
+        }
+        th {
+            background-color: #1e1e1e;
+        }
+        ul {
+            margin-bottom: 20px;
+        }
+        .wiki-img {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .wiki-img img {
+            border: 1px solid #333;
+            border-radius: 6px;
+            padding: 5px;
+            background-color: #0c0c0c;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-wrapper">
+        <a href="../index.html" class="back-btn">&larr; Powrót do Menu</a>
+
+        <h2>System AutoLoot</h2>
+        <p>AutoLoot automatycznie zbiera przedmioty, które dropią z potworów po ich zabiciu, wysyłając je bezpośrednio do Skrzyni AutoLoot (<em>Baú do AutoLoot</em>).</p>
+
+        <h3>Jak to działa:</h3>
+        <ul>
+            <li><strong>Automatyczne zbieranie:</strong> Po zabiciu stwora, przedmioty z dropu są zbierane automatycznie do Twojego okna AutoLoot.</li>
+            <li><strong>Wysyłka do depozytu:</strong> Po zgromadzeniu pożądanych przedmiotów, kliknij na <strong>Wyślij do depozytu (Enviar para o depósito)</strong>, aby je przetransferować. Istnieje czas oczekiwania (cooldown) na otrzymanie wysłanych przedmiotów, który może zostać zredukowany za pomocą Wydajności Energetycznej (Energy Efficiency).</li>
+            <li><strong>Zniszcz Przedmiot (Destroy Item):</strong> W przypadku gdy jakiś niechciany przedmiot zostanie zebrany, wystarczy kliknąć na przedmiot w interfejsie AutoLoot i wybrać opcję <em>Destroy Item</em>. Przedmiot zostanie usunięty bezpośrednio z plecaka AutoLoot.</li>
+            <li><strong>Lista Zablokowanych Przedmiotów (Lista de Itens Bloqueados):</strong> Aby zapobiec automatycznemu zbieraniu określonych przedmiotów, kliknij na <strong>Otwórz listę przedmiotów (Abrir lista de itens)</strong>. Dodaj przedmioty, których nie chcesz zbierać na listę zablokowanych i kliknij na <strong>Save Changes</strong>, aby zapisać zmiany. Bez zapisania, zmiany nie zostaną zastosowane!</li>
+        </ul>
+
+        <blockquote style="background: #222; padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0;">
+            <strong>Ważna Uwaga:</strong><br>
+            Zawsze gdy dodasz lub zmienisz przedmioty na liście zablokowanych, pamiętaj, aby kliknąć na <strong>Save Changes</strong>. W przeciwnym razie zmiany nie zostaną zastosowane.
+        </blockquote>
+
+        <h3>Filtr Rzadkich Przedmiotów:</h3>
+        <p>W lewym górnym rogu interfejsu AutoLoot znajduje się przycisk Filtru Rzadkich Przedmiotów (Filtro de Itens Raros). Kiedy jest <strong>Aktywowany (Ativado)</strong>, system zaczyna zbierać <u>tylko i wyłącznie</u> przedmioty z Rzadkościami (Raridades). Przedmioty łączone/podzielne (stackowalne) nadal są zbierane normalnie, niezależnie od rzadkości. <em>Filtr jest funkcją ekskluzywną dla Premium Account.</em></p>
+
+        <h3>Wydajność Energetyczna (Witaminy) / Energy Efficiency (Vitaminas):</h3>
+        <p>Witaminy są specjalnymi przedmiotami, które zwiększają energię do AutoLoot. Im większy poziom energii, tym mniejszy będzie czas oczekiwania między wysyłkami do depozytu. Witaminy można nabyć w Shopie.</p>
+
+        <div class="wiki-img">
+            <img src="vitamin.png" alt="Wydajność Energetyczna - Witaminy">
+        </div>
+
+        <h3>Ewolucja Witamin:</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Poziom</th>
+                    <th>Szansa na Sukces</th>
+                    <th>Wymagane Witaminy</th>
+                    <th>Czas Oczekiwania (Cooldown)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Poziom 0</td><td>—</td><td>—</td><td>20 min</td></tr>
+                <tr><td>Poziom 1</td><td>90%</td><td>2 witaminy</td><td>18 min</td></tr>
+                <tr><td>Poziom 2</td><td>70%</td><td>3 witaminy</td><td>15 min</td></tr>
+                <tr><td>Poziom 3</td><td>60%</td><td>4 witaminy</td><td>10 min</td></tr>
+                <tr><td>Poziom 4</td><td>50%</td><td>5 witamin</td><td>5 min</td></tr>
+                <tr><td>Poziom 5</td><td>40%</td><td>8 witamin</td><td>2 min (Maksimum)</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Sloty AutoLoot (Slots de AutoLoot):</h3>
+        <p>Każdy gracz zaczyna z <strong>12 slotami</strong> dostępnymi w systemie. Pojemność rozwija się wraz z postępem postaci:</p>
+        <ul>
+            <li>Co każde 10 poziomów, gracz zyskuje <strong>+1 slot dodatkowy</strong>.</li>
+            <li>Sloty ekstra mogą być także zdobyte przez bonusy, nagrody specjalne lub zakupione bezpośrednio w Shopie.</li>
+        </ul>
+
+        <p><strong>Przykład skalowania slotów z poziomu:</strong></p>
+        <ul>
+            <li>Level 10 &rarr; 13 slotów</li>
+            <li>Level 50 &rarr; 17 slotów</li>
+            <li>Level 100 &rarr; 22 sloty</li>
+            <li>Level 200 &rarr; 32 sloty</li>
+        </ul>
+        <p>Ponadto w Shopie możliwe jest nabycie ekstra slotów do AutoLoot, co pozwala jeszcze bardziej rozszerzyć pojemność systemu.</p>
+
+        <div class="wiki-img">
+            <img src="slot.png" alt="Sloty AutoLoot">
+        </div>
+
+        <p>Z witaminami, dodatkowymi slotami i Filtrem Rzadkich Przedmiotów, system AutoLoot staje się szybszy, wydajniejszy i w pełni personalizowalny dla każdego gracza.</p>
+    </div>
+
+</body>
+</html>
