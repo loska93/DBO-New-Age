@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Marketu i Sprzedaży Postaci - WIKI</title>
+    <link rel="stylesheet" href="../style.css"> 
+    <style>
+        .content-wrapper {
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #111;
+            color: #fff;
+            border-radius: 8px;
+            border: 1px solid #222;
+            font-family: sans-serif;
+            line-height: 1.6;
+        }
+        .back-btn {
+            display: inline-block;
+            background-color: #ff9800;
+            color: #000;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            transition: background-color 0.2s;
+        }
+        .back-btn:hover {
+            background-color: #e08600;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            text-align: left;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 10px;
+        }
+        th {
+            background-color: #1e1e1e;
+        }
+        ul {
+            margin-bottom: 20px;
+        }
+        .wiki-img {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .wiki-img img {
+            border: 1px solid #333;
+            border-radius: 6px;
+            padding: 5px;
+            background-color: #0c0c0c;
+            max-width: 100%;
+        }
+        .market-section {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #222;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-wrapper">
+        <a href="../index.html" class="back-btn">&larr; Powrót do Menu</a>
+
+        <h2>Globalny System Handlu (Market & Character Trade)</h2>
+        <p>Serwer oferuje zaawansowany, w pełni zautomatyzowany system ekonomiczny, który pozwala na wygodny handel przedmiotami oraz całymi postaciami między graczami. System działa asynchronicznie – żadna ze stron transakcji nie musi znajdować się w tym samym czasie w grze.</p>
+
+        <hr style="border: 0; border-top: 1px solid #333; margin: 25px 0;">
+
+        <div class="market-section">
+            <h3>🛍️ 1. Rynek Przedmiotów (Market)</h3>
+            <p>Umożliwia wystawianie ekwipunku i surowców na ogólnodostępną giełdę. Wszystko obsługiwane jest za pomocą intuicyjnego okna w grze podzielonego na trzy główne zakładki: <strong>Kup (Comprar)</strong>, <strong>Sprzedaj (Vender)</strong> oraz <strong>Historia (Histórico)</strong>.</p>
+            
+            <div class="wiki-img">
+                <img src="market-items.png" alt="Interfejs Marketu Przedmiotów">
+            </div>
+
+            <h4>Zasady i Opłaty Giełdowe:</h4>
+            <ul>
+                <li><strong>Podatek od wystawienia (Taxa):</strong> Przy tworzeniu oferty system pobiera kaucję/opłatę manipulacyjną wynoszącą <strong>10% wartości</strong> zdefiniowanej przez Ciebie ceny końcowej.</li>
+                <li><strong>Czas trwania oferty:</strong> Każdy przedmiot może znajdować się na Markecie przez maksymalnie <strong>48 godzin</strong>.</li>
+                <li><strong>Zwrot kaucji:</strong> Jeśli oferta wygaśnie naturalnie po 48 godzinach i nikt nie zakupi przedmiotu, pobrana opłata 10% jest <u>w całości zwracana</u> do Twojego banku.</li>
+                <li><strong>Ważne – ręczne anulowanie:</strong> Jeśli zdecydujesz się wycofać ofertę z rynku ręcznie przed upływem regulaminowych 48 godzin, wpłacona opłata manipulacyjna <strong>przepada i nie zostanie zwrócona</strong>.</li>
+                <li><strong>Przedmioty Unikalne (Unique Items):</strong> Ekwipunek posiadający status unikalny (przypisany do postaci lub ze specjalnymi właściwościami unikatowości) jest całkowicie zablokowany i nie może zostać wystawiony na rynek.</li>
+            </ul>
+
+            <h4>Limity Równoległych Ogłoszeń:</h4>
+            <table>
+                <thead>
+                    <tr style="background-color: #1e1e1e;">
+                        <th>Status Konta Gracza</th>
+                        <th>Maksymalna Ilość Ofert Jednocześnie</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>⭐ <strong>Premium Account (Konto PACC)</strong></td>
+                        <td>Do <strong>15 przedmiotów</strong> wystawionych w tym samym czasie</td>
+                    </tr>
+                    <tr>
+                        <td>👤 <strong>Free Account (Konto Darmowe)</strong></td>
+                        <td>Do <strong>8 przedmiotów</strong> wystawionych w tym samym czasie</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="market-section" style="border: none; margin-bottom: 0; padding-bottom: 0;">
+            <h3>👤 2. System Sprzedaży Postaci (Character Bazaar)</h3>
+            <p>Unikalna funkcja pozwalająca legalnie i bezpiecznie sprzedać swojego bohatera innemu graczowi za pośrednictwem rynku. Handlować można wyłącznie przy użyciu waluty <strong>Premium Points</strong>. Kupujący ma możliwość dokładnego prześwietlenia kupowanej postaci w specjalnym menu.</p>
+
+            <div class="wiki-img">
+                <img src="market-chars.png" alt="Interfejs Sprzedaży Postaci">
+            </div>
+
+            <h4>Jak działa Character Bazaar:</h4>
+            <ul>
+                <li><strong>Wylogowanie bohatera:</strong> W momencie zatwierdzenia oferty sprzedaży, postać zostaje natychmiastowo rozłączona z grą i zablokowana do momentu zakończenia aukcji. Ogłoszenie widnieje na rynku przez równe <strong>3 dni (72 godziny)</strong>.</li>
+                <li><strong>Transparentność (Podgląd):</strong> Inni gracze przeglądający rynek mogą sprawdzić pełną specyfikację bohatera:
+                    <ul>
+                        <li>Dokładny Poziom (Level) oraz całkowitą ilość punktów Mocy (Power).</li>
+                        <li>Kompletny, aktualnie założony na postaci ekwipunek (Equipment).</li>
+                        <li>Poziomy umiejętności (Skills) wraz z głównymi atrybutami bojowymi.</li>
+                    </ul>
+                </li>
+                <li><strong>Cena Minimalna:</strong> Najniższa dopuszczalna kwota, za jaką można wystawić postać na giełdę, wynosi <strong>750 Premium Points</strong>.</li>
+                <li><strong>Zasada Gildii:</strong> Postać wystawiana na sprzedaż <u>nie może</u> być członkiem żadnej gildii. Przed dodaniem ogłoszenia musisz ją opuścić.</li>
+            </ul>
+
+            <h4>Anulowanie Oferty i Kaucje:</h4>
+            <ul>
+                <li><strong>Zwrot za wygaśnięcie:</strong> Jeśli nikt nie kupi postaci w ciągu 3 dni, ogłoszenie wygasa automatycznie, postać wraca na konto, a opłata za wystawienie jest zwracana w 100%.</li>
+                <li><strong>Ręczne wycofanie postaci:</strong> Aby anulować sprzedaż przed upływem 3 dni, musisz zalogować się na <u>inną postać</u> na tym samym koncie, wejść do Marketu, wyszukać imię swojej wystawionej postaci i kliknąć przycisk <strong>X</strong>. Postać natychmiast wróci na listę wyboru, ale opłata startowa przepadnie.</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
