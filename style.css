@@ -1,5 +1,5 @@
 /* ==========================================================================
-   GLOBALNE USTAWIENIA OKNA PRZEGLĄDARKI
+   GLOBALNE USTAWIENIA
    ========================================================================== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -14,19 +14,12 @@ body {
     min-height: 100vh;        
 }
 
-*, *::before, *::after {
-    box-sizing: inherit;
-}
+*, *::before, *::after { box-sizing: inherit; }
 
 /* ==========================================================================
-   NAGŁÓWEK I KONTENERY GŁÓWNE
+   NAGŁÓWEK I KONTENERY
    ========================================================================== */
-header {
-    text-align: center;
-    margin-bottom: 40px;
-    width: 100%;
-    max-width: 900px;
-}
+header { text-align: center; margin-bottom: 40px; width: 100%; max-width: 900px; }
 
 header h1 {
     color: #ff9800; 
@@ -38,31 +31,22 @@ header h1 {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-.welcome-text {
-    font-size: 1.15rem;
-    line-height: 1.6;
-    color: #111111 !important; 
-    font-weight: 600; 
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.4), 
-                 0 0 8px rgba(255, 255, 255, 0.2);
-    max-width: 750px;
-    margin: 0 auto;
-}
+.container { width: 100%; max-width: 1200px; margin: 0 auto; }
 
-.welcome-text .highlight {
-    color: #ff9800 !important;
-    font-weight: 800;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-}
-
-.container {
+.content-wrapper {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1200px; 
+    background: rgba(0, 0, 0, 0.85) !important; 
+    backdrop-filter: blur(12px);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+    margin: 0 0 30px 0; 
 }
 
 /* ==========================================================================
-   SIATKA KAFELKÓW (MENU GŁÓWNE)
+   MENU GŁÓWNE (KAFELKI)
    ========================================================================== */
 .grid-container {
     display: grid;
@@ -70,9 +54,14 @@ header h1 {
     gap: 20px;
 }
 
+.top-nav-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 kafelki w rzędzie */
+}
+
+@media (max-width: 900px) { .top-nav-grid { grid-template-columns: repeat(2, 1fr); } }
+
 .tile {
     background: rgba(0, 0, 0, 0.65) !important; 
-    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.08) !important;
     border-radius: 12px !important;
@@ -85,27 +74,13 @@ header h1 {
     transition: all 0.4s ease;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
     color: #fff !important;
+    text-decoration: none;
 }
 
 .tile:hover {
     background: rgba(0, 0, 0, 0.75) !important;
     border-color: #ff9800 !important;
-    box-shadow: 0 5px 25px rgba(255, 152, 0, 0.25);
     transform: translateY(-5px);
-    color: #fff !important;
-}
-
-.content-wrapper {
-    width: 100%;
-    max-width: 1200px; 
-    background: rgba(0, 0, 0, 0.85) !important; 
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
-    padding: 40px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
-    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
-    margin: 0 0 30px 0; 
 }
 
 .back-btn {
@@ -119,17 +94,10 @@ header h1 {
     border: 1px solid #ff9800;
     transition: all 0.3s ease;
 }
-
-.back-btn:hover {
-    background: #ff9800;
-    color: #000;
-}
+.back-btn:hover { background: #ff9800; color: #000; }
 
 /* ==========================================================================
-   NOWA SEKCJA: GALERIA - UKŁAD PRECYZYJNY (GRID)
-   ========================================================================== */
-/* ==========================================================================
-   GALERIA - WERSJA POWIĘKSZONA (Finalna)
+   GALERIA ZDJĘĆ
    ========================================================================== */
 .gallery-container {
     display: grid;
@@ -147,7 +115,6 @@ header h1 {
 .item2 { grid-column: 2; grid-row: 1; }
 .item3 { grid-column: 3; grid-row: 1; }
 .item4 { grid-column: 4; grid-row: 1; }
-
 .item5 { grid-column: 2 / span 3; grid-row: 2; }
 
 .img-box { 
@@ -160,32 +127,18 @@ header h1 {
 }
 .img-box:hover { transform: scale(1.02); border-color: #fff; }
 
-.img-box img { 
-    width: 100%; 
-    height: 150px; 
-    object-fit: contain; 
-    display: block; 
-}
-
-.img-box p { 
-    font-size: 0.9rem; 
-    color: #fff; 
-    margin: 8px 0 0 0; 
-    font-weight: bold; 
-    text-transform: uppercase;
-}
+.img-box img { width: 100%; height: 150px; object-fit: contain; display: block; }
+.img-box p { font-size: 0.9rem; color: #fff; margin: 8px 0 0 0; font-weight: bold; text-transform: uppercase; }
 
 /* ==========================================================================
-   LIGHTBOX - POPRAWKA WYŚWIETLANIA (Z-INDEX 9999)
+   LIGHTBOX
    ========================================================================== */
 #lightbox {
     display: none; 
     position: fixed; 
     z-index: 9999; 
-    top: 0; 
-    left: 0; 
-    width: 100vw; 
-    height: 100vh;
+    top: 0; left: 0; 
+    width: 100vw; height: 100vh;
     background: rgba(0, 0, 0, 0.95); 
     justify-content: center; 
     align-items: center;
