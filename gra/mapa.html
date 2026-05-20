@@ -14,24 +14,16 @@
     <h2 style="text-align: center;">Mapa Świata</h2>
     
     <div style="text-align: center; margin-top: 20px;">
-        <img src="mapa.png" 
-             style="max-width: 100%; height: auto; border: 2px solid #ff9800; cursor: zoom-in; border-radius: 8px;" 
-             onclick="openLightbox('mapa.png')" 
-             alt="Mapa Świata">
-        <p style="margin-top: 10px; color: #aaa;">Kliknij mapę, aby otworzyć w pełnym rozmiarze.</p>
+        <a href="mapa.png" target="_blank" style="text-decoration: none;">
+            <img src="mapa.png" 
+                 style="max-width: 100%; height: auto; border: 2px solid #ff9800; cursor: pointer; border-radius: 8px;" 
+                 alt="Mapa Świata">
+            <p style="margin-top: 15px; color: #ff9800; font-weight: bold;">
+                KLIKNIJ, ABY OTWORZYĆ MAPĘ W NOWEJ KARCIE
+            </p>
+        </a>
     </div>
 </div>
-
-<div id="lightbox" onclick="this.style.display='none'">
-    <img id="lightbox-img" src="" alt="Powiększenie mapy">
-</div>
-
-<script>
-    function openLightbox(src) {
-        document.getElementById('lightbox-img').src = src;
-        document.getElementById('lightbox').style.display = 'flex';
-    }
-</script>
 
 </body>
 </html>
