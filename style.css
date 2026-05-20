@@ -46,7 +46,7 @@ header h1 {
 }
 
 /* ==========================================================================
-   MENU GŁÓWNE (KAFELKI)
+   MENU GŁÓWNE (KAFELKI) - POPRAWKA
    ========================================================================== */
 .grid-container {
     display: grid;
@@ -54,11 +54,14 @@ header h1 {
     gap: 20px;
 }
 
+/* Wymuszamy 4 kolumny dla sekcji z tą klasą */
 .top-nav-grid {
-    grid-template-columns: repeat(4, 1fr); /* 4 kafelki w rzędzie */
+    grid-template-columns: repeat(4, 1fr) !important; 
 }
 
-@media (max-width: 900px) { .top-nav-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) { 
+    .top-nav-grid { grid-template-columns: repeat(2, 1fr) !important; } 
+}
 
 .tile {
     background: rgba(0, 0, 0, 0.65) !important; 
