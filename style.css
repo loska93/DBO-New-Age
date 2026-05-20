@@ -128,30 +128,33 @@ header h1 {
 /* ==========================================================================
    NOWA SEKCJA: GALERIA - UKŁAD PRECYZYJNY (GRID)
    ========================================================================== */
+/* ==========================================================================
+   NOWA SEKCJA: GALERIA - WERSJA POWIĘKSZONA (O 50%)
+   ========================================================================== */
 .gallery-container {
     display: grid;
-    /* 1. kolumna: szeroka na 1.png, potem 3 równe kolumny dla reszty */
-    grid-template-columns: 350px 120px 120px 120px; 
+    /* Zwiększono szerokości o 50% */
+    grid-template-columns: 525px 180px 180px 180px; 
     grid-template-rows: auto auto;
-    gap: 10px;
+    gap: 15px; /* Zwiększony odstęp między kafelkami */
     justify-content: center;
-    max-width: 900px;
-    margin: 20px auto;
+    max-width: 1300px;
+    margin: 30px auto;
 }
 
-/* 1.png po lewej stronie, zajmuje oba wiersze */
+/* 1.png po lewej - teraz wyższe */
 .item1 { 
     grid-column: 1; 
     grid-row: 1 / span 2; 
 }
-.item1 img { height: 320px !important; }
+.item1 img { height: 480px !important; } /* Zwiększone z 320px */
 
-/* 2, 3, 4 w pierwszym wierszu po prawej */
+/* Kafelki 2, 3, 4 w pierwszym wierszu - większe */
 .item2 { grid-column: 2; grid-row: 1; }
 .item3 { grid-column: 3; grid-row: 1; }
 .item4 { grid-column: 4; grid-row: 1; }
 
-/* 5 na dole, pod 2, 3, 4 */
+/* 5 na dole - teraz szeroki na 540px (180*3) */
 .item5 { 
     grid-column: 2 / span 3; 
     grid-row: 2; 
@@ -159,16 +162,23 @@ header h1 {
 
 /* Wspólne dla wszystkich kafelków */
 .img-box { 
-    border: 1px solid #ff9800; 
-    padding: 5px; 
-    background: rgba(0,0,0,0.4); 
+    border: 2px solid #ff9800; /* Nieco grubsza ramka dla lepszego efektu */
+    padding: 8px; 
+    background: rgba(0,0,0,0.5); 
     text-align: center;
     cursor: pointer;
 }
 .img-box img { 
     width: 100%; 
-    height: 100px; 
+    height: 150px; /* Zwiększone z 100px */
     object-fit: contain; 
     display: block; 
+}
+.img-box p { 
+    font-size: 1.05rem; /* Zwiększona czcionka */
+    color: #fff; 
+    margin: 8px 0 0 0; 
+    font-weight: bold; 
+    text-transform: uppercase;
 }
 .img-box p { font-size: 0.7rem; color: #fff; margin: 5px 0 0 0; font-weight: bold; text-transform: uppercase; }
