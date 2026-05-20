@@ -111,9 +111,6 @@ header h1 {
     border-color: #fff !important;
 }
 
-/* ==========================================================================
-   PODSTRONY SYSTEMÓW & KONTENERY TEKSTOWE
-   ========================================================================== */
 .content-wrapper {
     width: 100%;
     max-width: 1200px; 
@@ -128,16 +125,15 @@ header h1 {
 }
 
 .back-btn {
-    position: fixed; /* Przycisk "przykleja się" do ekranu */
-    top: 20px;       /* Odległość od góry */
-    left: 20px;      /* Odległość od lewej strony */
-    z-index: 1000;   /* Zapewnia, że przycisk będzie nad innymi elementami */
+    display: inline-block;
+    margin-bottom: 20px; /* Odstęp od nagłówka */
     padding: 10px 20px;
     background: rgba(0, 0, 0, 0.6);
     color: white;
     text-decoration: none;
     border-radius: 5px;
     border: 1px solid #ff9800;
+    transition: all 0.3s ease;
 }
 
 .back-btn:hover {
