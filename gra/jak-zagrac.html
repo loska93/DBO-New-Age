@@ -23,31 +23,32 @@
     <h2 style="text-align: center;">Jak zagrać w DBO New Age?</h2>
     <p style="text-align: center;">Kliknij na dowolny obrazek, aby go powiększyć.</p>
 
-    <div class="gallery-container">
-        <div class="img-box" onclick="openLightbox('1.png')">
-            <img src="1.png" alt="Ekran Logowania">
-            <p>Ekran Logowania</p>
+<div class="gallery-container">
+    <div class="img-box main-left" onclick="openLightbox('1.png')">
+        <img src="1.png" alt="Ekran Logowania">
+        <p>Ekran Logowania</p>
+    </div>
+    
+    <div class="right-side">
+        <div class="img-box" onclick="openLightbox('2.png')">
+            <img src="2.png" alt="Tworzenie Konta">
+            <p>Tworzenie Konta</p>
+        </div>
+        <div class="img-box" onclick="openLightbox('3.png')">
+            <img src="3.png" alt="Zmiana Hasła">
+            <p>Zmiana Hasła</p>
+        </div>
+        <div class="img-box" onclick="openLightbox('4.png')">
+            <img src="4.png" alt="Odzyskiwanie">
+            <p>Odzyskiwanie</p>
         </div>
         
-        <div class="right-side">
-            <div class="img-box" onclick="openLightbox('2.png')">
-                <img src="2.png" alt="Tworzenie Konta">
-                <p>Tworzenie Konta</p>
-            </div>
-            <div class="img-box" onclick="openLightbox('3.png')">
-                <img src="3.png" alt="Zmiana Hasła">
-                <p>Zmiana Hasła</p>
-            </div>
-            <div class="img-box" onclick="openLightbox('4.png')">
-                <img src="4.png" alt="Odzyskiwanie">
-                <p>Odzyskiwanie</p>
-            </div>
-            <div class="img-box" onclick="openLightbox('5.png')" style="grid-column: span 3;">
-                <img src="5.png" alt="Wybór Postaci">
-                <p>Wybór Postaci</p>
-            </div>
+        <div class="img-box bottom-right" onclick="openLightbox('5.png')">
+            <img src="5.png" alt="Wybór Postaci">
+            <p>Wybór Postaci</p>
         </div>
     </div>
+</div>
 </div>
 
 <div id="lightbox" onclick="this.style.display='none'">
