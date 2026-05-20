@@ -127,25 +127,22 @@ header h1 {
     margin: 0 0 30px 0; 
 }
 
-#back-btn, .back-btn {
-    display: inline-block;
-    background-color: #ff9800;
-    color: #121212;
-    border: none;
-    padding: 12px 25px;
-    font-size: 1rem;
-    font-weight: bold;
-    text-transform: uppercase;
+.back-btn {
+    position: fixed; /* Przycisk "przykleja się" do ekranu */
+    top: 20px;       /* Odległość od góry */
+    left: 20px;      /* Odległość od lewej strony */
+    z-index: 1000;   /* Zapewnia, że przycisk będzie nad innymi elementami */
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-decoration: none;
     border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 20px;
-    text-decoration: none; 
-    transition: background-color 0.2s ease;
-    text-align: center;
+    border: 1px solid #ff9800;
 }
 
-#back-btn:hover, .back-btn:hover {
-    background-color: #e68a00;
+.back-btn:hover {
+    background: #ff9800;
+    color: #000;
 }
 
 /* ==========================================================================
