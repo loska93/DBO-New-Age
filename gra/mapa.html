@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Świata - DBO New Age</title>
+    <link rel="stylesheet" href="../style.css"> 
+</head>
+<body>
+
+<div class="content-wrapper">
+    <a href="../index.html" class="back-btn">&larr; Powrót do Menu</a>
+    
+    <h2 style="text-align: center;">Mapa Świata</h2>
+    
+    <div style="text-align: center; margin-top: 20px;">
+        <img src="mapa.png" 
+             style="max-width: 100%; height: auto; border: 2px solid #ff9800; cursor: zoom-in; border-radius: 8px;" 
+             onclick="openLightbox('mapa.png')" 
+             alt="Mapa Świata">
+        <p style="margin-top: 10px; color: #aaa;">Kliknij mapę, aby otworzyć w pełnym rozmiarze.</p>
+    </div>
+</div>
+
+<div id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" src="" alt="Powiększenie mapy">
+</div>
+
+<script>
+    function openLightbox(src) {
+        document.getElementById('lightbox-img').src = src;
+        document.getElementById('lightbox').style.display = 'flex';
+    }
+</script>
+
+</body>
+</html>
