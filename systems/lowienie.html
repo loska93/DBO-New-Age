@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Wędkowania - WIKI</title>
+    
+    <link rel="stylesheet" href="../style.css?v=100"> 
+    
+    <style>
+        body {
+            background-image: url('background.png') !important;
+            background-attachment: fixed !important;
+            background-position: center center !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+        }
+        
+        .content-wrapper {
+            max-width: 1125px;
+            margin: 40px auto;
+            padding: 30px;
+        }
+        
+        /* Stylizacja tabeli */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        th { background: rgba(255, 152, 0, 0.2); color: #ff9800; }
+        
+        .wiki-img {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .wiki-img img {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            padding: 5px;
+            background-color: rgba(0, 0, 0, 0.5);
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-wrapper">
+        <a href="../index.html" class="back-btn">&larr; Powrót do Menu</a>
+
+        <h2>System Wędkowania (Pesca)</h2>
+        <p>Wędkarstwo pozwala łowić różne potwory morskie i daje szansę na zdobycie rzadkich bossów.</p>
+        <ul>
+            <li>W obszarach początkowych masz szansę na złowienie bossa <strong>Oceanus Shenron</strong>.</li>
+            <li>Na wyższych poziomach pojawia się potężny <strong>King Crab</strong>.</li>
+            <li>Im wyższy poziom wędkarstwa, tym silniejsze potwory i lepsze nagrody.</li>
+        </ul>
+
+        <h3>Obszary połowów (Mapa)</h3>
+        <p>Obszary są dynamiczne (aktywne losowo przez 2–4 godziny). Aby je znaleźć:</p>
+        <ol>
+            <li>Naciśnij <strong>ALT + TAB</strong>, aby otworzyć mapę świata.</li>
+            <li>W prawym górnym rogu sprawdzisz liczbę aktywnych obszarów oraz czas do rotacji.</li>
+            <li>Kliknij nazwę obszaru (np. Obszar-1), aby mapa wskazała dokładną lokalizację.</li>
+        </ol>
+
+        <div class="wiki-img">
+            <img src="lowienie.png" alt="System Wędkowania">
+        </div>
+
+        <h3>Tabela połowów</h3>
+        <table>
+            <tr>
+                <th>Poziom</th>
+                <th>Potwory</th>
+                <th>Boss</th>
+            </tr>
+            <tr><td>0–24</td><td>Fish, Crocodile, Bluish Crab, Desert Crab, Sea Crab</td><td>Oceanus Shenron</td></tr>
+            <tr><td>25–50</td><td>Acqua, Akkuman</td><td>Oceanus Shenron</td></tr>
+            <tr><td>51–70</td><td>Acqua, Lobstron, Crustacor, Akkuman</td><td>King Crab</td></tr>
+            <tr><td>71–80</td><td>Polvoraith, Lobstron, Crustacor</td><td>King Crab</td></tr>
+            <tr><td>81–100</td><td>Polvoraith, Lobstron, Giant Crab</td><td>King Crab</td></tr>
+        </table>
+
+        <h3>Informacje dodatkowe</h3>
+        <ul>
+            <li><strong>Nagrody:</strong> Rzadka szansa na znalezienie Sfery Wymiarowej 7.</li>
+            <li><strong>Wymagania:</strong> Potrzebujesz Wędki i Przynęt (do nabycia u NPC Rybaka - Pesqueiro).</li>
+        </ul>
+
+        <blockquote style="background: rgba(0, 0, 0, 0.4); padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0; border-radius: 0 8px 8px 0;">
+            <strong>Ważne Uwagi:</strong><br>
+            - Złowione potwory znikają po 30 sekundach – bądź szybki!<br>
+            - Umiejętność Wędkowania rośnie automatycznie podczas łowienia.<br>
+            - Może istnieć do 4 aktywnych obszarów jednocześnie.
+        </blockquote>
+    </div>
+
+</body>
+</html>
