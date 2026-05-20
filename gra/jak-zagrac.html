@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jak zagrać? - DBO New Age</title>
+    <link rel="stylesheet" href="../style.css">
+    
+    <style>
+        /* Stylizacja galerii */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 15px;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .main-left {
+            grid-column: 1 / 2;
+            grid-row: 1 / 3;
+        }
+
+        .top-right {
+            grid-column: span 1;
+        }
+
+        .bottom-right {
+            grid-column: 2 / 5;
+        }
+
+        .gallery-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Ustawienia strony */
+        body { background-color: #0d0d0d; }
+    </style>
+</head>
+<body>
+
+    <div class="content-wrapper">
+        <a href="../index.html" class="back-btn">&larr; Powrót do Menu</a>
+
+        <h2 style="text-align: center;">Jak zacząć grę?</h2>
+        <p style="text-align: center;">Poniżej znajdziesz przewodnik graficzny, który przeprowadzi Cię przez pierwsze kroki w DBO New Age.</p>
+
+        <div class="gallery-container">
+            <div class="main-left"><img src="1.png" alt="Ekran logowania"></div>
+            <div class="top-right"><img src="2.jpg" alt="Tworzenie konta"></div>
+            <div class="top-right"><img src="3.jpg" alt="Zmiana hasła"></div>
+            <div class="top-right"><img src="4.jpg" alt="Odzyskiwanie"></div>
+            <div class="bottom-right"><img src="5.jpg" alt="Wybór postaci"></div>
+        </div>
+    </div>
+
+</body>
+</html>
