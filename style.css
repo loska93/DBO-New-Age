@@ -130,39 +130,45 @@ header h1 {
    ========================================================================== */
 .gallery-container {
     display: grid;
-    grid-template-columns: 300px 380px; /* Lewa kolumna stała, Prawa kolumna stała */
+    /* 1. kolumna: szeroka na 1.png, potem 3 równe kolumny dla reszty */
+    grid-template-columns: 350px 120px 120px 120px; 
+    grid-template-rows: auto auto;
     gap: 10px;
     justify-content: center;
+    max-width: 900px;
     margin: 20px auto;
 }
 
-/* Lewa strona - zdjęcie 1 */
-.main-left { grid-row: span 2; }
-.main-left img { width: 100%; height: 350px; object-fit: contain; border: 1px solid #ff9800; border-radius: 6px; }
+/* 1.png po lewej stronie, zajmuje oba wiersze */
+.item1 { 
+    grid-column: 1; 
+    grid-row: 1 / span 2; 
+}
+.item1 img { height: 320px !important; }
 
-/* Prawa strona - kontener na 2, 3, 4 i 5 */
-.right-side {
-    display: grid;
-    grid-template-rows: auto auto; /* Góra na 2,3,4 | Dół na 5 */
-    gap: 10px;
+/* 2, 3, 4 w pierwszym wierszu po prawej */
+.item2 { grid-column: 2; grid-row: 1; }
+.item3 { grid-column: 3; grid-row: 1; }
+.item4 { grid-column: 4; grid-row: 1; }
+
+/* 5 na dole, pod 2, 3, 4 */
+.item5 { 
+    grid-column: 2 / span 3; 
+    grid-row: 2; 
 }
 
-.top-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 równe kolumny */
-    gap: 10px;
-}
-
+/* Wspólne dla wszystkich kafelków */
 .img-box { 
-    cursor: pointer; 
-    text-align: center; 
+    border: 1px solid #ff9800; 
+    padding: 5px; 
     background: rgba(0,0,0,0.4); 
-    border: 1px solid #ff9800;
-    padding: 5px;
-    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
 }
-
-.img-box img { width: 100%; height: 100px; object-fit: contain; display: block; }
-.bottom-right img { height: 140px; }
-
+.img-box img { 
+    width: 100%; 
+    height: 100px; 
+    object-fit: contain; 
+    display: block; 
+}
 .img-box p { font-size: 0.7rem; color: #fff; margin: 5px 0 0 0; font-weight: bold; text-transform: uppercase; }
