@@ -146,13 +146,12 @@ header h1 {
     cursor: pointer; 
     text-align: center; 
     background: rgba(0,0,0,0.4); 
-    border-radius: 6px; /* Nieco mniejszy promień */
+    border-radius: 6px;
     border: 1px solid #ff9800;
-    padding: 3px; /* Drastycznie zmniejszony padding, aby usunąć pustą przestrzeń */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; /* Wyśrodkowanie w pionie */
+    padding: 2px;             /* Zmniejszamy odstęp do minimum */
+    display: inline-block;    /* Ramka będzie tak szeroka jak zdjęcie */
+    width: fit-content;       /* Ramka "dopasuje się" do rozmiaru zdjęcia */
+    margin: 0 auto;           /* Wyśrodkowanie w kolumnie */
 }
 
 /* Wymuszenie proporcji dla miniaturek -contain pokaże całe zdjęcie */
