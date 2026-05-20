@@ -163,21 +163,42 @@ header h1 {
    ========================================================================== */
 .gallery-container {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    /* 1. kolumna dla 1.png (duża), 2/3/4 kolumny dla prawej strony */
+    grid-template-columns: 1.5fr 1fr 1fr 1fr; 
     gap: 15px;
     margin: 20px auto;
 }
 
 .right-side {
+    grid-column: span 3; /* Prawa strona zajmuje pozostałe 3 kolumny */
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 równe kolumny dla 2, 3, 4 */
     gap: 10px;
 }
 
 .img-box { cursor: pointer; text-align: center; }
-.img-box img { width: 100%; border-radius: 8px; border: 1px solid #ff9800; transition: 0.3s; }
-.img-box img:hover { transform: scale(1.03); }
-.img-box p { font-size: 0.9rem; color: #fff; margin-top: 5px; font-weight: bold; }
+
+/* Wymuszenie jednakowych proporcji dla mniejszych zdjęć (2, 3, 4) */
+.right-side .img-box img { 
+    width: 100%; 
+    height: 150px; /* Stała wysokość dla 2, 3, 4 */
+    object-fit: cover; 
+    border-radius: 8px;
+    border: 1px solid #ff9800;
+}
+
+/* 1.png - ma być większy, więc ustawiamy mu większą wysokość */
+.main-left img {
+    width: 100%;
+    height: 320px; /* 1.png będzie znacznie wyższy */
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ff9800;
+}
+
+/* 5.png - szerokość 3 kolumn */
+.bottom-right { grid-column: span 3; }
+.bottom-right img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; border: 1px solid #ff9800; }
 
 /* Lightbox - powiększenie */
 #lightbox {
