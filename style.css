@@ -161,46 +161,55 @@ header h1 {
 /* ==========================================================================
    NOWA SEKCJA: GALERIA DLA "JAK ZAGRAĆ"
    ========================================================================== */
+/* ==========================================================================
+   NOWA SEKCJA: GALERIA DLA "JAK ZAGRAĆ" - MINIATURKI (CAŁE ZDJĘCIA)
+   ========================================================================== */
 .gallery-container {
     display: grid;
-    /* 1. kolumna dla 1.png (duża), 2/3/4 kolumny dla prawej strony */
-    grid-template-columns: 1.5fr 1fr 1fr 1fr; 
+    grid-template-columns: 1.5fr 3fr; /* Lewa 1.5 jednostki, Prawa 3 jednostki */
     gap: 15px;
     margin: 20px auto;
 }
 
 .right-side {
-    grid-column: span 3; /* Prawa strona zajmuje pozostałe 3 kolumny */
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* 3 równe kolumny dla 2, 3, 4 */
+    grid-template-columns: 1fr 1fr 1fr; /* 3 kolumny dla 2, 3, 4 */
     gap: 10px;
 }
 
-.img-box { cursor: pointer; text-align: center; }
+.img-box { 
+    cursor: pointer; 
+    text-align: center; 
+    background: rgba(0,0,0,0.3); /* Tło dla miniaturki, żeby było widać gdzie kończy się zdjęcie */
+    border-radius: 8px;
+    border: 1px solid #ff9800;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-/* Wymuszenie jednakowych proporcji dla mniejszych zdjęć (2, 3, 4) */
-.right-side .img-box img { 
+/* Ustawienie dla wszystkich zdjęć: contain zamiast cover */
+.img-box img { 
     width: 100%; 
-    height: 150px; /* Stała wysokość dla 2, 3, 4 */
-    object-fit: cover; 
-    border-radius: 8px;
-    border: 1px solid #ff9800;
+    height: 150px; /* Bazowa wysokość miniaturek */
+    object-fit: contain; /* Pokaże całe zdjęcie bez ucinania */
+    transition: 0.3s;
 }
 
-/* 1.png - ma być większy, więc ustawiamy mu większą wysokość */
+/* 1.png - powiększony, ale nadal contain */
 .main-left img {
-    width: 100%;
-    height: 220px; /* 1.png będzie znacznie wyższy */
-    object-fit: cover;
-    border-radius: 8px;
-    border: 1px solid #ff9800;
+    height: 310px; 
+    object-fit: contain;
 }
 
-/* 5.png - szerokość 3 kolumn */
+/* 5.png - szeroki na dole */
 .bottom-right { grid-column: span 3; }
-.bottom-right img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; border: 1px solid #ff9800; }
+.bottom-right img { height: 200px; object-fit: contain; }
 
-/* Lightbox - powiększenie */
+.img-box p { font-size: 0.9rem; color: #fff; margin: 5px 0 0 0; font-weight: bold; }
+
+/* Lightbox - powiększenie zostaje bez zmian */
 #lightbox {
     display: none; position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0,0,0,0.9); justify-content: center; align-items: center;
