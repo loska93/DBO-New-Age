@@ -85,7 +85,7 @@ header h1 {
     cursor: pointer;
     transition: all 0.4s ease;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
-    color: #fff !important; /* Domyślny biały napis */
+    color: #fff !important;
 }
 
 .tile:hover {
@@ -96,9 +96,6 @@ header h1 {
     color: #fff !important;
 }
 
-/* ==========================================================================
-   SPECJALNE KAFELKI NA GÓRZE (JASNE Z CZARNYM NAPISEM)
-   ========================================================================== */
 .top-tile {
     background: rgba(255, 255, 255, 0.7) !important;
     color: #000 !important;
@@ -126,7 +123,7 @@ header h1 {
 
 .back-btn {
     display: inline-block;
-    margin-bottom: 20px; /* Odstęp od nagłówka */
+    margin-bottom: 20px;
     padding: 10px 20px;
     background: rgba(0, 0, 0, 0.6);
     color: white;
@@ -141,10 +138,6 @@ header h1 {
     color: #000;
 }
 
-
-/* ==========================================================================
-   IKONY SPOŁECZNOŚCIOWE
-   ========================================================================== */
 .social-links {
     text-align: center;
     margin-top: 40px;
@@ -164,3 +157,31 @@ header h1 {
     color: #ff9800; 
     transform: scale(1.2); 
 }
+
+/* ==========================================================================
+   NOWA SEKCJA: GALERIA DLA "JAK ZAGRAĆ"
+   ========================================================================== */
+.gallery-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 15px;
+    margin: 20px auto;
+}
+
+.right-side {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.img-box { cursor: pointer; text-align: center; }
+.img-box img { width: 100%; border-radius: 8px; border: 1px solid #ff9800; transition: 0.3s; }
+.img-box img:hover { transform: scale(1.03); }
+.img-box p { font-size: 0.9rem; color: #fff; margin-top: 5px; font-weight: bold; }
+
+/* Lightbox - powiększenie */
+#lightbox {
+    display: none; position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9); justify-content: center; align-items: center;
+}
+#lightbox img { max-width: 90%; max-height: 80%; border: 3px solid #fff; border-radius: 4px; }
