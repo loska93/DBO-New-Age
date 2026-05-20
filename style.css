@@ -126,34 +126,31 @@ header h1 {
 }
 
 /* ==========================================================================
-   NOWA SEKCJA: GALERIA - ZWARTE KAFELKI (FLEXBOX)
+   NOWA SEKCJA: GALERIA - UKŁAD PRECYZYJNY (GRID)
    ========================================================================== */
 .gallery-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Wyśrodkowanie całości */
+    display: grid;
+    grid-template-columns: 300px 380px; /* Lewa kolumna stała, Prawa kolumna stała */
     gap: 10px;
+    justify-content: center;
     margin: 20px auto;
-    max-width: 900px; /* Ograniczenie szerokości, żeby się nie rozjeżdżało */
 }
 
-/* 1.png - lewa strona */
-.main-left {
-    flex: 0 0 300px; /* Stała szerokość */
-    cursor: pointer;
-}
-.main-left img { width: 100%; height: 250px; object-fit: contain; border: 1px solid #ff9800; border-radius: 6px; }
+/* Lewa strona - zdjęcie 1 */
+.main-left { grid-row: span 2; }
+.main-left img { width: 100%; height: 350px; object-fit: contain; border: 1px solid #ff9800; border-radius: 6px; }
 
-/* Grupa prawych kafelków */
+/* Prawa strona - kontener na 2, 3, 4 i 5 */
 .right-side {
-    display: flex;
-    flex-direction: column; /* Ustawia kafelki 2,3,4 w rzędzie, a 5 pod spodem */
-    gap: 5px;
+    display: grid;
+    grid-template-rows: auto auto; /* Góra na 2,3,4 | Dół na 5 */
+    gap: 10px;
 }
 
 .top-row {
-    display: flex; /* Kafelki 2,3,4 w jednej linii */
-    gap: 5px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 równe kolumny */
+    gap: 10px;
 }
 
 .img-box { 
@@ -161,15 +158,11 @@ header h1 {
     text-align: center; 
     background: rgba(0,0,0,0.4); 
     border: 1px solid #ff9800;
-    padding: 3px;
+    padding: 5px;
     border-radius: 6px;
-    width: 120px; /* Stała, mała szerokość */
 }
 
-.img-box img { width: 100%; height: 80px; object-fit: contain; display: block; }
+.img-box img { width: 100%; height: 100px; object-fit: contain; display: block; }
+.bottom-right img { height: 140px; }
 
-/* 5.png - szeroki na dole */
-.bottom-right { width: 370px; } /* Szerokość 3x kafelka + odstępy */
-.bottom-right img { height: 120px; object-fit: contain; }
-
-.img-box p { font-size: 0.7rem; color: #fff; margin: 3px 0 0 0; font-weight: bold; text-transform: uppercase; }
+.img-box p { font-size: 0.7rem; color: #fff; margin: 5px 0 0 0; font-weight: bold; text-transform: uppercase; }
