@@ -5,59 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jak zagrać? - DBO New Age</title>
     <link rel="stylesheet" href="../style.css">
-    
     <style>
-        /* Stylizacja galerii */
+        body {
+            background-image: url('../background.png') !important;
+            background-attachment: fixed !important;
+            background-position: center center !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+        }
+
+        /* Układ galerii zgodny z Twoim projektem */
         .gallery-container {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
             grid-template-rows: auto auto;
             gap: 15px;
-            max-width: 1200px;
-            margin: 20px auto;
+            margin-top: 20px;
         }
 
-        .main-left {
-            grid-column: 1 / 2;
-            grid-row: 1 / 3;
-        }
-
-        .top-right {
-            grid-column: span 1;
-        }
-
-        .bottom-right {
-            grid-column: 2 / 5;
-        }
+        .main-left { grid-column: 1 / 2; grid-row: 1 / 3; }
+        .top-right { grid-column: span 1; }
+        .bottom-right { grid-column: 2 / 5; }
 
         .gallery-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
         }
 
-        /* Ustawienia strony */
-        body { background-color: #0d0d0d; }
+        .gallery-container img:hover {
+            border-color: #ff9800;
+            transform: scale(1.02);
+        }
     </style>
 </head>
 <body>
 
-    <div class="content-wrapper">
-        <a href="../index.html" class="back-btn">&larr; Powrót do Menu</a>
+<div class="content-wrapper">
+    <a href="../index.html" class="back-btn">&larr; Powrót</a>
+    
+    <h2 style="text-align: center;">Jak zagrać w DBO New Age?</h2>
+    <p style="text-align: center;">Zapoznaj się z poniższym przewodnikiem, który pokaże Ci proces instalacji i rozpoczęcia przygody na naszym serwerze.</p>
 
-        <h2 style="text-align: center;">Jak zacząć grę?</h2>
-        <p style="text-align: center;">Poniżej znajdziesz przewodnik graficzny, który przeprowadzi Cię przez pierwsze kroki w DBO New Age.</p>
-
-        <div class="gallery-container">
-            <div class="main-left"><img src="1.png" alt="Ekran logowania"></div>
-            <div class="top-right"><img src="2.jpg" alt="Tworzenie konta"></div>
-            <div class="top-right"><img src="3.jpg" alt="Zmiana hasła"></div>
-            <div class="top-right"><img src="4.jpg" alt="Odzyskiwanie"></div>
-            <div class="bottom-right"><img src="5.jpg" alt="Wybór postaci"></div>
-        </div>
+    <div class="gallery-container">
+        <div class="main-left"><img src="1.png" alt="Instalacja"></div>
+        
+        <div class="top-right"><img src="2.jpg" alt="Konto"></div>
+        <div class="top-right"><img src="3.jpg" alt="Logowanie"></div>
+        <div class="top-right"><img src="4.jpg" alt="Konfiguracja"></div>
+        
+        <div class="bottom-right"><img src="5.jpg" alt="Start gry"></div>
     </div>
+</div>
 
 </body>
 </html>
