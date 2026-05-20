@@ -126,62 +126,70 @@ header h1 {
 }
 
 /* ==========================================================================
-   NOWA SEKCJA: GALERIA DLA "JAK ZAGRAĆ" - ZWARTE MINIATURKI (MNIEJSZE RAMKI)
+   GALERIA - ZWARTE KAFELKI (NAPRAWIONE I PRZYTULONE)
    ========================================================================== */
 .gallery-container {
     display: grid;
-    grid-template-columns: 1fr 3fr; /* Węższa lewa kolumna, szersza prawa */
-    gap: 10px; /* Jeszcze mniejsza przerwa między ramkami */
-    margin: 15px auto;
+    grid-template-columns: 1fr 3fr; 
+    gap: 8px; /* Mały odstęp między lewą a prawą stroną */
+    margin: 20px auto;
 }
 
 .right-side {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* 3 równe kolumny dla 2, 3, 4 */
-    gap: 8px; /* Mała przerwa między małymi zdjęciami */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 0px; /* PRZYTULONE: brak odstępu między kafelkami 2, 3, 4 */
 }
 
-/* Główne ustawienie dla ramki - zmniejszone puste miejsce (padding) */
 .img-box { 
     cursor: pointer; 
     text-align: center; 
     background: rgba(0,0,0,0.4); 
-    border-radius: 6px;
     border: 1px solid #ff9800;
-    padding: 2px;             /* Zmniejszamy odstęp do minimum */
-    display: inline-block;    /* Ramka będzie tak szeroka jak zdjęcie */
-    width: fit-content;       /* Ramka "dopasuje się" do rozmiaru zdjęcia */
-    margin: 0 auto;           /* Wyśrodkowanie w kolumnie */
-}
-
-/* Wymuszenie proporcji dla miniaturek -contain pokaże całe zdjęcie */
-.img-box img { 
-    width: 100%; 
-    height: 100px; /* Jeszcze mniejsza bazowa wysokość miniaturek dla 2,3,4 */
-    object-fit: contain; 
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     transition: 0.3s;
 }
 
-/* 1.png (Ekran Logowania) - mniejsza wysokość kontenera */
+.img-box:hover { border-color: #fff; background: rgba(0,0,0,0.6); }
+
+/* Obrazki w kafelkach - wszystkie w całości */
+.img-box img { 
+    width: 100%; 
+    height: 100px; 
+    object-fit: contain; 
+}
+
+/* 1.png (Lewy duży) */
 .main-left img {
-    height: 280px; /* Zmniejszono wysokość 1.png, aby pasował do nowego stylu */
+    height: 308px; /* 100+100+8 = 208 + padding/ramki = dopasowane do prawej strony */
+    width: 100%;
     object-fit: contain;
 }
 
-/* 5.png (Wybór Postaci) - mniejszy */
-.bottom-right { grid-column: span 3; }
-.bottom-right img { height: 130px; object-fit: contain; }
+/* 5.png (Dolny szeroki) */
+.bottom-right { 
+    grid-column: span 3; 
+    border-top: none; /* Łączy ramki */
+}
+.bottom-right img { 
+    height: 130px; 
+    width: 100%;
+    object-fit: contain; 
+}
 
-/* Zwarte podpisy */
 .img-box p { 
-    font-size: 0.8rem; /* Nieco mniejsza czcionka podpisu */
+    font-size: 0.75rem; 
     color: #fff; 
-    margin: 3px 0 0 0; /* Minimalny margines nad podpisem */
+    margin: 4px 0 0 0; 
     font-weight: bold; 
     text-transform: uppercase;
 }
 
-/* Lightbox - powiększenie zostaje bez zmian */
+/* Lightbox */
 #lightbox {
     display: none; position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0,0,0,0.9); justify-content: center; align-items: center;
