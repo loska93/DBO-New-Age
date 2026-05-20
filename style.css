@@ -190,7 +190,7 @@ header h1 {
 /* 1.png - ma być większy, więc ustawiamy mu większą wysokość */
 .main-left img {
     width: 100%;
-    height: 320px; /* 1.png będzie znacznie wyższy */
+    height: 220px; /* 1.png będzie znacznie wyższy */
     object-fit: cover;
     border-radius: 8px;
     border: 1px solid #ff9800;
