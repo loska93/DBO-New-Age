@@ -23,13 +23,22 @@
             padding: 30px;
         }
         
-        ul {
-            margin-bottom: 20px;
-            padding-left: 20px;
+        ul { margin-bottom: 20px; padding-left: 20px; }
+        li { margin-bottom: 8px; }
+
+        /* FIX DLA OBRAZKA SAGI */
+        .wiki-img {
+            text-align: center;
+            margin: 30px auto;
+            max-width: 600px; /* Obrazki przedmiotów są zazwyczaj mniejsze */
+            width: 100%;
         }
-        
-        li {
-            margin-bottom: 8px;
+        .wiki-img img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 152, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
         }
     </style>
 </head>
@@ -42,9 +51,11 @@
         <p>System Sag pozwala graczowi przeżyć na nowo legendarną historię uniwersum Dragon Ball poprzez serię sekwencyjnych misji fabularnych. Każda saga stawia przed nami zestaw konkretnych celów, a za ukończenie całej linii fabularnej przewidziane są potężne nagrody końcowe.</p>
 
         <h3>Jak uzyskać dostęp do Sagi:</h3>
-                <div class="wiki-img">
-            <img src="Saga.png" alt="Saga Orb Link">
+        
+        <div class="wiki-img">
+            <img src="saga.png" alt="Saga Orb Link">
         </div>
+
         <ul>
             <li><strong>Saga Orb Link:</strong> Po rozpoczęciu przygody na serwerze i otrzymaniu Zestawu Startowego (<em>Kit Inicial</em>), w Twoim ekwipunku pojawi się specjalny przedmiot o nazwie <strong>Saga Orb Link</strong>.</li>
             <li><strong>Uruchomienie interfejsu:</strong> Wystarczy kliknąć na ten przedmiot, aby na ekranie automatycznie wyświetliło się dedykowane okno z celami Twojej aktualnej sagi.</li>
