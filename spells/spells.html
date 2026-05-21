@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Spells - DBO New Age</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .spells-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        /* Dwa dolne kafelki zajmują więcej miejsca, żeby były wyśrodkowane */
+        .bottom-row {
+            grid-template-columns: repeat(2, 1fr);
+            max-width: 600px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content-wrapper">
+    <a href="../index.html" class="back-btn">&larr; Powrót do Menu</a>
+    <h2 style="text-align: center;">Wybierz kategorię zaklęć</h2>
+
+    <div class="spells-grid">
+        <a href="passives.html" class="tile">Passives</a>
+        <a href="regeneration.html" class="tile">Regeneration</a>
+        <a href="support.html" class="tile">Support</a>
+    </div>
+
+    <div class="spells-grid bottom-row">
+        <a href="single.html" class="tile">Single</a>
+        <a href="area.html" class="tile">Area</a>
+    </div>
+</div>
+
+</body>
+</html>
