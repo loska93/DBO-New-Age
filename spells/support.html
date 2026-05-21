@@ -2,19 +2,46 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support Spells - DBO New Age</title>
     <link rel="stylesheet" href="../style.css"> 
     <style>
-        body { background-image: url('../background.png') !important; background-attachment: fixed !important; background-size: cover !important; }
-        h2 { text-align: center; color: #fff; text-transform: uppercase; }
+        /* Spójny motyw tła */
+        body {
+            background-image: url('../background.png') !important;
+            background-attachment: fixed !important;
+            background-position: center center !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+        }
+
+        .content-wrapper {
+            max-width: 1125px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 8px;
+        }
+
+        h2 { text-align: center; color: #fff; text-transform: uppercase; margin-bottom: 30px; }
         h3 { color: #ff9800; border-bottom: 1px solid #ff9800; padding-bottom: 5px; margin-top: 30px; }
-        .description-box { background: rgba(0,0,0,0.3); padding: 10px; border-radius: 5px; margin-bottom: 15px; line-height: 1.4; }
-        .table-container { overflow-x: auto; margin-bottom: 30px; }
-        .node-table { width: 100%; border-collapse: collapse; background: rgba(0,0,0,0.4); font-size: 0.85em; }
-        .node-table th, .node-table td { padding: 8px; border: 1px solid #444; text-align: center; color: #fff; }
-        .node-table th { background: rgba(255, 152, 0, 0.2); color: #ff9800; }
         
-        /* Nowe style dla wyśrodkowania vocation-special */
+        .description-box { 
+            background: rgba(0,0,0,0.3); 
+            padding: 15px; 
+            border-radius: 5px; 
+            margin-bottom: 15px; 
+            border-left: 3px solid #ff9800; 
+            line-height: 1.4;
+        }
+
+        .table-container { overflow-x: auto; margin-bottom: 30px; }
+        
+        .node-table { width: 100%; border-collapse: collapse; background: rgba(0,0,0,0.4); font-size: 0.9em; }
+        .node-table th, .node-table td { padding: 12px; border: 1px solid rgba(255, 255, 255, 0.1); text-align: center; color: #fff; }
+        .node-table th { background: rgba(255, 152, 0, 0.2); color: #ff9800; text-transform: uppercase; }
+        tr:nth-child(even) { background-color: rgba(255, 255, 255, 0.03); }
+        
         .vocation-wrapper { text-align: center; }
         .vocation-link { display: inline-block; background: rgba(255, 152, 0, 0.2); color: #ff9800; padding: 10px 15px; border: 2px solid #ff9800; border-radius: 4px; text-decoration: none; font-weight: bold; margin-top: 10px; transition: background 0.3s; }
         .vocation-link:hover { background: rgba(255, 152, 0, 0.4); color: #fff; border-color: #fff; }
@@ -27,38 +54,38 @@
     <h2>Support Spells (Zaklęcia Wspierające)</h2>
 
     <h3>Sense</h3>
-    <p class="description-box">Opis: Rozszerza duchową percepcję, aby zlokalizować obecność innych pobliskich wojowników, ujawniając ich przybliżoną pozycję.</p>
+    <p class="description-box"><strong>Opis:</strong> Rozszerza duchową percepcję, aby zlokalizować obecność innych pobliskich wojowników, ujawniając ich przybliżoną pozycję.</p>
 
     <h3>Jump</h3>
-    <p class="description-box">Opis: Kanałuje Ki w nogach, aby wykonac potężny skok, pozwalający na wspinanie się po ścianach i pokonywanie wysokich przeszkód.</p>
+    <p class="description-box"><strong>Opis:</strong> Kanałuje Ki w nogach, aby wykonać potężny skok, pozwalający na wspinanie się po ścianach i pokonywanie wysokich przeszkód.</p>
 
     <h3>Skip</h3>
-    <p class="description-box">Opis: Wykorzystuje precyzyjną kontrolę Ki, aby pchnąć ciało pionowo, pozwalając na wchodzenie przez dziury i podwyższone przejścia.</p>
+    <p class="description-box"><strong>Opis:</strong> Wykorzystuje precyzyjną kontrolę Ki, aby pchnąć ciało pionowo, pozwalając na wchodzenie przez dziury i podwyższone przejścia.</p>
 
     <h3>Speed Up (Aktywna)</h3>
-    <p class="description-box">Opis: Tymczasowo zwiększa prędkość ruchu użytkownika, pozwalając na szybsze przemieszczanie się.</p>
+    <p class="description-box"><strong>Opis:</strong> Tymczasowo zwiększa prędkość ruchu użytkownika, pozwalając na szybsze przemieszczanie się.</p>
     <div class="table-container">
         <table class="node-table">
             <tr><th>Węzeł (Node)</th><th>Opis działania</th><th>Lv 1</th><th>Lv 2</th><th>Lv 3</th><th>Lv 4</th><th>Lv 5</th></tr>
-            <tr><td><strong>Velocity Surge</strong></td><td>Napędza przepływ Ki przez mięśnie, zwiększając prędkość ruchu o 215.</td><td>+233 Haste</td><td>+251 Haste</td><td>+269 Haste</td><td>+287 Haste</td><td>+305 Haste</td></tr>
-            <tr><td><strong>Flow Release</strong></td><td>Uwalnia zastój w przepływie energii, przełamując efekty paraliżu.</td><td>Cooldown -4%</td><td>Cooldown -8%</td><td>Cooldown -12%</td><td>Cooldown -16%</td><td>Cooldown -20%</td></tr>
-            <tr><td><strong>Mind Balance</strong></td><td>Równoważy mentalny przepływ Ki, oczyszczając efekt upojenia.</td><td>Cooldown -4%</td><td>Cooldown -8%</td><td>Cooldown -12%</td><td>Cooldown -16%</td><td>Cooldown -20%</td></tr>
-            <tr><td><strong>Reflex Overdrive</strong></td><td>Podnosi stan percepcji i refleksu, dając +2% szansy na unik.</td><td>+2.4% Dodge</td><td>+2.8% Dodge</td><td>+3.2% Dodge</td><td>+3.6% Dodge</td><td>+4.0% Dodge</td></tr>
-            <tr><td><strong>Temporal Acceleration</strong></td><td>Manipuluje przepływem czasu Ki, redukując ogólny czas odnowienia o 5%.</td><td>-6% cooldown</td><td>-7% cooldown</td><td>-8% cooldown</td><td>-9% cooldown</td><td>-10% cooldown</td></tr>
+            <tr><td><strong>Velocity Surge</strong></td><td>Bonus szybkości ruchu.</td><td>+233 Haste</td><td>+251 Haste</td><td>+269 Haste</td><td>+287 Haste</td><td>+305 Haste</td></tr>
+            <tr><td><strong>Flow Release</strong></td><td>Przełamanie paraliżu.</td><td>CD -4%</td><td>CD -8%</td><td>CD -12%</td><td>CD -16%</td><td>CD -20%</td></tr>
+            <tr><td><strong>Mind Balance</strong></td><td>Oczyszczenie z upojenia.</td><td>CD -4%</td><td>CD -8%</td><td>CD -12%</td><td>CD -16%</td><td>CD -20%</td></tr>
+            <tr><td><strong>Reflex Overdrive</strong></td><td>Bonus szansy na unik.</td><td>+2.4%</td><td>+2.8%</td><td>+3.2%</td><td>+3.6%</td><td>+4.0%</td></tr>
+            <tr><td><strong>Temporal Acceleration</strong></td><td>Redukcja ogólnego cooldownu.</td><td>-6%</td><td>-7%</td><td>-8%</td><td>-9%</td><td>-10%</td></tr>
         </table>
     </div>
 
     <h3>Ki Defense</h3>
-    <p class="description-box">Opis: Otacza ciało barierą z czystego Ki sprawiając, że otrzymywane obrażenia są absorbowane przez Ki zamiast przez życie przez 15 sekund.</p>
+    <p class="description-box"><strong>Opis:</strong> Otacza ciało barierą z czystego Ki sprawiając, że otrzymywane obrażenia są absorbowane przez Ki zamiast przez życie przez 15 sekund.</p>
 
     <h3>Vocation Special</h3>
     <div class="description-box vocation-wrapper">
-        Opis: Specjalne i unikalne techniki przypisane bezpośrednio do poszczególnych profesji oraz klas postaci w grze.<br>
+        Specjalne i unikalne techniki przypisane bezpośrednio do poszczególnych profesji oraz klas postaci w grze.<br>
         <a href="../characters/characters.html" class="vocation-link">ZOBACZ OPIS KLAS POSTACI &rarr;</a>
     </div>
 
     <h3>Flight Kubu</h3>
-    <p class="description-box">Opis: Wyzwala intensywny wybuch Ki, aby przeć do przodu z dużą prędkością, wykonując ekstremalnie szybki dash o dalekim zasięgu.</p>
+    <p class="description-box"><strong>Opis:</strong> Wyzwala intensywny wybuch Ki, aby przeć do przodu z dużą prędkością, wykonując ekstremalnie szybki dash o dalekim zasięgu.</p>
 
 </div>
 
