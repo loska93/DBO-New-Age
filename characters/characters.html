@@ -5,34 +5,18 @@
     <title>Postacie - DBO New Age</title>
     <link rel="stylesheet" href="../style.css">
     <style>
-        body {
-            background-image: url('../background.png') !important;
-            background-attachment: fixed !important;
-            background-position: center center !important;
-            background-size: cover !important;
-            background-repeat: no-repeat !important;
-        }
-
-        .chars-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 10px; margin-bottom: 40px; }
+        body { background-image: url('../background.png') !important; background-attachment: fixed !important; background-position: center center !important; background-size: cover !important; background-repeat: no-repeat !important; }
         
-        .char-tile { 
-            background: rgba(0,0,0,0.6); 
-            border: 2px solid #333; 
-            border-radius: 6px; 
-            aspect-ratio: 1/1; 
-            cursor: pointer; 
-            transition: 0.2s; 
-        }
+        .class-section { margin-bottom: 30px; border-bottom: 1px solid #333; padding-bottom: 20px; }
+        .chars-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 10px; margin-top: 10px; }
         
-        .char-tile:hover { border-color: #ff9800; transform: scale(1.05); }
-        
-        /* Klasa podświetlenia */
-        .char-tile.selected { border-color: #ff9800; box-shadow: 0 0 10px #ff9800; transform: scale(1.05); }
-        
-        .char-tile img { width: 100%; height: 100%; border-radius: 4px; object-fit: cover; }
+        .char-tile { background: rgba(0,0,0,0.6); border: 2px solid #333; border-radius: 6px; aspect-ratio: 1/1; cursor: pointer; transition: 0.2s; overflow: hidden; }
+        .char-tile:hover, .char-tile.selected { border-color: #ff9800; transform: scale(1.05); }
+        .char-tile img { width: 100%; height: 100%; object-fit: cover; }
         
         .desc-box { display: none; background: rgba(0,0,0,0.85); padding: 25px; border-left: 4px solid #ff9800; margin-top: 20px; color: #fff; border-radius: 0 8px 8px 0; }
         .desc-box.active { display: block; }
+        .class-title { color: #ff9800; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid #ff9800; display: inline-block; }
     </style>
 </head>
 <body>
@@ -40,85 +24,80 @@
     <a href="../index.html" class="back-btn">&larr; Powrót</a>
     <h2>Wybierz Postać</h2>
 
-    <div class="chars-grid">
-        <div class="char-tile" id="tile-goku" onclick="showChar('goku')"><img src="Goku.png" alt="Goku"></div>
-        <div class="char-tile" id="tile-vegeta" onclick="showChar('vegeta')"><img src="Vegeta.png" alt="Vegeta"></div>
-        <div class="char-tile" id="tile-piccolo" onclick="showChar('piccolo')"><img src="Piccolo.png" alt="Piccolo"></div>
-        <div class="char-tile" id="tile-c17" onclick="showChar('c17')"><img src="C17.png" alt="C17"></div>
-        <div class="char-tile" id="tile-trunks" onclick="showChar('trunks')"><img src="Trunks.png" alt="Trunks"></div>
-        <div class="char-tile" id="tile-cell" onclick="showChar('cell')"><img src="Cell.png" alt="Cell"></div>
-        <div class="char-tile" id="tile-moro" onclick="showChar('moro')"><img src="Moro.png" alt="Moro"></div>
-        <div class="char-tile" id="tile-bergamo" onclick="showChar('bergamo')"><img src="Bergamo.png" alt="Bergamo"></div>
-        <div class="char-tile" id="tile-broly" onclick="showChar('broly')"><img src="Brolly.png" alt="Broly"></div>
-        <div class="char-tile" id="tile-c18" onclick="showChar('c18')"><img src="C18.png" alt="C18"></div>
-        <div class="char-tile" id="tile-uub" onclick="showChar('uub')"><img src="Uub.png" alt="Uub"></div>
-        <div class="char-tile" id="tile-freeza" onclick="showChar('freeza')"><img src="Freeza.png" alt="Freeza"></div>
-        <div class="char-tile" id="tile-cooler" onclick="showChar('cooler')"><img src="Cooler.png" alt="Cooler"></div>
-        <div class="char-tile" id="tile-dende" onclick="showChar('dende')"><img src="Dende.png" alt="Dende"></div>
-        <div class="char-tile" id="tile-tsuful" onclick="showChar('tsuful')"><img src="Tsuful.png" alt="Tsuful"></div>
-        <div class="char-tile" id="tile-kuririn" onclick="showChar('kuririn')"><img src="Kuririn.png" alt="Kuririn"></div>
-        <div class="char-tile" id="tile-kaioshin" onclick="showChar('kaioshin')"><img src="Kaiohshin.png" alt="Kaioshin"></div>
-        <div class="char-tile" id="tile-janemba" onclick="showChar('janemba')"><img src="Janemba.png" alt="Janemba"></div>
-        <div class="char-tile" id="tile-tenshinhan" onclick="showChar('tenshinhan')"><img src="tenshinhan.png" alt="Tenshinhan"></div>
-        <div class="char-tile" id="tile-raditz" onclick="showChar('raditz')"><img src="Raditz.png" alt="Raditz"></div>
-        <div class="char-tile" id="tile-turles" onclick="showChar('turles')"><img src="Turles.png" alt="Turles"></div>
-        <div class="char-tile" id="tile-gohan" onclick="showChar('gohan')"><img src="Gohan.png" alt="Gohan"></div>
-        <div class="char-tile" id="tile-gotenks" onclick="showChar('gotenks')"><img src="gotenks.png" alt="Gotenks"></div>
-        <div class="char-tile" id="tile-shenron" onclick="showChar('shenron')"><img src="Shenron.png" alt="Shenron"></div>
-        <div class="char-tile" id="tile-vegetto" onclick="showChar('vegetto')"><img src="Vegetto.png" alt="Vegetto"></div>
-        <div class="char-tile" id="tile-tapion" onclick="showChar('tapion')"><img src="Tapion.png" alt="Tapion"></div>
-        <div class="char-tile" id="tile-kame" onclick="showChar('kame')"><img src="Kame.png" alt="Mestre Kame"></div>
-        <div class="char-tile" id="tile-kagome" onclick="showChar('kagome')"><img src="Kagome.png" alt="Kagome"></div>
-        <div class="char-tile" id="tile-zaiko" onclick="showChar('zaiko')"><img src="Zaiko.png" alt="Zaiko"></div>
-        <div class="char-tile" id="tile-bills" onclick="showChar('bills')"><img src="Bills.png" alt="Bills"></div>
-        <div class="char-tile" id="tile-zamasu" onclick="showChar('zamasu')"><img src="Zamasu.png" alt="Zamasu"></div>
-        <div class="char-tile" id="tile-goku_black" onclick="showChar('goku_black')"><img src="GokuBlack.png" alt="Goku Black"></div>
-        <div class="char-tile" id="tile-jiren" onclick="showChar('jiren')"><img src="Jiren.png" alt="Jiren"></div>
-        <div class="char-tile" id="tile-android21" onclick="showChar('android21')"><img src="C21.png" alt="Android 21"></div>
-        <div class="char-tile" id="tile-boo" onclick="showChar('boo')"><img src="Boo.png" alt="Boo"></div>
-        <div class="char-tile" id="tile-chilled" onclick="showChar('chilled')"><img src="Chilled.png" alt="Chilled"></div>
-        <div class="char-tile" id="tile-king_vegeta" onclick="showChar('king_vegeta')"><img src="KingVegeta.png" alt="King Vegeta"></div>
+    <div class="class-section">
+        <h3 class="class-title">DPS</h3>
+        <div class="chars-grid">
+            <div class="char-tile" id="tile-gohan" onclick="showChar('gohan')"><img src="Gohan.png" alt="Gohan"></div>
+            <div class="char-tile" id="tile-gotenks" onclick="showChar('gotenks')"><img src="gotenks.png" alt="Gotenks"></div>
+            <div class="char-tile" id="tile-goku" onclick="showChar('goku')"><img src="Goku.png" alt="Goku"></div>
+            <div class="char-tile" id="tile-vegeta" onclick="showChar('vegeta')"><img src="Vegeta.png" alt="Vegeta"></div>
+            <div class="char-tile" id="tile-c17" onclick="showChar('c17')"><img src="C17.png" alt="C17"></div>
+            <div class="char-tile" id="tile-trunks" onclick="showChar('trunks')"><img src="Trunks.png" alt="Trunks"></div>
+            <div class="char-tile" id="tile-bergamo" onclick="showChar('bergamo')"><img src="Bergamo.png" alt="Bergamo"></div>
+            <div class="char-tile" id="tile-c18" onclick="showChar('c18')"><img src="C18.png" alt="C18"></div>
+            <div class="char-tile" id="tile-uub" onclick="showChar('uub')"><img src="Uub.png" alt="Uub"></div>
+            <div class="char-tile" id="tile-tsuful" onclick="showChar('tsuful')"><img src="Tsuful.png" alt="Tsuful"></div>
+            <div class="char-tile" id="tile-kuririn" onclick="showChar('kuririn')"><img src="Kuririn.png" alt="Kuririn"></div>
+        </div>
     </div>
 
-    <div id="goku" class="desc-box"><h3>Goku: Instinto Superior</h3><p>Zwiększa obrażenia o 10% na 30 sekund i sprawia, że kolejne 50 otrzymanych ataków jest automatycznie unikanych.</p></div>
-    <div id="vegeta" class="desc-box"><h3>Vegeta: Frenesi</h3><p>Zwiększa obrażenia o 20% na 30 sekund, ale zużywa pewną ilość HP co sekundę, gdy efekt jest aktywny.</p></div>
-    <div id="piccolo" class="desc-box"><h3>Piccolo: Chobakuretsumaha Namekjin</h3><p>Zwiększa HP o 80% na 30 sekund i przyznaje +20 do skilla tarczy podczas trwania efektu.</p></div>
-    <div id="c17" class="desc-box"><h3>Android 17: Energy Barrier</h3><p>Staje się niewrażliwy na wszelkie obrażenia przez 4 sekundy i odbija w całości każde otrzymane obrażenie w tym czasie.</p></div>
-    <div id="trunks" class="desc-box"><h3>Trunks: Flash Temporal</h3><p>Trunks zaznacza pozycję podczas użycia Flash Temporal. Po 6 sekundach automatycznie powraca do zaznaczonego miejsca. Jeśli zginie w tym czasie, zostanie przeteleportowany z powrotem do pozycji zaznaczonej w momencie śmierci.</p></div>
-    <div id="cell" class="desc-box"><h3>Cell: Copy Ability</h3><p>Cell może kopiować zdolność specjalną innych postaci, z wyjątkiem Cella, Freezy, Chilleda i Boo.</p></div>
-    <div id="moro" class="desc-box"><h3>Moro: Soul Harvest</h3><p>Tworzy aurę energii na 10 sekund, zadając obrażenia obszarowe (2x2) co 0,5s. 35% obrażeń jest konwertowane w manę poprzez wysysanie z wrogów. Nadmiar many jest przekształcany w Energy Shield.</p></div>
-    <div id="bergamo" class="desc-box"><h3>Bergamo: Furious Wolf</h3><p>Bergamo zwiększa prędkość ruchu o 500 punktów na 20 sekund i staje się niewidzialny przez pierwsze 4 sekundy.</p></div>
-    <div id="broly" class="desc-box"><h3>Broly: Saiyan Berserk</h3><p>Broly otrzymuje 10% zwiększenia ataku i obrony. Wrogowie, którzy zaatakują go, gdy technika jest aktywna, otrzymają debuff -10% do ataku i obrony.</p></div>
-    <div id="c18" class="desc-box"><h3>Android 18: Energy Boost</h3><p>C18 otrzymuje efekt Life Leech na 20 sekund, lecząc 15% zadanych obrażeń. Wrogowie, którzy ją zaatakują w czasie trwania efektu, otrzymają debuff -10% do ataku i obrony.</p></div>
-    <div id="uub" class="desc-box"><h3>Uub: Transfiguration Beam</h3><p>Zamienia cel w czekoladę, unieruchamiając go na 2 sekundy.</p></div>
-    <div id="freeza" class="desc-box"><h3>Freeza: Divine Missile</h3><p>Trafienie wroga w plecy nakłada stun na 3 sekundy. Jeśli atak nie trafi w plecy, nakłada paralyze trwający 2,5 sekundy.</p></div>
-    <div id="cooler" class="desc-box"><h3>Cooler: Toxic Rejuvenation</h3><p>Przez 15 sekund ty i członkowie twojej party otrzymujecie ciągłe leczenie, pozostając w obszarze działania Toksyny.</p></div>
-    <div id="dende" class="desc-box"><h3>Dende: Resurrection</h3><p>Dende zaznacza wszystkich pobliskich sojuszników na 6 sekund. Jeśli sojusznik zginie będąc zaznaczonym, zostanie wskrzeszony z pełnym HP.</p></div>
-    <div id="tsuful" class="desc-box"><h3>Tsuful: Body Manipulation</h3><p>Tsuful zamienia się miejscami z celem, kradnąc jego strój (outfit) na 15 sekund i stając się niewrażliwym na 2 sekundy.</p></div>
-    <div id="kuririn" class="desc-box"><h3>Kuririn: Solar Flare</h3><p>W obszarze 2x2 wszyscy trafieni gracze zostaną uciszeni (silenced) na 3 sekundy.</p></div>
-    <div id="kaioshin" class="desc-box"><h3>Kaioshin: Divinity Aura</h3><p>W obszarze 4x4 Kaioshin uwalnia swoją aurę, przyznając 15% Damage wszystkim członkom party, w tym sobie, na 15 sekund.</p></div>
-    <div id="janemba" class="desc-box"><h3>Janemba: Perfect Distorcion</h3><p>Janemba rzuca zniekształcenie wymiarowe na cel, korumpując jego percepcję na 3 sekundy. W tym czasie ruchy są odwrócone, co sprawia, że cel porusza się w przeciwnym kierunku do wydanych komend.</p></div>
-    <div id="tenshinhan" class="desc-box"><h3>Tenshinhan: Multi Form</h3><p>Tenshinhan tworzy cztery identyczne klony. Po ponownym użyciu techniki losowo zamienia się miejscami z jednym z nich, myląc wroga i sprawiając, że cel zaczyna skupiać się na klonie.</p></div>
-    <div id="raditz" class="desc-box"><h3>Raditz: Begone</h3><p>Raditz skacze na wybraną pozycję, powodując uderzenie w obszarze 1x1. Trafieni wrogowie otrzymują obrażenia i są podrzucani w powietrze (Knock Up) na 2 sekundy.</p></div>
-    <div id="turles" class="desc-box"><h3>Turles: Create Power Fruit</h3><p>Turles tworzy Power Fruit. Po jego skonsumowaniu, HP zostaje zwiększone o 30%, a obrona przeciw technikom o 10% na 30 sekund.</p></div>
-    <div id="gohan" class="desc-box"><h3>Gohan: Super Strength</h3><p>Gohan zmienia się w Wielkiego Oozaru, podwajając swoje obrażenia melee na 20 sekund. Podczas transformacji otrzymuje 20% ochrony, jednak nie może używać technik.</p></div>
-    <div id="gotenks" class="desc-box"><h3>Gotenks: Ghost Spectre</h3><p>Gotenks tworzy 3 duchy, które ścigają cel, a po krótkim czasie wybuchają, zadając obrażenia obszarowe.</p></div>
-    <div id="shenron" class="desc-box"><h3>Shenron: Dragonic Absorb</h3><p>Gdy efekt jest aktywny, 50% otrzymanych obrażeń jest konwertowane w manę dzięki Smoczemu Błogosławieństwu.</p></div>
-    <div id="vegetto" class="desc-box"><h3>Vegetto: Vegetto Blue</h3><p>Vegetto zmienia się w Vegetto Blue, zwiększając swoje obrażenia o 20% na 20 sekund.</p></div>
-    <div id="tapion" class="desc-box"><h3>Tapion: Melodic Enchantment</h3><p>Tapion gra swoją melodię przez 15 sekund, stając się niewidzialnym i uciszonym na 2 sekundy. Gdy efekt jest aktywny, wszystkie obrażenia zadane w plecy celu nakładają trafienie krytyczne, zadając 50% dodatkowych obrażeń.</p></div>
-    <div id="kame" class="desc-box"><h3>Mestre Kame: Kame Energy Boost</h3><p>Kame uwalnia impuls energii w obszarze 4x4, zwiększając prędkość ruchu o 300 punktów i całkowite Ki o 30% dla wszystkich członków grupy, w tym siebie, na 15 sekund. Wszyscy trafieni niewidzialni wrogowie zostają natychmiast ujawnieni.</p></div>
-    <div id="kagome" class="desc-box"><h3>Kagome: Vital Transcendence</h3><p>Gdy Buff Witalny jest aktywny, 25% wszystkich otrzymanych obrażeń zostanie przekonwertowane w życie dla Kagome, zapewniając ciągłą regenerację przez 15 sekund.</p></div>
-    <div id="zaiko" class="desc-box"><h3>Zaiko: Saikosai Fortress</h3><p>Zwiększa obronę Zaiko o 20%, wzmacniając jego odporność na ataki przez 20 sekund.</p></div>
-    <div id="bills" class="desc-box"><h3>Bills: Divine Hakai</h3><p>Bills czaruje Hakai, wyprowadzając potężny cios, który zadaje masowe obrażenia celowi i podrzuca go w powietrze (Knock Up) na 2 sekundy.</p></div>
-    <div id="zamasu" class="desc-box"><h3>Zamasu: Divinity Protection</h3><p>Zamasu wzywa moc swojego Bóstwa w obszarze 4x4, otaczając wszystkich sojuszników świętą aurą, która redukuje otrzymywane obrażenia o 20% na 15 sekund. Efekt obejmuje również jego samego.</p></div>
-    <div id="goku_black" class="desc-box"><h3>Goku Black: Divine Black</h3><p>Goku Black staje się niewidzialny na 5 sekund i tworzy klona, który przyciąga wszystkie ataki. Jeśli klon zginie przed czasem, niewidzialność kończy się. W czasie trwania efektu obrażenia rosną o 10%.</p></div>
-    <div id="jiren" class="desc-box"><h3>Jiren: Justice Strong</h3><p>Jiren koncentruje swoją moc sprawiedliwości, zwiększając o 40% obrażenia swoich rękawic na 15 sekund. Gdy jest aktywny, każdy wróg atakujący Jirena będzie miał obronę zredukowaną o 10%.</p></div>
-    <div id="android21" class="desc-box"><h3>Android 21: Molecular Mayhem</h3><p>C21 zyskuje 15% redukcji obrażeń, a przy ataku redukuje obronę celu o 15% na 15 sekund.</p></div>
-    <div id="boo" class="desc-box"><h3>Boo: Majin Immortality (Pasywa)</h3><p>Regeneracja Majin: Po otrzymaniu śmiertelnego ciosu Boo wchodzi w stan unieruchomienia na kilka sekund i regeneruje się stopniowo, odzyskując 30% maksymalnego życia co sekundę, aż do powrotu do walki.</p></div>
-    <div id="chilled" class="desc-box"><h3>Chilled: Cold Precision (Pasywa)</h3><p>Chilled automatycznie resetuje cooldown umiejętności Physics Razor (Paralyze) po 80 sekundach.</p></div>
-    <div id="king_vegeta" class="desc-box"><h3>King Vegeta: Royal Saiyan Pride (Pasywa)</h3><p>Podczas wejścia w walkę i przy spadku życia poniżej 85%, King Vegeta uwalnia swoją królewską furię, zwiększając progresywnie moc ataku w miarę spadku zdrowia, osiągając do 20% dodatkowych obrażeń.</p><p>Ponadto, po pokonaniu stworzenia, King Vegeta wchodzi w stan podboju, otrzymując tymczasowe zwiększenie mocy na 60 sekund. Przy eliminacji potworów, jego obrażenia są zwiększone o 3%, natomiast przy eliminacji graczy, wzrost wynosi 6%.</p><p>Efekt można odnowić poprzez ponowne pokonanie stworzenia tego samego typu. W przypadku braku eliminacji w określonym czasie, bonus wygasa.</p></div>
+    <div class="class-section">
+        <h3 class="class-title">DPS PREMIUM</h3>
+        <div class="chars-grid">
+            <div class="char-tile" id="tile-moro" onclick="showChar('moro')"><img src="Moro.png" alt="Moro"></div>
+            <div class="char-tile" id="tile-shenron" onclick="showChar('shenron')"><img src="Shenron.png" alt="Shenron"></div>
+            <div class="char-tile" id="tile-vegetto" onclick="showChar('vegetto')"><img src="Vegetto.png" alt="Vegetto"></div>
+            <div class="char-tile" id="tile-tapion" onclick="showChar('tapion')"><img src="Tapion.png" alt="Tapion"></div>
+            <div class="char-tile" id="tile-king_vegeta" onclick="showChar('king_vegeta')"><img src="KingVegeta.png" alt="King Vegeta"></div>
+            <div class="char-tile" id="tile-jiren" onclick="showChar('jiren')"><img src="Jiren.png" alt="Jiren"></div>
+            <div class="char-tile" id="tile-bills" onclick="showChar('bills')"><img src="Bills.png" alt="Bills"></div>
+            <div class="char-tile" id="tile-goku_black" onclick="showChar('goku_black')"><img src="GokuBlack.png" alt="Goku Black"></div>
+        </div>
+    </div>
 
-</div>
+    <div class="class-section">
+        <h3 class="class-title">Tank</h3>
+        <div class="chars-grid">
+            <div class="char-tile" id="tile-raditz" onclick="showChar('raditz')"><img src="Raditz.png" alt="Raditz"></div>
+            <div class="char-tile" id="tile-turles" onclick="showChar('turles')"><img src="Turles.png" alt="Turles"></div>
+            <div class="char-tile" id="tile-piccolo" onclick="showChar('piccolo')"><img src="Piccolo.png" alt="Piccolo"></div>
+            <div class="char-tile" id="tile-cell" onclick="showChar('cell')"><img src="Cell.png" alt="Cell"></div>
+            <div class="char-tile" id="tile-boo" onclick="showChar('boo')"><img src="Boo.png" alt="Boo"></div>
+            <div class="char-tile" id="tile-broly" onclick="showChar('broly')"><img src="Brolly.png" alt="Broly"></div>
+        </div>
+    </div>
+
+    <div class="class-section">
+        <h3 class="class-title">Tank PREMIUM</h3>
+        <div class="chars-grid">
+            <div class="char-tile" id="tile-kagome" onclick="showChar('kagome')"><img src="Kagome.png" alt="Kagome"></div>
+            <div class="char-tile" id="tile-zaiko" onclick="showChar('zaiko')"><img src="Zaiko.png" alt="Zaiko"></div>
+            <div class="char-tile" id="tile-android21" onclick="showChar('android21')"><img src="C21.png" alt="Android 21"></div>
+        </div>
+    </div>
+
+    <div class="class-section">
+        <h3 class="class-title">Support</h3>
+        <div class="chars-grid">
+            <div class="char-tile" id="tile-freeza" onclick="showChar('freeza')"><img src="Freeza.png" alt="Freeza"></div>
+            <div class="char-tile" id="tile-cooler" onclick="showChar('cooler')"><img src="Cooler.png" alt="Cooler"></div>
+            <div class="char-tile" id="tile-dende" onclick="showChar('dende')"><img src="Dende.png" alt="Dende"></div>
+            <div class="char-tile" id="tile-kaioshin" onclick="showChar('kaioshin')"><img src="Kaiohshin.png" alt="Kaioshin"></div>
+            <div class="char-tile" id="tile-janemba" onclick="showChar('janemba')"><img src="Janemba.png" alt="Janemba"></div>
+            <div class="char-tile" id="tile-tenshinhan" onclick="showChar('tenshinhan')"><img src="tenshinhan.png" alt="Tenshinhan"></div>
+        </div>
+    </div>
+
+    <div class="class-section">
+        <h3 class="class-title">Support PREMIUM</h3>
+        <div class="chars-grid">
+            <div class="char-tile" id="tile-kame" onclick="showChar('kame')"><img src="Kame.png" alt="Mestre Kame"></div>
+            <div class="char-tile" id="tile-chilled" onclick="showChar('chilled')"><img src="Chilled.png" alt="Chilled"></div>
+            <div class="char-tile" id="tile-zamasu" onclick="showChar('zamasu')"><img src="Zamasu.png" alt="Zamasu"></div>
+        </div>
+    </div>
+
+    </div>
 
 <script>
     function showChar(id) {
