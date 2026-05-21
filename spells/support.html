@@ -13,8 +13,11 @@
         .node-table { width: 100%; border-collapse: collapse; background: rgba(0,0,0,0.4); font-size: 0.85em; }
         .node-table th, .node-table td { padding: 8px; border: 1px solid #444; text-align: center; color: #fff; }
         .node-table th { background: rgba(255, 152, 0, 0.2); color: #ff9800; }
-        .vocation-link { display: inline-block; background: rgba(255, 152, 0, 0.2); color: #ff9800; padding: 10px 15px; border: 1px solid #ff9800; border-radius: 4px; text-decoration: none; font-weight: bold; margin-top: 5px; transition: background 0.3s; }
-        .vocation-link:hover { background: rgba(255, 152, 0, 0.4); color: #fff; }
+        
+        /* Nowe style dla wyśrodkowania vocation-special */
+        .vocation-wrapper { text-align: center; }
+        .vocation-link { display: inline-block; background: rgba(255, 152, 0, 0.2); color: #ff9800; padding: 10px 15px; border: 2px solid #ff9800; border-radius: 4px; text-decoration: none; font-weight: bold; margin-top: 10px; transition: background 0.3s; }
+        .vocation-link:hover { background: rgba(255, 152, 0, 0.4); color: #fff; border-color: #fff; }
     </style>
 </head>
 <body>
@@ -48,14 +51,14 @@
     <h3>Ki Defense</h3>
     <p class="description-box">Opis: Otacza ciało barierą z czystego Ki sprawiając, że otrzymywane obrażenia są absorbowane przez Ki zamiast przez życie przez 15 sekund.</p>
 
+    <h3>Vocation Special</h3>
+    <div class="description-box vocation-wrapper">
+        Opis: Specjalne i unikalne techniki przypisane bezpośrednio do poszczególnych profesji oraz klas postaci w grze.<br>
+        <a href="../characters/characters.html" class="vocation-link">ZOBACZ OPIS KLAS POSTACI &rarr;</a>
+    </div>
+
     <h3>Flight Kubu</h3>
     <p class="description-box">Opis: Wyzwala intensywny wybuch Ki, aby przeć do przodu z dużą prędkością, wykonując ekstremalnie szybki dash o dalekim zasięgu.</p>
-
-    <h3>Vocation Special</h3>
-    <p class="description-box">
-        Opis: Specjalne i unikalne techniki przypisane bezpośrednio do poszczególnych profesji oraz klas postaci w grze.<br><br>
-        <a href="../characters/characters.html" class="vocation-link">Zobacz opis klas postaci &rarr;</a>
-    </p>
 
 </div>
 
