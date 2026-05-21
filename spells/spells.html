@@ -2,9 +2,20 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spells - DBO New Age</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style.css"> 
+    
     <style>
+        /* Tło pobierane lokalnie */
+        body {
+            background-image: url('background.png') !important;
+            background-attachment: fixed !important;
+            background-position: center center !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+        }
+        
         .spells-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -12,7 +23,7 @@
             max-width: 900px;
             margin: 0 auto;
         }
-        /* Dwa dolne kafelki zajmują więcej miejsca, żeby były wyśrodkowane */
+        
         .bottom-row {
             grid-template-columns: repeat(2, 1fr);
             max-width: 600px;
