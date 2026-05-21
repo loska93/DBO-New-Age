@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System Sag (Sagas) - WIKI</title>
-    
+    <title>Bossowie Chaos - WIKI</title>
     <link rel="stylesheet" href="../style.css?v=101"> 
     
     <style>
-        /* Tło zablokowane na stałe jako tapeta */
+        /* Spójny motyw tła */
         body {
             background-image: url('background.png') !important;
             background-attachment: fixed !important;
@@ -16,28 +15,55 @@
             background-size: cover !important;
             background-repeat: no-repeat !important;
         }
-        
+
         .content-wrapper {
             max-width: 1125px;
             margin: 40px auto;
             padding: 30px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 8px;
+        }
+
+        h2 { text-align: center; color: #fff; text-transform: uppercase; margin-bottom: 30px; }
+
+        .back-btn {
+            display: inline-block;
+            background-color: #ff9800;
+            color: #000;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 0.9em;
+            background: rgba(0,0,0,0.4);
         }
         
-        ul { margin-bottom: 20px; padding-left: 20px; }
-        li { margin-bottom: 8px; }
-
-        .wiki-img {
-            text-align: center;
-            margin: 20px auto;
-            max-width: 200px;
-            width: 100%;
+        th, td {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px;
         }
-        .wiki-img img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 152, 0, 0.3);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+        
+        th {
+            background-color: rgba(255, 152, 0, 0.2);
+            color: #ff9800;
+            text-transform: uppercase;
+        }
+        
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .essence-highlight {
+            color: #b77eff;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -46,50 +72,96 @@
     <div class="content-wrapper">
         <a href="../index.html" class="back-btn">&larr; Powrót do Menu</a>
 
-        <h2>System Sag (Sagas)</h2>
-        <p>System Sag pozwala graczowi przeżyć na nowo legendarną historię uniwersum Dragon Ball poprzez serię sekwencyjnych misji fabularnych. Każda saga stawia przed nami zestaw konkretnych celów, a za ukończenie całej linii fabularnej przewidziane są potężne nagrody końcowe.</p>
+        <h2>Bossowie Chaos</h2>
 
-        <h3>Jak uzyskać dostęp do Sagi:</h3>
-        
-        <div class="wiki-img">
-            <img src="saga.png" alt="Saga Orb Link">
-        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Przedział Poziomu</th>
+                    <th>Punkty Życia (HP)</th>
+                    <th>Poziom Przedmiotu (Item Lv)</th>
+                    <th>Bonus HP/Dmg</th>
+                    <th>Essence Drop</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>100 – 200</strong></td>
+                    <td>200 000 HP</td>
+                    <td>150 Item Level</td>
+                    <td style="color: #00e676; font-weight: bold;">100% (Bazowe)</td>
+                    <td class="essence-highlight">300 szt.</td>
+                </tr>
+                <tr>
+                    <td><strong>201 – 300</strong></td>
+                    <td>450 000 HP</td>
+                    <td>250 Item Level</td>
+                    <td style="color: #ffb300; font-weight: bold;">160%</td>
+                    <td class="essence-highlight">350 szt.</td>
+                </tr>
+                <tr>
+                    <td><strong>301 – 400</strong></td>
+                    <td>700 000 HP</td>
+                    <td>350 Item Level</td>
+                    <td style="color: #ff5252; font-weight: bold;">400%</td>
+                    <td class="essence-highlight">700 szt.</td>
+                </tr>
+                <tr>
+                    <td><strong>401+</strong></td>
+                    <td style="color: #ff4444; font-weight: bold;">1 200 000 HP</td>
+                    <td style="color: #ff9800; font-weight: bold;">450 Item Level</td>
+                    <td style="color: #ff5252; font-weight: bold;">550%</td>
+                    <td class="essence-highlight">1000 szt.</td>
+                </tr>
+            </tbody>
+        </table>
 
-        <ul>
-            <li><strong>Saga Orb Link:</strong> Po rozpoczęciu przygody na serwerze i otrzymaniu Zestawu Startowego (<em>Kit Inicial</em>), w Twoim ekwipunku pojawi się specjalny przedmiot o nazwie <strong>Saga Orb Link</strong>.</li>
-            <li><strong>Uruchomienie interfejsu:</strong> Wystarczy kliknąć na ten przedmiot, aby na ekranie automatycznie wyświetliło się dedykowane okno z celami Twojej aktualnej sagi.</li>
-        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nazwa Bossa</th>
+                    <th>Upuszczany Zestaw (Set Drop)</th>
+                    <th>Nawigacja na Mapie</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Mecha Wasp</strong></td>
+                    <td style="color: #00c851; font-weight: bold;">🟢 Emerald Set</td>
+                    <td>Pozycja w Wikipedia > B.Chaos</td>
+                </tr>
+                <tr>
+                    <td><strong>Undead Skeleton Royale</strong></td>
+                    <td style="color: #aaaaaa; font-weight: bold;">⚪ Bone Set</td>
+                    <td>Pozycja w Wikipedia > B.Chaos</td>
+                </tr>
+                <tr>
+                    <td><strong>Chaos Vegeta</strong></td>
+                    <td style="color: #ffbb33; font-weight: bold;">🟡 Golden Set</td>
+                    <td>Pozycja w Wikipedia > B.Chaos</td>
+                </tr>
+                <tr>
+                    <td><strong>Frozen Skeleton Warrior</strong></td>
+                    <td style="color: #33b5e5; font-weight: bold;">🔵 Crystal Set</td>
+                    <td>Pozycja w Wikipedia > B.Chaos</td>
+                </tr>
+                <tr>
+                    <td><strong>Dark Reaver</strong></td>
+                    <td style="color: #cc0000; font-weight: bold;">🔴 Daemon Set</td>
+                    <td>Pozycja w Wikipedia > B.Chaos</td>
+                </tr>
+                <tr>
+                    <td><strong>Deep Sea Plesiosaur</strong></td>
+                    <td style="color: #4da6ff; font-weight: bold;">🔵 Ocean Set</td>
+                    <td>Pozycja w Wikipedia > B.Chaos</td>
+                </tr>
+            </tbody>
+        </table>
 
-        <h3>Misje i Postęp fabularny:</h3>
-        <p>Każda saga składa się z wielu powiązanych ze sobą zadań, które należy wykonywać jedno po drugim (sekwencyjnie):</p>
-        <ul>
-            <li><strong>Podgląd postępu:</strong> Twój aktualny etap jest stale odzwierciedlany na specjalnym pasku wizualnym (np. <em>5/6 ukończonych misji</em>).</li>
-            <li><strong>Różnorodność celów:</strong> Zadania mogą polegać na pokonywaniu określonych przeciwników, prowadzeniu rozmów z NPC, zbieraniu rzadkich przedmiotów lub odkrywaniu nieznanych miejsc na mapie.</li>
-        </ul>
-
-        <h3>Nagrody za ukończenie Sag:</h3>
-        <p>Wraz z postępem w fabule i zamykaniem kolejnych rozdziałów, Twoja postać zyskuje bezcenne benefity:</p>
-        <ul>
-            <li><strong>Zeny:</strong> Pokaźne zastrzyki gotówki na rozwój postaci.</li>
-            <li><strong>Dodatkowy Power:</strong> Permanentne punkty zwiększające ogólną Moc bojową bohatera.</li>
-            <li><strong>Punkty Doświadczenia (EXP):</strong> Ogromne ilości doświadczenia pozwalające na szybszy awans poziomu.</li>
-            <li><strong>Unikalne Przedmioty:</strong> Ekskluzywny ekwipunek i przedmioty użytkowe dostępne wyłącznie z danej sagi.</li>
-            <li><strong>Nowa Zawartość:</strong> Dostęp do zablokowanych wcześniej, specjalnych obszarów mapy oraz instancji.</li>
-        </ul>
-
-        <h3>Pozycja w Wikipedia > B.Chaos</h3>
-        <p>Aby ułatwić odnajdywanie celów misji, na serwerze zaimplementowano inteligentny wskaźnik pozycji, który działa w dwóch trybach zależnie od Twojej odległości od celu:</p>
-        <ul>
-            <li><strong>Powyżej 80 SQM:</strong> Wskaźnik działa w trybie ogólnym i pokazuje jedynie główne kierunki świata: Północ (N), Południe (S), Wschód (E) lub Zachód (W).</li>
-            <li><strong>W obrębie 80 SQM:</strong> Gdy zbliżysz się do celu, system przełącza się w tryb precyzyjny i zaczyna pokazywać również kierunki skośne (diagonale), prowadząc Cię idealnie krok po kroku aż na samo miejsce.</li>
-        </ul>
-
-        <blockquote style="background: rgba(0, 0, 0, 0.4); padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0; border-radius: 0 8px 8px 0;">
+        <blockquote style="background: rgba(0, 0, 0, 0.4); padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0; border-radius: 0 8px 8px 0; color: #fff;">
             <strong>Ważne Uwagi (Observações Importantes):</strong><br>
-            • Postać może mieć w danym momencie aktywną tylko jedną sagę.<br>
-            • Niektóre misje posiadają wymagania wstępne, takie jak minimalny poziom postaci (Level).<br>
-            • Główne nagrody końcowe są przyznawane <u>wyłącznie</u> po ukończeniu sagi w 100%.<br>
-            • <strong>Zabezpieczenie przedmiotu:</strong> Jeśli zginiesz i stracisz swój plecak (bag), Twój <em>Saga Orb Link</em> nie przepadnie – zostanie automatycznie odesłany do Twojego depozytu (Depot).
+            • Ponieważ Potwory Chaosu pojawiają się niespodziewanie na losowych lokacjach, zawsze zachowuj czujność i pełne punkty życia podczas rutynowych huntów.<br>
+            • Zestawy odpornościowe (elementalne) są kluczowym elementem przygotowania postaci do najtrudniejszych rajdów i instancji PvE na serwerze.
         </blockquote>
     </div>
 
