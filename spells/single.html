@@ -7,10 +7,14 @@
     <style>
         body { background-image: url('../background.png') !important; background-attachment: fixed !important; background-size: cover !important; }
         h3 { color: #ff9800; border-bottom: 1px solid #ff9800; padding-bottom: 5px; margin-top: 30px; }
-        .node-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; background: rgba(0,0,0,0.4); }
-        .node-table th { background: rgba(255, 152, 0, 0.2); color: #ff9800; padding: 8px; border: 1px solid #444; }
-        .node-table td { padding: 8px; border: 1px solid #444; color: #fff; }
         .description-box { background: rgba(0,0,0,0.3); padding: 10px; border-radius: 5px; margin-bottom: 15px; }
+        
+        /* Kontener dla tabel, aby się nie rozjeżdżały */
+        .table-container { overflow-x: auto; margin-bottom: 30px; }
+        
+        .node-table { width: 100%; border-collapse: collapse; background: rgba(0,0,0,0.4); font-size: 0.9em; }
+        .node-table th, .node-table td { padding: 8px; border: 1px solid #444; text-align: center; color: #fff; }
+        .node-table th { background: rgba(255, 152, 0, 0.2); color: #ff9800; }
     </style>
 </head>
 <body>
@@ -19,33 +23,38 @@
     <a href="spells.html" class="back-btn">&larr; Powrót do kategorii</a>
     <h2>Single Target Spells</h2>
 
-    <h3>Ki Blast (Aktywna)</h3>
-    <p class="description-box">Opis: Szybki wystrzał energii w formie wielu pocisków.</p>
-    
-    <table class="node-table">
-        <tr><th>Węzeł (Node)</th><th>Opis działania</th><th>Efekty poziomów (Lv 1-5)</th></tr>
-        <tr><td>[1] Rapid Fire</td><td>Zwiększa obrażenia i dodaje strzał na maks. poziomie.</td><td>Lv 1: +6% | Lv 2: +12% | Lv 3: +18% | Lv 4: +24% i +1 strzał | Lv 5: +24% i +1 strzał</td></tr>
-        <tr><td>[2] Explosive Shot</td><td>Pociski wybuchają, zadając dmg obszarowy.</td><td>Lv 1: +7% | Lv 2: +14% | Lv 3: +21% | Lv 4: +28% i obszar | Lv 5: +35% i obszar</td></tr>
-        <tr><td>[3] Energy Transfer</td><td>Pociski rykoszetują między celami.</td><td>Lv 1: 1 cel/+6% | Lv 2: 1 cel/+12% | Lv 3: 2 cele/+12% | Lv 4: 3 cele/+12% | Lv 5: 4 cele/+12%</td></tr>
-        <tr><td>[4] Healing Shot</td><td>Konwertuje część dmg na leczenie użytkownika.</td><td>Lv 1: 7% | Lv 2: 9% | Lv 3: 11% | Lv 4: 13% | Lv 5: 15%</td></tr>
-    </table>
-
-    <h3>Energy Pulse (Aktywna)</h3>
-    <p class="description-box">Opis: Seria strzałów energetycznych w linii prostej.</p>
-    
-    <table class="node-table">
-        <tr><th>Węzeł (Node)</th><th>Opis działania</th><th>Efekty poziomów (Lv 1-5)</th></tr>
-        <tr><td>[1] Zenkai Instinct</td><td>Kradzież życia (life leech) – leczy zadając obrażenia.</td><td>Lv 1: +9% | Lv 2: +13% | Lv 3: +17% | Lv 4: +21% | Lv 5: +25%</td></tr>
-        <tr><td>[2] Renzoku Energy Burst</td><td>Zwiększa obrażenia każdego wystrzelonego pocisku.</td><td>Lv 1: +7% | Lv 2: +14% | Lv 3: +21% | Lv 4: +28% | Lv 5: +35%</td></tr>
-        <tr><td>[3] Makosen Wave</td><td>Zwiększa dmg; na maks. poziomie przebija wrogów.</td><td>Lv 1: +6% | Lv 2: +12% | Lv 3: +18% | Lv 4: +24% | Lv 5: +24% + przebicie (50%)</td></tr>
-        <tr><td>[4] Spirit Surge</td><td>Zwiększa obrażenia i szansę na cios krytyczny.</td><td>Lv 1: +6% dmg, 8% kryt | Lv 2: +12% dmg, 11% kryt | Lv 3: +18% dmg, 14% kryt | Lv 4: +24% dmg, 17% kryt | Lv 5: +30% dmg, 20% kryt</td></tr>
-    </table>
-
     <h3>Energy Blast (Uderzenie Energii)</h3>
     <p class="description-box">Opis: Wystrzeliwuje dwie szybkie serie Ki w kierunku celu, zadając obrażenia energetyczne w sekwencji.</p>
 
     <h3>Generic Ki Blast (Standardowy Wystrzał Ki)</h3>
     <p class="description-box">Opis: Wypuszcza trzy następujące po sobie serie Ki w stronę celu, zwiększając presję ofensywną i całkowite obrażenia.</p>
+
+    <h3>Ki Blast (Aktywna)</h3>
+    <p class="description-box">Opis: Szybki wystrzał energii w formie wielu pocisków.</p>
+    
+    <div class="table-container">
+        <table class="node-table">
+            <tr><th>Węzeł (Node)</th><th>Opis działania</th><th>Lv 1</th><th>Lv 2</th><th>Lv 3</th><th>Lv 4</th><th>Lv 5</th></tr>
+            <tr><td><strong>Rapid Fire</strong></td><td>Zwiększa dmg i dodaje strzał.</td><td>+6%</td><td>+12%</td><td>+18%</td><td>+24% (+1 strzał)</td><td>+24% (+1 strzał)</td></tr>
+            <tr><td><strong>Explosive Shot</strong></td><td>Pociski wybuchają (dmg obszarowy).</td><td>+7%</td><td>+14%</td><td>+21%</td><td>+28% + obszar</td><td>+35% + obszar</td></tr>
+            <tr><td><strong>Energy Transfer</strong></td><td>Rykoszet między celami.</td><td>1 cel / +6%</td><td>1 cel / +12%</td><td>2 cele / +12%</td><td>3 cele / +12%</td><td>4 cele / +12%</td></tr>
+            <tr><td><strong>Healing Shot</strong></td><td>Konwersja dmg na leczenie.</td><td>7%</td><td>9%</td><td>11%</td><td>13%</td><td>15%</td></tr>
+        </table>
+    </div>
+
+    <h3>Energy Pulse (Aktywna)</h3>
+    <p class="description-box">Opis: Seria strzałów energetycznych w linii prostej.</p>
+    
+    <div class="table-container">
+        <table class="node-table">
+            <tr><th>Węzeł (Node)</th><th>Opis działania</th><th>Lv 1</th><th>Lv 2</th><th>Lv 3</th><th>Lv 4</th><th>Lv 5</th></tr>
+            <tr><td><strong>Zenkai Instinct</strong></td><td>Kradzież życia (leczy dmg).</td><td>+9%</td><td>+13%</td><td>+17%</td><td>+21%</td><td>+25%</td></tr>
+            <tr><td><strong>Renzoku Burst</strong></td><td>Zwiększa dmg pocisków.</td><td>+7%</td><td>+14%</td><td>+21%</td><td>+28%</td><td>+35%</td></tr>
+            <tr><td><strong>Makosen Wave</strong></td><td>Zwiększa dmg / przebicie.</td><td>+6%</td><td>+12%</td><td>+18%</td><td>+24%</td><td>+24% + przebicie</td></tr>
+            <tr><td><strong>Spirit Surge</strong></td><td>Dmg i szansa na krytyk.</td><td>+6% / 8%</td><td>+12% / 11%</td><td>+18% / 14%</td><td>+24% / 17%</td><td>+30% / 20%</td></tr>
+        </table>
+    </div>
+
 </div>
 
 </body>
