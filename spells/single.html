@@ -2,69 +2,58 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Single Spells - DBO New Age</title>
     <link rel="stylesheet" href="../style.css"> 
     <style>
-        body {
-            background-image: url('../background.png') !important;
-            background-attachment: fixed !important;
-            background-size: cover !important;
-        }
-        /* Stylizacja tabel */
+        body { background-image: url('background.png') !important; background-attachment: fixed !important; background-size: cover !important; }
         .table-container { overflow-x: auto; margin: 15px 0 25px 0; }
         table { width: 100%; border-collapse: collapse; background: rgba(0,0,0,0.6); }
         th, td { padding: 12px; border: 1px solid rgba(255,255,255,0.15); text-align: center; color: #fff; }
-        th { background: rgba(255, 152, 0, 0.25); color: #ff9800; font-weight: bold; }
-        
-        /* Nagłówki i opisy */
-        h2 { text-align: center; color: #fff; text-transform: uppercase; }
-        h3 { color: #ff9800; border-bottom: 1px solid #ff9800; padding-bottom: 5px; margin-top: 35px; }
-        .description-box { background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; font-size: 0.95em; line-height: 1.5; border-left: 3px solid #ff9800; }
+        th { background: rgba(255, 152, 0, 0.25); color: #ff9800; }
+        h3 { color: #ff9800; border-bottom: 1px solid #ff9800; margin-top: 35px; }
+        .desc { background: rgba(0,0,0,0.4); padding: 10px; border-radius: 5px; font-size: 0.9em; }
     </style>
 </head>
 <body>
-
 <div class="content-wrapper">
-    <a href="spells.html" class="back-btn">&larr; Powrót do kategorii</a>
+    <a href="spells.html" class="back-btn">&larr; Powrót</a>
     <h2>Single Target Spells</h2>
 
     <h3>Energy Blast</h3>
-    <p class="description-box"><em>Opis:</em> Wystrzeliwuje dwie szybkie serie Ki w kierunku celu, zadając obrażenia energetyczne w sekwencji.</p>
+    <p class="desc">Wystrzeliwuje dwie szybkie serie Ki w kierunku celu, zadając obrażenia energetyczne w sekwencji.</p>
 
-    <h3>Generic Ki Blast</h3>
-    <p class="description-box"><em>Opis:</em> Uwalnia trzy kolejne serie Ki w stronę celu, zwiększając presję ofensywną i całkowite obrażenia.</p>
+    <h3>Ki Blast</h3>
+    <p class="desc">Disparo rápido de energia em múltiplos projéteis.</p>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr><th>Poziom</th><th>Rapid Fire (Dmg/Extra)</th><th>Explosive Shot (Dmg)</th><th>Energy Transfer (Ricochets)</th><th>Healing Shot (Cura)</th></tr>
+                <tr style="font-size:0.8em; font-style:italic;"><td>-</td><td>Zwiększa dmg/dodaje pocisk</td><td>Wybuch przy celu</td><td>Odbicie między celami</td><td>Leczenie z obrażeń</td></tr>
+            </thead>
+            <tbody>
+                <tr><td>Lv 1</td><td>+6%</td><td>+7%</td><td>1 cel / +6%</td><td>7%</td></tr>
+                <tr><td>Lv 2</td><td>+12%</td><td>+14%</td><td>1 cel / +12%</td><td>9%</td></tr>
+                <tr><td>Lv 3</td><td>+18%</td><td>+21%</td><td>2 cele / +12%</td><td>11%</td></tr>
+                <tr><td>Lv 4</td><td>+24% / +1 pocisk</td><td>+28%</td><td>3 cele / +12%</td><td>13%</td></tr>
+                <tr><td>Lv 5</td><td>+24% / +1 pocisk</td><td>+35%</td><td>4 cele / +12%</td><td>15%</td></tr>
+            </tbody>
+        </table>
+    </div>
 
     <h3>Energy Pulse</h3>
-    <p class="description-box"><em>Opis:</em> Sekwencja serii energii w linii prostej.</p>
-    
-<div class="table-container">
-    <table>
-        <thead>
-            <tr>
-                <th>Poziom</th>
-                <th>Zenkai Instinct</th>
-                <th>Renzoku Energy Burst</th>
-                <th>Makosen Wave</th>
-                <th>Spirit Surge</th>
-            </tr>
-            <tr style="background: rgba(255, 255, 255, 0.05); font-size: 0.85em; font-style: italic; color: #ccc;">
-                <td>-</td>
-                <td>Wysysanie życia (Life Leech)</td>
-                <td>Obrażenia pocisku</td>
-                <td>Obrażenia i przebicie</td>
-                <td>Obrażenia i krytyk</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td>Lv 1</td><td>+9%</td><td>+7%</td><td>+6%</td><td>+6% / 8%</td></tr>
-            <tr><td>Lv 2</td><td>+13%</td><td>+14%</td><td>+12%</td><td>+12% / 11%</td></tr>
-            <tr><td>Lv 3</td><td>+17%</td><td>+21%</td><td>+18%</td><td>+18% / 14%</td></tr>
-            <tr><td>Lv 4</td><td>+21%</td><td>+28%</td><td>+24%</td><td>+24% / 17%</td></tr>
-            <tr><td>Lv 5</td><td>+25%</td><td>+35%</td><td>+24% + Przebicie</td><td>+30% / 20%</td></tr>
-        </tbody>
-    </table>
+    <p class="desc">Sekwencja serii energii w linii prostej.</p>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr><th>Poziom</th><th>Zenkai Instinct (Life Leech)</th><th>Renzoku (Dmg)</th><th>Makosen (Dmg/Eff)</th><th>Spirit Surge (Dmg/Crit)</th></tr>
+                <tr style="font-size:0.8em; font-style:italic;"><td>-</td><td>Wysysanie życia</td><td>Obrażenia pocisku</td><td>Obrażenia i przebicie</td><td>Obrażenia i krytyk</td></tr>
+            </thead>
+            <tbody>
+                <tr><td>Lv 1</td><td>+9%</td><td>+7%</td><td>+6%</td><td>+6% / 8%</td></tr>
+                <tr><td>Lv 5</td><td>+25%</td><td>+35%</td><td>+24% + Przebicie</td><td>+30% / 20%</td></tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 </body>
 </html>
