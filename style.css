@@ -31,6 +31,17 @@ header h1 {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
+/* SOCIAL MEDIA - NOWA SEKCJA */
+.social-links { margin-top: 15px; margin-bottom: 20px; }
+.social-links a { 
+    color: #fff; 
+    font-size: 28px; 
+    margin: 0 12px; 
+    transition: all 0.3s ease; 
+    text-decoration: none;
+}
+.social-links a:hover { color: #ff9800; transform: scale(1.2); }
+
 .container { width: 100%; max-width: 1200px; margin: 0 auto; }
 
 .content-wrapper {
@@ -46,7 +57,7 @@ header h1 {
 }
 
 /* ==========================================================================
-   MENU GŁÓWNE (KAFELKI) - POPRAWKA
+   MENU GŁÓWNE (KAFELKI)
    ========================================================================== */
 .grid-container {
     display: grid;
@@ -54,7 +65,6 @@ header h1 {
     gap: 20px;
 }
 
-/* Wymuszamy 4 kolumny dla sekcji z tą klasą */
 .top-nav-grid {
     grid-template-columns: repeat(4, 1fr) !important; 
 }
