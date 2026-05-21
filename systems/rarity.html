@@ -53,6 +53,21 @@
         .tier-epic { color: #c48eff; font-weight: bold; }
         .tier-legendary { color: #ffbb33; font-weight: bold; }
         .tier-mythical { color: #ff5555; font-weight: bold; }
+
+        /* FIX DLA GIGA OBRAZKA */
+        .wiki-img {
+            text-align: center;
+            margin: 30px auto;
+            max-width: 800px; /* Maksymalna szerokość obrazka w oknie wiki */
+            width: 100%;
+        }
+        .wiki-img img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 152, 0, 0.3); /* Pomarańczowa ramka pasująca do h3 */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* Cień pod grafiką */
+        }
     </style>
 </head>
 <body>
@@ -72,7 +87,7 @@
             <li><span class="tier-mythical">Mythical:</span> <strong>1% szansy</strong> (gwarantuje dokładnie 3 stałe, potężne atrybuty).</li>
         </ul>
 
-                <h3>Tabela Możliwych Atrybutów:</h3>
+        <h3>Tabela Możliwych Atrybutów:</h3>
         <p><em>*Poniższa tabela przedstawia przykładowe wartości obliczone dynamicznie dla przedmiotu na <strong>250 poziom (Level)</strong>.</em></p>
 
         <table>
@@ -99,7 +114,7 @@
             </tbody>
         </table>
 
-                <div class="wiki-img">
+        <div class="wiki-img">
             <img src="mapa2.png" alt="Lokalizacja">
         </div>
 
@@ -110,7 +125,6 @@
             <li><strong>Modify Single Attribute (Modyfikacja jednego atrybutu):</strong> Zastępuje tylko jeden, wybrany przez Ciebie atrybut innym, losowym.</li>
             <li><strong>Randomize Attribute Value (Losowanie wartości):</strong> Zachowuje obecny typ atrybutu, ale losuje na nowo jego wartość liczbową z przedziału danej rzadkości.</li>
         </ul>
-
 
         <blockquote style="background: rgba(0, 0, 0, 0.4); padding: 15px; border-left: 4px solid #ff9800; margin: 20px 0; border-radius: 0 8px 8px 0;">
             <strong>Ważne Uwagi (Observações Importantes):</strong><br>
